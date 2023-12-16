@@ -5,6 +5,8 @@
 package View;
 
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
+import java.awt.BorderLayout;
+import javax.swing.JPanel;
 
 /**
  *
@@ -17,6 +19,8 @@ public class MainLogin extends javax.swing.JFrame {
      */
     public MainLogin() {
         initComponents();
+        LoginPanel loginPanel = new LoginPanel();
+        mostrarPanel(loginPanel);
     }
 
     /**
@@ -93,6 +97,15 @@ public class MainLogin extends javax.swing.JFrame {
                 new MainLogin().setVisible(true);
             }
         });
+    }
+    
+    public void mostrarPanel(JPanel panel) {
+        panel.setSize(400, 600);
+        panel.setLocation(0, 0);
+        containerForms.removeAll();
+        containerForms.add(panel, BorderLayout.CENTER);
+        containerForms.revalidate();
+        containerForms.repaint();
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
