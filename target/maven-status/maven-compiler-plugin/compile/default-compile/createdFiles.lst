@@ -1,2 +1,6 @@
-View\MainLogin.class
 View\MainLogin$1.class
+View\forgotPanel.class
+Model\PanelManager.class
+View\LoginPanel$1.class
+View\LoginPanel.class
+View\MainLogin.class

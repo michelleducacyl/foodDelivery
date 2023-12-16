@@ -170,6 +170,9 @@
         <Property name="horizontalAlignment" type="int" value="0"/>
         <Property name="text" type="java.lang.String" value="Forgot password?"/>
       </Properties>
+      <Events>
+        <EventHandler event="mousePressed" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="forgotBtnMousePressed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="signUpBtn">
       <Properties>

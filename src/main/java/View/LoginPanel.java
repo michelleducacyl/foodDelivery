@@ -4,6 +4,9 @@
  */
 package View;
 
+import Model.PanelManager;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 /**
@@ -12,16 +15,20 @@ import javax.swing.UIManager;
  */
 public class LoginPanel extends javax.swing.JPanel {
 
+    
     /**
      * Creates new form LoginPanel
      */
     public LoginPanel() {
+        
         initComponents();
         loginBtn.putClientProperty( "Button.arc","arc:40" );
         inputEmailLogin.putClientProperty( "JComponent.arc","arc:40" );
         inputEmailLogin.putClientProperty("JTextField.placeholderText", "name@example.com");
         inputPasswordLogin.putClientProperty("JTextField.placeholderText", "min. 8 characters");
     }
+    
+    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -71,6 +78,11 @@ public class LoginPanel extends javax.swing.JPanel {
         forgotBtn.setForeground(new java.awt.Color(78, 96, 255));
         forgotBtn.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         forgotBtn.setText("Forgot password?");
+        forgotBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                forgotBtnMousePressed(evt);
+            }
+        });
 
         signUpBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         signUpBtn.setForeground(new java.awt.Color(78, 96, 255));
@@ -143,6 +155,16 @@ public class LoginPanel extends javax.swing.JPanel {
                     .addComponent(signUpBtn)))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    
+    private void forgotBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotBtnMousePressed
+        // TODO add your handling code here:
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+    if (mainFrame instanceof MainLogin) {
+        ((MainLogin) mainFrame).forgotPanel();
+    }
+       
+    }//GEN-LAST:event_forgotBtnMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

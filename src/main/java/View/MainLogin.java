@@ -4,6 +4,7 @@
  */
 package View;
 
+import Model.PanelManager;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;
@@ -20,7 +21,8 @@ public class MainLogin extends javax.swing.JFrame {
     public MainLogin() {
         initComponents();
         LoginPanel loginPanel = new LoginPanel();
-        mostrarPanel(loginPanel);
+        PanelManager manager = new PanelManager(containerForms);
+        manager.mostrarPanel(loginPanel);
     }
 
     /**
@@ -99,14 +101,20 @@ public class MainLogin extends javax.swing.JFrame {
         });
     }
     
-    public void mostrarPanel(JPanel panel) {
-        panel.setSize(400, 600);
-        panel.setLocation(0, 0);
-        containerForms.removeAll();
-        containerForms.add(panel, BorderLayout.CENTER);
-        containerForms.revalidate();
-        containerForms.repaint();
+    public  void forgotPanel(){
+        forgotPanel forgotPanel = new forgotPanel();
+        PanelManager manager = new PanelManager(containerForms);
+        manager.mostrarPanel(forgotPanel);
     }
+    
+    public  void loginPanel(){
+        LoginPanel loginPanel = new LoginPanel();
+        PanelManager manager = new PanelManager(containerForms);
+        manager.mostrarPanel(loginPanel);
+    }
+  
+    
+   
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JPanel background;
