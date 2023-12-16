@@ -112,7 +112,20 @@ public class MainLogin extends javax.swing.JFrame {
         PanelManager manager = new PanelManager(containerForms);
         manager.mostrarPanel(loginPanel);
     }
-  
+    
+    public  void signUpPanel(){
+        SignUpPanel signUp = new SignUpPanel();
+        PanelManager manager = new PanelManager(containerForms);
+        manager.mostrarPanel(signUp);
+    }
+    
+    public void login(){
+         MainLogin.this.dispose();
+
+        // Abre NuevoJFrame
+        MainApp nuevoFrame = new MainApp();
+        nuevoFrame.setVisible(true);
+    }
     
    
 

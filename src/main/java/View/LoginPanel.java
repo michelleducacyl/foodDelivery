@@ -73,6 +73,11 @@ public class LoginPanel extends javax.swing.JPanel {
         loginBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
+        loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                loginBtnMousePressed(evt);
+            }
+        });
 
         forgotBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         forgotBtn.setForeground(new java.awt.Color(78, 96, 255));
@@ -87,6 +92,11 @@ public class LoginPanel extends javax.swing.JPanel {
         signUpBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         signUpBtn.setForeground(new java.awt.Color(78, 96, 255));
         signUpBtn.setText("Sign Up");
+        signUpBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mousePressed(java.awt.event.MouseEvent evt) {
+                signUpBtnMousePressed(evt);
+            }
+        });
 
         infoTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         infoTxt.setText("Don’t have an account? ");
@@ -165,6 +175,22 @@ public class LoginPanel extends javax.swing.JPanel {
     }
        
     }//GEN-LAST:event_forgotBtnMousePressed
+
+    private void signUpBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpBtnMousePressed
+        // TODO add your handling code here:
+           JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+    if (mainFrame instanceof MainLogin) {
+        ((MainLogin) mainFrame).signUpPanel();
+    }
+    }//GEN-LAST:event_signUpBtnMousePressed
+
+    private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
+        // TODO add your handling code here:
+            JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+    if (mainFrame instanceof MainLogin) {
+        ((MainLogin) mainFrame).login();
+    }
+    }//GEN-LAST:event_loginBtnMousePressed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
