@@ -14,13 +14,18 @@ import javax.swing.JPanel;
  */
 public class PanelManager {
     private Container container;
-
-    public PanelManager(Container container) {
+    private int witdh;
+    private int height;
+    
+    public PanelManager(Container container, int witdh, int height) {
         this.container = container;
+        this.witdh = witdh;
+        this.height = height;
+        
     }
 
     public void mostrarPanel(JPanel panel) {
-        panel.setSize(400, 600);
+        panel.setSize(witdh, height);
         panel.setLocation(0, 0);
         container.removeAll();
         container.add(panel, BorderLayout.CENTER);

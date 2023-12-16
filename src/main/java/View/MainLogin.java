@@ -21,7 +21,7 @@ public class MainLogin extends javax.swing.JFrame {
     public MainLogin() {
         initComponents();
         LoginPanel loginPanel = new LoginPanel();
-        PanelManager manager = new PanelManager(containerForms);
+        PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(loginPanel);
     }
 
@@ -103,19 +103,19 @@ public class MainLogin extends javax.swing.JFrame {
     
     public  void forgotPanel(){
         forgotPanel forgotPanel = new forgotPanel();
-        PanelManager manager = new PanelManager(containerForms);
+        PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(forgotPanel);
     }
     
     public  void loginPanel(){
         LoginPanel loginPanel = new LoginPanel();
-        PanelManager manager = new PanelManager(containerForms);
+        PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(loginPanel);
     }
     
     public  void signUpPanel(){
         SignUpPanel signUp = new SignUpPanel();
-        PanelManager manager = new PanelManager(containerForms);
+        PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(signUp);
     }
     
