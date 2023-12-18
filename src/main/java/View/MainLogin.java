@@ -4,6 +4,7 @@
  */
 package View;
 
+import Model.DBConnection;
 import Model.PanelManager;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.BorderLayout;
@@ -20,6 +21,7 @@ public class MainLogin extends javax.swing.JFrame {
      */
     public MainLogin() {
         initComponents();
+        DBConnection.startConnection();
         LoginPanel loginPanel = new LoginPanel();
         PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(loginPanel);

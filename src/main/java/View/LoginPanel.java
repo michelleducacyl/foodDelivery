@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.LoginController;
 import Model.PanelManager;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
@@ -50,6 +51,7 @@ public class LoginPanel extends javax.swing.JPanel {
         forgotBtn = new javax.swing.JLabel();
         signUpBtn = new javax.swing.JLabel();
         infoTxt = new javax.swing.JLabel();
+        errorLogin = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -101,6 +103,9 @@ public class LoginPanel extends javax.swing.JPanel {
         infoTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         infoTxt.setText("Don’t have an account? ");
 
+        errorLogin.setForeground(new java.awt.Color(255, 0, 51));
+        errorLogin.setText("Error");
+
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
         layout.setHorizontalGroup(
@@ -128,15 +133,17 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addComponent(inputPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
-                .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
-            .addGroup(layout.createSequentialGroup()
-                .addGap(60, 60, 60)
                 .addComponent(forgotBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
             .addGroup(layout.createSequentialGroup()
                 .addGap(110, 110, 110)
                 .addComponent(infoTxt)
                 .addGap(0, 0, 0)
                 .addComponent(signUpBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE))
+            .addGroup(layout.createSequentialGroup()
+                .addGap(60, 60, 60)
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(errorLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 131, javax.swing.GroupLayout.PREFERRED_SIZE)))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -155,7 +162,9 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addComponent(emailTxt1)
                 .addGap(2, 2, 2)
                 .addComponent(inputPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(37, 37, 37)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
+                .addComponent(errorLogin)
+                .addGap(9, 9, 9)
                 .addComponent(loginBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(45, 45, 45)
                 .addComponent(forgotBtn)
@@ -186,10 +195,16 @@ public class LoginPanel extends javax.swing.JPanel {
 
     private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
         // TODO add your handling code here:
-            JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-    if (mainFrame instanceof MainLogin) {
-        ((MainLogin) mainFrame).login();
+        if(LoginController.loginRequest(inputEmailLogin.getText(), inputPasswordLogin.getText())){
+                JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+                if (mainFrame instanceof MainLogin) {
+                ((MainLogin) mainFrame).login();
+                }
+        }
+    else{
+            System.out.println("ERROR");
     }
+    
     }//GEN-LAST:event_loginBtnMousePressed
 
 
@@ -197,6 +212,7 @@ public class LoginPanel extends javax.swing.JPanel {
     private javax.swing.JLabel descriptionTxt;
     private javax.swing.JLabel emailTxt;
     private javax.swing.JLabel emailTxt1;
+    private javax.swing.JLabel errorLogin;
     private javax.swing.JLabel forgotBtn;
     private javax.swing.JLabel infoTxt;
     private javax.swing.JTextField inputEmailLogin;
