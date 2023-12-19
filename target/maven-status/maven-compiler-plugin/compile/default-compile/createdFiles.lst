@@ -10,6 +10,7 @@ View\LoginPanel$2.class
 Model\DBConnection.class
 Model\User.class
 View\MainLogin$1.class
+Model\PasswordHasher.class
 View\forgotPanel.class
 Model\PanelRound.class
 View\HomePanel.class
