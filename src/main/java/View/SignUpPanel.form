@@ -21,52 +21,45 @@
   <Layout>
     <DimensionLayout dim="0">
       <Group type="103" groupAlignment="0" attributes="0">
-          <Group type="102" attributes="0">
-              <Group type="103" groupAlignment="0" attributes="0">
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
-                      <Component id="logo" min="-2" pref="103" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="titleTxt" min="-2" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="descriptionTxt" min="-2" pref="289" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="emailTxt1" min="-2" pref="70" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="inputEmailSignUp" min="-2" pref="280" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="emailTxt2" min="-2" pref="70" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Component id="inputPasswordSignUp" min="-2" pref="280" max="-2" attributes="0"/>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
-                      <Group type="103" groupAlignment="0" attributes="0">
-                          <Component id="registerBtn" alignment="0" min="-2" pref="280" max="-2" attributes="0"/>
-                          <Group type="102" alignment="0" attributes="0">
-                              <EmptySpace min="-2" pref="24" max="-2" attributes="0"/>
-                              <Component id="infoTxt" min="-2" max="-2" attributes="0"/>
-                              <EmptySpace max="-2" attributes="0"/>
-                              <Component id="signUpBtn" min="-2" pref="70" max="-2" attributes="0"/>
-                          </Group>
-                          <Component id="inputRepeatSignUp" min="-2" pref="280" max="-2" attributes="0"/>
+          <Group type="102" alignment="0" attributes="0">
+              <Group type="103" groupAlignment="1" attributes="0">
+                  <Component id="registerBtn" alignment="1" min="-2" pref="289" max="-2" attributes="0"/>
+                  <Component id="inputRepeatSignUp" alignment="1" min="-2" pref="289" max="-2" attributes="0"/>
+                  <Component id="inputEmailSignUp" alignment="1" min="-2" pref="289" max="-2" attributes="0"/>
+                  <Group type="103" groupAlignment="0" max="-2" attributes="0">
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="27" pref="27" max="-2" attributes="0"/>
+                          <Component id="logo" min="-2" pref="103" max="-2" attributes="0"/>
                       </Group>
-                  </Group>
-                  <Group type="102" alignment="0" attributes="0">
-                      <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
-                      <Component id="emailTxt3" min="-2" pref="112" max="-2" attributes="0"/>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                          <Component id="titleTxt" min="-2" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                          <Component id="descriptionTxt" min="-2" pref="289" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" attributes="0">
+                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                          <Component id="emailTxt1" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="84" max="-2" attributes="0"/>
+                          <Component id="infoTxt" min="-2" max="-2" attributes="0"/>
+                          <EmptySpace max="-2" attributes="0"/>
+                          <Component id="signUpBtn" min="-2" pref="70" max="-2" attributes="0"/>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
+                          <Group type="103" groupAlignment="0" attributes="0">
+                              <Component id="emailTxt2" min="-2" pref="70" max="-2" attributes="0"/>
+                              <Component id="inputPasswordSignUp" max="32767" attributes="0"/>
+                          </Group>
+                      </Group>
+                      <Group type="102" alignment="0" attributes="0">
+                          <EmptySpace min="-2" pref="60" max="-2" attributes="0"/>
+                          <Component id="emailTxt3" min="-2" pref="112" max="-2" attributes="0"/>
+                      </Group>
                   </Group>
               </Group>
               <EmptySpace min="-2" pref="51" max="-2" attributes="0"/>
@@ -88,13 +81,13 @@
               <Component id="inputEmailSignUp" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace type="unrelated" max="-2" attributes="0"/>
               <Component id="emailTxt2" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-              <Component id="inputPasswordSignUp" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace type="unrelated" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="inputPasswordSignUp" min="-2" pref="35" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
               <Component id="emailTxt3" min="-2" max="-2" attributes="0"/>
-              <EmptySpace min="2" pref="2" max="-2" attributes="0"/>
-              <Component id="inputRepeatSignUp" min="-2" pref="33" max="-2" attributes="0"/>
-              <EmptySpace min="-2" pref="31" max="-2" attributes="0"/>
+              <EmptySpace max="-2" attributes="0"/>
+              <Component id="inputRepeatSignUp" min="-2" pref="32" max="-2" attributes="0"/>
+              <EmptySpace min="-2" pref="28" max="-2" attributes="0"/>
               <Component id="registerBtn" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace min="-2" pref="82" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="3" attributes="0">
@@ -159,6 +152,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Sign Up"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="registerBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="signUpBtn">
       <Properties>
@@ -190,8 +186,6 @@
         <Property name="text" type="java.lang.String" value="Password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputPasswordSignUp">
-    </Component>
     <Component class="javax.swing.JLabel" name="emailTxt3">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
@@ -200,7 +194,9 @@
         <Property name="text" type="java.lang.String" value="Repeat password"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JTextField" name="inputRepeatSignUp">
+    <Component class="javax.swing.JPasswordField" name="inputPasswordSignUp">
+    </Component>
+    <Component class="javax.swing.JPasswordField" name="inputRepeatSignUp">
     </Component>
   </SubComponents>
 </Form>
