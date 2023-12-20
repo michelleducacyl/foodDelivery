@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="food_delivery" name="model.Restaurant" optimistic-lock="none" table="restaurant">
+        <id name="id" type="string">
+            <column length="50" name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <property name="name" type="string">
+            <column length="100" name="name"/>
+        </property>
+        <property name="address" type="string">
+            <column length="200" name="address"/>
+        </property>
+        <property name="image" type="string">
+            <column length="200" name="image"/>
+        </property>
+        <set fetch="select" inverse="true" lazy="true" name="disheses" table="dishes">
+            <key>
+                <column length="50" name="id_restaurant"/>
+            </key>
+            <one-to-many class="model.Dishes"/>
+        </set>
+    </class>
+</hibernate-mapping>

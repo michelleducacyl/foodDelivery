@@ -4,8 +4,8 @@
  */
 package View;
 
-import Model.DBConnection;
-import Model.PanelManager;
+import Controller.DBConnection;
+import Controller.PanelManager;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 import java.awt.BorderLayout;
 import javax.swing.JPanel;

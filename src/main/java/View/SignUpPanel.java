@@ -5,8 +5,8 @@
 package View;
 
 import Controller.SignUpController;
-import Model.EmailValidator;
-import Model.PanelManager;
+import Controller.EmailValidator;
+import Controller.PanelManager;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;

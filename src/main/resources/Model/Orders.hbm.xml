@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<hibernate-mapping>
+    <class catalog="food_delivery" name="model.Orders" optimistic-lock="none" table="orders">
+        <id name="id" type="string">
+            <column length="50" name="id"/>
+            <generator class="assigned"/>
+        </id>
+        <many-to-one class="model.Users" fetch="select" name="users">
+            <column name="id_user"/>
+        </many-to-one>
+        <property name="total" type="java.lang.Double">
+            <column name="total" precision="22" scale="0"/>
+        </property>
+        <set fetch="select" inverse="false" lazy="true" name="disheses" table="orders_dishes">
+            <key>
+                <column length="50" name="order_id" not-null="true"/>
+            </key>
+            <many-to-many entity-name="model.Dishes">
+                <column name="dish_id" not-null="true"/>
+            </many-to-many>
+        </set>
+    </class>
+</hibernate-mapping>

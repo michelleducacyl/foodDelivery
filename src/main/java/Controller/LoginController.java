@@ -4,12 +4,17 @@
  */
 package Controller;
 
-import Model.DBConnection;
-import Model.PasswordHasher;
+import Model.HibernateUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+
+import com.password4j.types.Bcrypt;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.query.Query;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -18,33 +23,30 @@ import java.sql.SQLException;
 public class LoginController {
    
     
-    public static boolean loginRequest(String email, String password) {
-    boolean found = false;
+    public static String obtenerContrasenaDeUsuario(String email) {
+    SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+    Session sesion = sessionFactory.openSession();
+
     try {
-        
-        String sql = "SELECT * FROM users WHERE email=?";
-        PreparedStatement preparedStatement = DBConnection.connection.prepareStatement(sql);
-        preparedStatement.setString(1, email);
-        ResultSet result = preparedStatement.executeQuery();
-
-        // Verificar si se encontró el usuario con el correo electrónico proporcionado
-        if (result.next()) {
-            String hashed = result.getString("password");
-            System.out.println("HASHED " + hashed );
-            // Comprobar la contraseña utilizando PasswordHasher (se asume que funciona correctamente)
-            if (PasswordHasher.comprobarHash(hashed, password)) {
-                found = true;
-            }
-        }
-
-        result.close();
-        preparedStatement.close();
-    } catch (SQLException e) {
-        // Manejar excepciones de SQL adecuadamente (puedes personalizar el manejo de errores aquí)
-        e.printStackTrace();
-        System.out.println(e.getMessage());
+      String hql = "SELECT u.password FROM Users u WHERE u.email = :email";
+      Query<String> query = sesion.createQuery(hql, String.class);
+      query.setParameter("email", email);
+      return query.uniqueResult();
+    } catch (Exception e) {
+      e.printStackTrace();
+      return null;
+    } finally {
+      sesion.close();
     }
-    return found;
-}
+  }
+
+    // Método para verificar si la contraseña coincide (puedes usar BCrypt)
+  public static boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
+     BCrypt.gensalt();
+      System.out.println("Hasheada: " + BCrypt.hashpw(contrasenaInput, BCrypt.gensalt()));
+    // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
+    return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); // Esto es solo un ejemplo, debes utilizar una función de verificación segura
+  }
+  
 }
 

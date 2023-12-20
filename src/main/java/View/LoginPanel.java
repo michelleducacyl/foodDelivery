@@ -5,8 +5,10 @@
 package View;
 
 import Controller.LoginController;
-import Model.PanelManager;
+import Controller.PanelManager;
+import Model.User;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -16,20 +18,17 @@ import javax.swing.UIManager;
  */
 public class LoginPanel extends javax.swing.JPanel {
 
-    
     /**
      * Creates new form LoginPanel
      */
     public LoginPanel() {
-        
+
         initComponents();
-        loginBtn.putClientProperty( "Button.arc","arc:40" );
-        inputEmailLogin.putClientProperty( "JComponent.arc","arc:40" );
+        loginBtn.putClientProperty("Button.arc", "arc:40");
+        inputEmailLogin.putClientProperty("JComponent.arc", "arc:40");
         inputEmailLogin.putClientProperty("JTextField.placeholderText", "name@example.com");
         inputPasswordLogin.putClientProperty("JTextField.placeholderText", "min. 8 characters");
     }
-    
-    
 
     /**
      * This method is called from within the constructor to initialize the form.
@@ -177,37 +176,63 @@ public class LoginPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    
+
     private void forgotBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_forgotBtnMousePressed
         // TODO add your handling code here:
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-    if (mainFrame instanceof MainLogin) {
-        ((MainLogin) mainFrame).forgotPanel();
-    }
-       
+        if (mainFrame instanceof MainLogin) {
+            ((MainLogin) mainFrame).forgotPanel();
+        }
+
     }//GEN-LAST:event_forgotBtnMousePressed
 
     private void signUpBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpBtnMousePressed
         // TODO add your handling code here:
-           JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-    if (mainFrame instanceof MainLogin) {
-        ((MainLogin) mainFrame).signUpPanel();
-    }
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainLogin) {
+            ((MainLogin) mainFrame).signUpPanel();
+        }
     }//GEN-LAST:event_signUpBtnMousePressed
 
     private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
         // TODO add your handling code here:
-        errorLogin.setText("");
-        if(LoginController.loginRequest(inputEmailLogin.getText(), inputPasswordLogin.getText())){
+        String email = inputEmailLogin.getText();
+        String password = String.valueOf(inputPasswordLogin.getPassword());
+        try {
+            // Obtener la contraseña almacenada del usuario
+            String contrasenaAlmacenada = LoginController.obtenerContrasenaDeUsuario(email);
+            System.out.println("CONTRASEÑA Email: " + contrasenaAlmacenada);
+            System.out.println("Contraseña text:" + password);
+            // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
+            boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
+
+            if (!comprueba) {
+                //JOptionPane.showMessageDialog(JPanel, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            } else {
+
+                //// Si el inicio de sesión es exitoso, guarda el usuario
+                User user = new User(email, password);
                 JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-                if (mainFrame instanceof MainLogin) {
+            if (mainFrame instanceof MainLogin) {
                 ((MainLogin) mainFrame).login();
-                }
+            }
+                
+            }
+        } catch (Exception e) {
+            e.printStackTrace();
         }
-    else{
-           errorLogin.setText("User or password incorrect");
-    }
-    
+        /*
+        errorLogin.setText("");
+        if (LoginController.loginRequest(inputEmailLogin.getText(), inputPasswordLogin.getText())) {
+            JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+            if (mainFrame instanceof MainLogin) {
+                ((MainLogin) mainFrame).login();
+            }
+        } else {
+            errorLogin.setText("User or password incorrect");
+        }
+*/
+
     }//GEN-LAST:event_loginBtnMousePressed
 
 

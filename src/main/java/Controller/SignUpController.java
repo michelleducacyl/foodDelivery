@@ -4,8 +4,6 @@
  */
 package Controller;
 
-import Model.DBConnection;
-import Model.PasswordHasher;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;

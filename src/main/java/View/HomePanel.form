@@ -142,7 +142,7 @@
             </DimensionLayout>
           </Layout>
           <SubComponents>
-            <Container class="Model.PanelRound" name="sushiHouse">
+            <Container class="View.PanelRound" name="sushiHouse">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -209,7 +209,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="Model.PanelRound" name="mexicanPalace">
+            <Container class="View.PanelRound" name="mexicanPalace">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -276,7 +276,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="Model.PanelRound" name="burgersAndPizza">
+            <Container class="View.PanelRound" name="burgersAndPizza">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -343,7 +343,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="Model.PanelRound" name="shawarmaQueen">
+            <Container class="View.PanelRound" name="shawarmaQueen">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -410,7 +410,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="Model.PanelRound" name="coffeeTime">
+            <Container class="View.PanelRound" name="coffeeTime">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -477,7 +477,7 @@
                 </Component>
               </SubComponents>
             </Container>
-            <Container class="Model.PanelRound" name="burgersAndPizza1">
+            <Container class="View.PanelRound" name="burgersAndPizza1">
               <Properties>
                 <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
                   <Color blue="ff" green="f4" red="f3" type="rgb"/>
@@ -548,7 +548,7 @@
         </Container>
       </SubComponents>
     </Container>
-    <Container class="Model.PanelRound" name="deals2">
+    <Container class="View.PanelRound" name="deals2">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ed" green="f3" red="ff" type="rgb"/>
@@ -633,7 +633,7 @@
         </Component>
       </SubComponents>
     </Container>
-    <Container class="Model.PanelRound" name="deals3">
+    <Container class="View.PanelRound" name="deals3">
       <Properties>
         <Property name="background" type="java.awt.Color" editor="org.netbeans.beaninfo.editors.ColorEditor">
           <Color blue="ff" green="f4" red="f3" type="rgb"/>

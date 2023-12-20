@@ -4,7 +4,7 @@
  */
 package View;
 
-import Model.PanelManager;
+import Controller.PanelManager;
 
 /**
  *

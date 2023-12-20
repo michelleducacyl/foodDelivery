@@ -33,36 +33,36 @@ public class HomePanel extends javax.swing.JPanel {
         nearbyTxt = new javax.swing.JLabel();
         jScrollPane1 = new javax.swing.JScrollPane();
         jPanel1 = new javax.swing.JPanel();
-        sushiHouse = new Model.PanelRound();
+        sushiHouse = new View.PanelRound();
         jLabel1 = new javax.swing.JLabel();
         jLabel7 = new javax.swing.JLabel();
         jLabel8 = new javax.swing.JLabel();
-        mexicanPalace = new Model.PanelRound();
+        mexicanPalace = new View.PanelRound();
         jLabel2 = new javax.swing.JLabel();
         jLabel9 = new javax.swing.JLabel();
         jLabel10 = new javax.swing.JLabel();
-        burgersAndPizza = new Model.PanelRound();
+        burgersAndPizza = new View.PanelRound();
         jLabel3 = new javax.swing.JLabel();
         jLabel11 = new javax.swing.JLabel();
         jLabel12 = new javax.swing.JLabel();
-        shawarmaQueen = new Model.PanelRound();
+        shawarmaQueen = new View.PanelRound();
         jLabel4 = new javax.swing.JLabel();
         jLabel13 = new javax.swing.JLabel();
         jLabel14 = new javax.swing.JLabel();
-        coffeeTime = new Model.PanelRound();
+        coffeeTime = new View.PanelRound();
         jLabel5 = new javax.swing.JLabel();
         jLabel15 = new javax.swing.JLabel();
         jLabel16 = new javax.swing.JLabel();
-        burgersAndPizza1 = new Model.PanelRound();
+        burgersAndPizza1 = new View.PanelRound();
         jLabel19 = new javax.swing.JLabel();
         jLabel20 = new javax.swing.JLabel();
         jLabel21 = new javax.swing.JLabel();
-        deals2 = new Model.PanelRound();
+        deals2 = new View.PanelRound();
         jLabel6 = new javax.swing.JLabel();
         jLabel17 = new javax.swing.JLabel();
         jLabel18 = new javax.swing.JLabel();
         jLabel22 = new javax.swing.JLabel();
-        deals3 = new Model.PanelRound();
+        deals3 = new View.PanelRound();
         jLabel23 = new javax.swing.JLabel();
         jLabel24 = new javax.swing.JLabel();
         jLabel25 = new javax.swing.JLabel();
@@ -480,11 +480,11 @@ public class HomePanel extends javax.swing.JPanel {
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private Model.PanelRound burgersAndPizza;
-    private Model.PanelRound burgersAndPizza1;
-    private Model.PanelRound coffeeTime;
-    private Model.PanelRound deals2;
-    private Model.PanelRound deals3;
+    private View.PanelRound burgersAndPizza;
+    private View.PanelRound burgersAndPizza1;
+    private View.PanelRound coffeeTime;
+    private View.PanelRound deals2;
+    private View.PanelRound deals3;
     private javax.swing.JLabel jLabel1;
     private javax.swing.JLabel jLabel10;
     private javax.swing.JLabel jLabel11;
@@ -513,10 +513,10 @@ public class HomePanel extends javax.swing.JPanel {
     private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private Model.PanelRound mexicanPalace;
+    private View.PanelRound mexicanPalace;
     private javax.swing.JLabel nearbyTxt;
     private javax.swing.JSeparator separator;
-    private Model.PanelRound shawarmaQueen;
-    private Model.PanelRound sushiHouse;
+    private View.PanelRound shawarmaQueen;
+    private View.PanelRound sushiHouse;
     // End of variables declaration//GEN-END:variables
 }

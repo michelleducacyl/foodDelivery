@@ -2,7 +2,7 @@
  * Click nbfs://nbhost/SystemFileSystem/Templates/Licenses/license-default.txt to change this license
  * Click nbfs://nbhost/SystemFileSystem/Templates/Classes/Class.java to edit this template
  */
-package Model;
+package Controller;
 
 import com.password4j.BcryptFunction;
 import java.util.Scanner;
@@ -18,6 +18,7 @@ public class PasswordHasher {
         String plainTextPassword = password;
         var bcrypt = BcryptFunction.getInstance(12);
         String hashedPassword = bcrypt.hash(plainTextPassword).getResult();
+ 
         return hashedPassword;
     }
 
