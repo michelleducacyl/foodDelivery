@@ -199,39 +199,39 @@ public class LoginPanel extends javax.swing.JPanel {
         String email = inputEmailLogin.getText();
         String password = String.valueOf(inputPasswordLogin.getPassword());
         try {
+            errorLogin.setText("");
             // Obtener la contraseña almacenada del usuario
-            String contrasenaAlmacenada = LoginController.obtenerContrasenaDeUsuario(email);
-            System.out.println("CONTRASEÑA Email: " + contrasenaAlmacenada);
-            System.out.println("Contraseña text:" + password);
             // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
-            boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
-
-            if (!comprueba) {
-                //JOptionPane.showMessageDialog(JPanel, "Credenciales no válidas", "Error en el inicio de sesión", JOptionPane.ERROR_MESSAGE);
+            if (email.isEmpty() || password.isEmpty()) {
+                errorLogin.setText("User/password empty");
             } else {
+                String contrasenaAlmacenada = LoginController.obtenerContrasenaDeUsuario(email);
+                if (contrasenaAlmacenada == null) {
+                    errorLogin.setText("User not found");
+                } else {
+                    System.out.println("CONTRASEÑA Email: " + contrasenaAlmacenada);
+                    System.out.println("Contraseña text:" + password);
+                    errorLogin.setText("");
+                    boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
+                    if (!comprueba) {
 
-                //// Si el inicio de sesión es exitoso, guarda el usuario
-                User user = new User(email, password);
-                JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-            if (mainFrame instanceof MainLogin) {
-                ((MainLogin) mainFrame).login();
-            }
-                
+                        errorLogin.setText("User or password incorrect");
+                        
+                    } else {
+                        //// Si el inicio de sesión es exitoso, guarda el usuario
+                        User user = new User(email, password);
+                        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+                        if (mainFrame instanceof MainLogin) {
+                            ((MainLogin) mainFrame).login();
+                        }
+                    }
+                }
+
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        /*
-        errorLogin.setText("");
-        if (LoginController.loginRequest(inputEmailLogin.getText(), inputPasswordLogin.getText())) {
-            JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-            if (mainFrame instanceof MainLogin) {
-                ((MainLogin) mainFrame).login();
-            }
-        } else {
-            errorLogin.setText("User or password incorrect");
-        }
-*/
+
 
     }//GEN-LAST:event_loginBtnMousePressed
 
