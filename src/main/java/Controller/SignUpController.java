@@ -4,9 +4,17 @@
  */
 package Controller;
 
+import Model.HibernateUtil;
+import Model.User;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import model.Users;
+import org.hibernate.Session;
+import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
+import org.hibernate.query.Query;
+import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
@@ -14,32 +22,71 @@ import java.sql.SQLException;
  */
 public class SignUpController {
 
-    public static void insertUser(String email, String password) {
+    public static boolean verificarCredenciales(String email, String password) {
+        boolean credencialesValidas = false;
+        SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
+        Session sesion = sessionFactory.openSession();
+        Transaction tx = sesion.beginTransaction();
 
         try {
+            // Crear la consulta HQL
+            String hql = "SELECT u FROM Users u WHERE email = :email AND password = :password";
+            Query<Users> query = sesion.createQuery(hql, Users.class);
+            query.setParameter("email", email);
+            query.setParameter("password", password);
 
-            String sql = "INSERT INTO users (email, password) VALUES (?, ?)";
-            PreparedStatement statement = DBConnection.connection.prepareStatement(sql);
-            statement.setString(1, email);
-            statement.setString(2, password);
-            int queryResult = statement.executeUpdate();
-            System.out.println(queryResult + " fila(s) afectada(s)");
+            // Obtener el resultado de la consulta
+            Users usuario = query.uniqueResult();
 
-        } catch (SQLException e) {
-
-            if (e.getSQLState().equals("22001")) {
-                // Atrapar la excepción específica para Data Truncation (22001)
-
-                System.out.println("One of the inputs is greater than the column");
-
-                // Otros manejos de errores o registros de excepciones según necesites
-            } else {
-
-                // Manejo general de otras excepciones SQL
-                System.out.println(e.getErrorCode());
-                System.out.println(e.getMessage());
-
+            // Verificar si se encontró un usuario con las credenciales proporcionadas
+            if (usuario != null) {
+                credencialesValidas = true;
             }
+        } catch (Exception e) {
+            e.printStackTrace();
+        } finally {
+            tx.commit();
+            sesion.close();
+        }
+
+        return credencialesValidas;
+    }
+
+    public static void introducirUsuario(String email, String password) {
+        // Obtén la sesión de Hibernate
+        Session session = HibernateUtil.getSessionFactory().openSession();
+
+        // Comienza una transacción
+        Transaction transaction = null;
+
+        try {
+            // Comienza la transacción
+            transaction = session.beginTransaction();
+
+            // Crea un nuevo usuario y establece sus propiedades
+            Users user = new Users();
+
+            // Encripta la contraseña antes de almacenarla
+            String hashedPassword = BCrypt.hashpw(password, BCrypt.gensalt());
+
+            user.setPassword(hashedPassword);
+
+            user.setEmail(email);
+
+            // Guarda el usuario en la base de datos
+            session.save(user);
+
+            // Confirma la transacción
+            transaction.commit();
+        } catch (Exception e) {
+            // Si hay algún error, realiza un rollback de la transacción
+            if (transaction != null) {
+                transaction.rollback();
+            }
+            e.printStackTrace(); // Trata el error según tus necesidades
+        } finally {
+            // Cierra la sesión de Hibernate
+            session.close();
         }
     }
 }

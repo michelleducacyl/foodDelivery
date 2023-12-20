@@ -8,6 +8,7 @@ import Controller.SignUpController;
 import Controller.EmailValidator;
 import Controller.PanelManager;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
@@ -175,15 +176,28 @@ public class SignUpPanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         String email = inputEmailSignUp.getText();
         System.out.println("EMAIL: " + email);
-        if (!EmailValidator.checkEmailFormat(email)) {
-            System.out.println("ERROR CON EL EMAIL");
+        String cont = String.valueOf(inputPasswordSignUp.getPassword());
+
+        if (email.isEmpty() || cont.isEmpty()) {
+            //JOptionPane.showMessageDialog(rootPane, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
         } else {
-            String password = inputPasswordSignUp.getText();
-            String passwordRepeat = inputRepeatSignUp.getText();
-            if (!password.isEmpty() & !passwordRepeat.isEmpty() & password.equals(passwordRepeat)) {
-                SignUpController.insertUser(email, password);
-            } else {
-                System.out.println("ERROR CON EL PASSWORD");
+            try {
+                boolean comprueba = SignUpController.verificarCredenciales(email, cont);
+                if (comprueba == true) {
+                    //JOptionPane.showMessageDialog(rootPane, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+                    inputEmailSignUp.setText("");
+                    inputPasswordSignUp.setText("");
+
+                } else {
+                    SignUpController.introducirUsuario(email, cont);
+                    //JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
+                    JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+                    if (mainFrame instanceof MainLogin) {
+                        ((MainLogin) mainFrame).loginPanel();
+                    }
+                }
+            } catch (ClassCastException e) {
+                e.printStackTrace();
             }
         }
 

@@ -6,7 +6,7 @@
             <column name="id"/>
             <generator class="identity"/>
         </id>
-        <property name="email" type="string">
+        <property name="email" type="string" unique="true">
             <column length="100" name="email"/>
         </property>
         <property name="password" type="string">
