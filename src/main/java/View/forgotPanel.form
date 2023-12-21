@@ -107,6 +107,9 @@
         </Property>
         <Property name="text" type="java.lang.String" value="Send instructions"/>
       </Properties>
+      <Events>
+        <EventHandler event="actionPerformed" listener="java.awt.event.ActionListener" parameters="java.awt.event.ActionEvent" handler="instructionsBtnActionPerformed"/>
+      </Events>
     </Component>
     <Component class="javax.swing.JLabel" name="descriptionTxt1">
       <Properties>

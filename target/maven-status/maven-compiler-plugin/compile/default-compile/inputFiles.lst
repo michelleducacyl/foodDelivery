@@ -1,7 +1,9 @@
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\SignUpPanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\PanelRound.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\DBConnection.java
+C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\EmailUtil.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\PasswordHasher.java
+C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\ForgotPasswordController.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\HomePanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\forgotPanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\MainApp.java
@@ -14,6 +16,6 @@ C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\Dishes.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\Restaurant.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\HibernateUtil.java
-C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\User.java
+C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\PasswordGenerator.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\PanelManager.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\MainLogin.java

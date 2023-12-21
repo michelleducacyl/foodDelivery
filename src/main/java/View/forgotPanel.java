@@ -4,6 +4,7 @@
  */
 package View;
 
+import Controller.ForgotPasswordController;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -57,6 +58,11 @@ public class forgotPanel extends javax.swing.JPanel {
         instructionsBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         instructionsBtn.setForeground(new java.awt.Color(255, 255, 255));
         instructionsBtn.setText("Send instructions");
+        instructionsBtn.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                instructionsBtnActionPerformed(evt);
+            }
+        });
 
         descriptionTxt1.setFont(new java.awt.Font("Nunito", 0, 11)); // NOI18N
         descriptionTxt1.setForeground(new java.awt.Color(84, 85, 99));
@@ -119,6 +125,11 @@ public class forgotPanel extends javax.swing.JPanel {
         ((MainLogin) mainFrame).loginPanel();
     }
     }//GEN-LAST:event_backToLoginBtnMousePressed
+
+    private void instructionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsBtnActionPerformed
+        // TODO add your handling code here:
+        ForgotPasswordController.changePassword(inputEmailReset.getText());
+    }//GEN-LAST:event_instructionsBtnActionPerformed
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

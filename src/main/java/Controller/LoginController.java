@@ -18,7 +18,7 @@ import org.mindrot.jbcrypt.BCrypt;
 
 /**
  *
- * @author Alumno
+ * @author Michelle Arias García
  */
 public class LoginController {
    

@@ -6,11 +6,11 @@ package View;
 
 import Controller.LoginController;
 import Controller.PanelManager;
-import Model.User;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import model.Users;
 
 /**
  *
@@ -219,7 +219,9 @@ public class LoginPanel extends javax.swing.JPanel {
                         
                     } else {
                         //// Si el inicio de sesión es exitoso, guarda el usuario
-                        User user = new User(email, password);
+                        Users userLogin = new Users();
+                        userLogin.setEmail(email);
+                        userLogin.setPassword(password);
                         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
                         if (mainFrame instanceof MainLogin) {
                             ((MainLogin) mainFrame).login();
