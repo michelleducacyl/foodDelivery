@@ -4,7 +4,7 @@
  */
 package Controller;
 
-import Model.HibernateUtil;
+import Utils.HibernateUtil;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;

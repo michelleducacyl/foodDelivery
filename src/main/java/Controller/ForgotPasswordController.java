@@ -4,7 +4,8 @@
  */
 package Controller;
 
-import Model.HibernateUtil;
+import Utils.EmailUtil;
+import Utils.HibernateUtil;
 import java.util.Properties;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;

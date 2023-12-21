@@ -4,7 +4,7 @@
  */
 package Controller;
 
-import Model.HibernateUtil;
+import Utils.HibernateUtil;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
@@ -52,6 +52,7 @@ public class SignUpController {
     }
 
     public static void introducirUsuario(String email, String password) {
+        
         // Obtén la sesión de Hibernate
         Session session = HibernateUtil.getSessionFactory().openSession();
 
