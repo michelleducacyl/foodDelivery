@@ -11,6 +11,7 @@ View\SignUpPanel.class
 Controller\ForgotPasswordController.class
 View\LoginPanel$2.class
 Controller\SignUpController.class
+View\ResetPasswordPanel.class
 Controller\EmailValidator.class
 Model\Orders.class
 View\MainLogin$1.class
@@ -19,6 +20,7 @@ Controller\PanelManager.class
 View\HomePanel.class
 View\LoginPanel$3.class
 View\SignUpPanel$1.class
+View\ResetPasswordPanel$1.class
 Controller\ForgotPasswordController$1.class
 View\LoginPanel.class
 View\forgotPanel$1.class

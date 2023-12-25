@@ -10,6 +10,7 @@ import java.util.Set;
 public class Users implements java.io.Serializable {
 
 	private Integer id;
+        private Integer verificationCode;
 	private String email;
 	private String password;
 	private Set orderses = new HashSet(0);
@@ -17,18 +18,27 @@ public class Users implements java.io.Serializable {
 	public Users() {
 	}
 
-	public Users(String email, String password, Set orderses) {
+	public Users(String email, String password, Set orderses, Integer verificationCode) {
 		this.email = email;
 		this.password = password;
 		this.orderses = orderses;
+                this.verificationCode = verificationCode;
 	}
 
 	public Integer getId() {
 		return this.id;
 	}
 
+        public Integer getVerificationCode() {
+		return this.verificationCode;
+	}
+        
 	public void setId(Integer id) {
 		this.id = id;
+	}
+        
+        public void setVerificationCode(Integer verificationCode) {
+		this.verificationCode = verificationCode;
 	}
 
 	public String getEmail() {

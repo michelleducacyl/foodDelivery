@@ -184,7 +184,7 @@ public class SignUpPanel extends javax.swing.JPanel {
         } else {
             try {
                 if (cont.equals(cont2) && checkEmailFormat(email) && cont.length() >= 8) {
-                    boolean comprueba = SignUpController.verificarCredenciales(email, cont);
+                    boolean comprueba = SignUpController.verificarCredenciales(email);
                     if (comprueba == true) {
                         JOptionPane.showMessageDialog(null, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
                         inputEmailSignUp.setText("");

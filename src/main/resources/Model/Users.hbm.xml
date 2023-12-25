@@ -6,6 +6,9 @@
             <column name="id"/>
             <generator class="identity"/>
         </id>
+        <property name="verificationCode" type="java.lang.Integer">
+            <column name="verification_code"/>
+        </property>
         <property name="email" type="string" unique="true">
             <column length="100" name="email"/>
         </property>

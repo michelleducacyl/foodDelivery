@@ -21,25 +21,24 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class SignUpController {
 
-    public static boolean verificarCredenciales(String email, String password) {
-        boolean credencialesValidas = false;
+    public static boolean verificarCredenciales(String email) {
+        boolean existeUsuario = false;
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session sesion = sessionFactory.openSession();
         Transaction tx = sesion.beginTransaction();
 
         try {
             // Crear la consulta HQL
-            String hql = "SELECT u FROM Users u WHERE email = :email AND password = :password";
+            String hql = "SELECT u FROM Users u WHERE email = :email";
             Query<Users> query = sesion.createQuery(hql, Users.class);
             query.setParameter("email", email);
-            query.setParameter("password", password);
 
             // Obtener el resultado de la consulta
             Users usuario = query.uniqueResult();
 
-            // Verificar si se encontró un usuario con las credenciales proporcionadas
+            // Verificar si se encontró un usuario con el email proporcionado
             if (usuario != null) {
-                credencialesValidas = true;
+                existeUsuario = true;
             }
         } catch (Exception e) {
             e.printStackTrace();
@@ -48,11 +47,11 @@ public class SignUpController {
             sesion.close();
         }
 
-        return credencialesValidas;
+        return existeUsuario;
     }
 
     public static void introducirUsuario(String email, String password) {
-        
+
         // Obtén la sesión de Hibernate
         Session session = HibernateUtil.getSessionFactory().openSession();
 

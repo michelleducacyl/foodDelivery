@@ -7,7 +7,6 @@ package View;
 import Controller.ForgotPasswordController;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
-import javax.swing.UIManager;
 
 /**
  *
@@ -129,6 +128,7 @@ public class forgotPanel extends javax.swing.JPanel {
     private void instructionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsBtnActionPerformed
         // TODO add your handling code here:
         ForgotPasswordController.changePassword(inputEmailReset.getText());
+       
     }//GEN-LAST:event_instructionsBtnActionPerformed
 
 
