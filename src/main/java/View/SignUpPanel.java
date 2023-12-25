@@ -6,6 +6,7 @@ package View;
 
 import Controller.SignUpController;
 import Controller.EmailValidator;
+import static Controller.EmailValidator.checkEmailFormat;
 import Controller.PanelManager;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
@@ -177,25 +178,39 @@ public class SignUpPanel extends javax.swing.JPanel {
         String email = inputEmailSignUp.getText();
         System.out.println("EMAIL: " + email);
         String cont = String.valueOf(inputPasswordSignUp.getPassword());
-
-        if (email.isEmpty() || cont.isEmpty()) {
-            //JOptionPane.showMessageDialog(rootPane, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+        String cont2 = String.valueOf(inputRepeatSignUp.getPassword());
+        if (email.isEmpty() || cont.isEmpty() || cont2.isEmpty()) {
+            JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
-                boolean comprueba = SignUpController.verificarCredenciales(email, cont);
-                if (comprueba == true) {
-                    //JOptionPane.showMessageDialog(rootPane, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
-                    inputEmailSignUp.setText("");
-                    inputPasswordSignUp.setText("");
+                if (cont.equals(cont2) && checkEmailFormat(email) && cont.length() >= 8) {
+                    boolean comprueba = SignUpController.verificarCredenciales(email, cont);
+                    if (comprueba == true) {
+                        JOptionPane.showMessageDialog(null, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+                        inputEmailSignUp.setText("");
+                        inputPasswordSignUp.setText("");
 
-                } else {
-                    SignUpController.introducirUsuario(email, cont);
-                    //JOptionPane.showMessageDialog(rootPane, "Usuario Creado correctamente");
-                    JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-                    if (mainFrame instanceof MainLogin) {
-                        ((MainLogin) mainFrame).loginPanel();
+                    } else {
+                        SignUpController.introducirUsuario(email, cont);
+                        JOptionPane.showMessageDialog(null, "Usuario Creado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+
+                        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+                        if (mainFrame instanceof MainLogin) {
+                            ((MainLogin) mainFrame).loginPanel();
+                        }
                     }
+                } else {
+                    
+                    if (!checkEmailFormat(email) || cont.length() < 8) {
+                        JOptionPane.showMessageDialog(null, "El email o contraseña no cumplen el formato correcto", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    if (!cont.equals(cont2)) {
+                        JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error", JOptionPane.ERROR_MESSAGE);
+                    }
+                    
+
                 }
+
             } catch (ClassCastException e) {
                 e.printStackTrace();
             }

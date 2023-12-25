@@ -215,7 +215,7 @@ public class LoginPanel extends javax.swing.JPanel {
                     boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
                     if (!comprueba) {
 
-                        errorLogin.setText("User or password incorrect");
+                        errorLogin.setText("User and password not match");
                         
                     } else {
                         //// Si el inicio de sesión es exitoso, guarda el usuario

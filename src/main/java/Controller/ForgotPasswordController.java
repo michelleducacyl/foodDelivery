@@ -86,6 +86,6 @@ public class ForgotPasswordController {
         System.out.println("Session created");
        
         EmailUtil.sendEmail(session, toemail, "Reset Password",
-                "Hello! \n Forgot your password? \n We receive a request to reset your password. \n This is yout new password: " + newPassword);
+                " Hello! \n Forgot your password? \n We receive a request to reset your password. \n This is yout new password: " + newPassword);
     }
 }

@@ -1,5 +1,7 @@
+Utils\EmailUtil.class
 View\forgotPanel$2.class
 View\MainApp$1.class
+Utils\HibernateUtil.class
 View\SignUpPanel$2.class
 View\LoginPanel$1.class
 Model\Dishes.class
@@ -9,16 +11,13 @@ View\SignUpPanel.class
 Controller\ForgotPasswordController.class
 View\LoginPanel$2.class
 Controller\SignUpController.class
-Controller\DBConnection.class
 Controller\EmailValidator.class
 Model\Orders.class
 View\MainLogin$1.class
 View\forgotPanel.class
 Controller\PanelManager.class
 View\HomePanel.class
-Controller\EmailUtil.class
 View\LoginPanel$3.class
-Model\HibernateUtil.class
 View\SignUpPanel$1.class
 Controller\ForgotPasswordController$1.class
 View\LoginPanel.class

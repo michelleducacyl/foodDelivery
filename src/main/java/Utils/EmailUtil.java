@@ -24,7 +24,7 @@ public class EmailUtil {
       msg.addHeader("Content-type", "text/HTML; charset-UTF-8");
       msg.addHeader("format", "flowed");
       msg.addHeader("Content-Transfer-Encoding", "8bit");
-      msg.setFrom(new InternetAddress("michelle.arigar@educa.jcyl.es", "Michelle :)"));
+      msg.setFrom(new InternetAddress("michelle.arigar@educa.jcyl.es", "Food Delivery"));
       msg.setReplyTo(InternetAddress.parse("michelle.arigar@educa.jcyl.es", false));
       msg.setSubject(subject, "UTF-8");
       msg.setText(body, "UTF-8");
