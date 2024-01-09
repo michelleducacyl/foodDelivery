@@ -3,6 +3,7 @@ View\forgotPanel$2.class
 View\MainApp$1.class
 Utils\HibernateUtil.class
 View\SignUpPanel$2.class
+View\ResetPasswordPanel$2.class
 View\LoginPanel$1.class
 Model\Dishes.class
 Controller\PasswordHasher.class
@@ -23,6 +24,7 @@ View\SignUpPanel$1.class
 View\ResetPasswordPanel$1.class
 Controller\ForgotPasswordController$1.class
 View\LoginPanel.class
+Controller\ResetPasswordController.class
 View\forgotPanel$1.class
 Controller\PasswordGenerator.class
 Model\Users.class

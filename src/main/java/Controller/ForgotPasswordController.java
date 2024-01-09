@@ -66,15 +66,16 @@ public class ForgotPasswordController {
     }
 
     public static void sendEmail(String email, String verificationCode) throws Exception {
-        final String fromemail = "michelle.arigar@educa.jcyl.es";
-        final String password = "Ert441gh";
+        final String fromemail = "foodeliveryapps1@gmail.com"; 
+        final String password = "msmwwmnglytwbvkp";
         final String toemail = email;
 
         Properties props = new Properties();
-        props.put("mail.smtp.host", "smtp-mail.outlook.com");
+        props.put("mail.smtp.host", "smtp.gmail.com");
+        props.put("mail.smtp.starttls.enable", "true");
         props.put("mail.smtp.port", "587");
         props.put("mail.smtp.auth", "true");
-        props.put("mail.smtp.starttls.enable", "true");
+        props.put("mail.smpt.ssl.protocols", "TLSv1.2");
 
         Authenticator auth = new Authenticator() {
             protected PasswordAuthentication getPasswordAuthentication() {
