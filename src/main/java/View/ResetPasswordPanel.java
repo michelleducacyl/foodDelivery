@@ -159,13 +159,13 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
         String cont2 = String.valueOf(inputRepeat.getPassword());
 
         if (verificationCode.isEmpty() || cont.isEmpty() || cont2.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please complete all fields", "Empty fields", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
                 if (!cont.equals(cont2)) {
-                    JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Passwords are not the same", "Error", JOptionPane.ERROR_MESSAGE);
                 } else if (cont.length() < 8) {
-                    JOptionPane.showMessageDialog(null, "La contraseña debe tener al menos 8 caracteres", "Error", JOptionPane.ERROR_MESSAGE);
+                    JOptionPane.showMessageDialog(null, "Password must be at least 8 characters", "Error", JOptionPane.ERROR_MESSAGE);
                 } else {
                     // Parseo del código de verificación
                     try {
@@ -174,21 +174,21 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
                         if (comprueba) {
                             if (ResetPasswordController.verificarCodigoDeVerificacion(userEmail, verifCode)) {
                                 ResetPasswordController.updatePassword(userEmail, cont);
-                                JOptionPane.showMessageDialog(null, "Contraseña actualizada correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "Password updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                                 dispose();
                             } else {
-                                JOptionPane.showMessageDialog(null, "Código de verificación no válido", "Error", JOptionPane.ERROR_MESSAGE);
+                                JOptionPane.showMessageDialog(null, "Invalid verification code", "Error", JOptionPane.ERROR_MESSAGE);
                             }
                         } else {
-                            JOptionPane.showMessageDialog(null, "El usuario no existe", "Error", JOptionPane.ERROR_MESSAGE);
+                            JOptionPane.showMessageDialog(null, "User not found", "Error", JOptionPane.ERROR_MESSAGE);
                         }
                     } catch (NumberFormatException e) {
-                        JOptionPane.showMessageDialog(null, "El código de verificación debe ser numérico", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Verification code must be numeric", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                 }
             } catch (ClassCastException e) {
                 e.printStackTrace();
-                JOptionPane.showMessageDialog(null, "Error inesperado", "Error", JOptionPane.ERROR_MESSAGE);
+                JOptionPane.showMessageDialog(null, "Unexpected error", "Error", JOptionPane.ERROR_MESSAGE);
             }
         }
 

@@ -180,19 +180,19 @@ public class SignUpPanel extends javax.swing.JPanel {
         String cont = String.valueOf(inputPasswordSignUp.getPassword());
         String cont2 = String.valueOf(inputRepeatSignUp.getPassword());
         if (email.isEmpty() || cont.isEmpty() || cont2.isEmpty()) {
-            JOptionPane.showMessageDialog(null, "Por favor, completa todos los campos", "Campos vacíos", JOptionPane.WARNING_MESSAGE);
+            JOptionPane.showMessageDialog(null, "Please complete all fields", "Empty fields.", JOptionPane.WARNING_MESSAGE);
         } else {
             try {
                 if (cont.equals(cont2) && checkEmailFormat(email) && cont.length() >= 8) {
                     boolean comprueba = SignUpController.verificarCredenciales(email);
                     if (comprueba == true) {
-                        JOptionPane.showMessageDialog(null, "El usuario o email ya existe en la base de datos", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "The user or email already exists.", "Error", JOptionPane.ERROR_MESSAGE);
                         inputEmailSignUp.setText("");
                         inputPasswordSignUp.setText("");
 
                     } else {
                         SignUpController.introducirUsuario(email, cont);
-                        JOptionPane.showMessageDialog(null, "Usuario Creado correctamente", "Éxito", JOptionPane.INFORMATION_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "User created successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
 
                         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
                         if (mainFrame instanceof MainLogin) {
@@ -202,10 +202,10 @@ public class SignUpPanel extends javax.swing.JPanel {
                 } else {
                     
                     if (!checkEmailFormat(email) || cont.length() < 8) {
-                        JOptionPane.showMessageDialog(null, "El email o contraseña no cumplen el formato correcto", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "The email or password does not comply with the correct format", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     if (!cont.equals(cont2)) {
-                        JOptionPane.showMessageDialog(null, "Las contraseñas no son iguales", "Error", JOptionPane.ERROR_MESSAGE);
+                        JOptionPane.showMessageDialog(null, "Passwords don't match", "Error", JOptionPane.ERROR_MESSAGE);
                     }
                     
 
