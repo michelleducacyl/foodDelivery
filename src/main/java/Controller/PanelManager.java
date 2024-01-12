@@ -12,6 +12,8 @@ import javax.swing.JPanel;
  *
  * @author Michelle Arias
  */
+
+//Clase para asignar el tamaño de los paneles a instanciar
 public class PanelManager {
     private Container container;
     private int witdh;

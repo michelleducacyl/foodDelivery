@@ -34,10 +34,10 @@ public class MainApp extends javax.swing.JFrame {
         topBar = new javax.swing.JPanel();
         logo = new javax.swing.JLabel();
         restaurantsBtn = new javax.swing.JLabel();
-        restaurantsBtn1 = new javax.swing.JLabel();
-        jSeparator1 = new javax.swing.JSeparator();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
+        myOrdersBtn = new javax.swing.JLabel();
+        verticalSeparator = new javax.swing.JSeparator();
+        userPicProfile = new javax.swing.JLabel();
+        userNameTxt = new javax.swing.JLabel();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -50,16 +50,16 @@ public class MainApp extends javax.swing.JFrame {
         restaurantsBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         restaurantsBtn.setText("Restaurants");
 
-        restaurantsBtn1.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        restaurantsBtn1.setText("My Orders");
+        myOrdersBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        myOrdersBtn.setText("My Orders");
 
-        jSeparator1.setOrientation(javax.swing.SwingConstants.VERTICAL);
+        verticalSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatar.png"))); // NOI18N
-        jLabel1.setText("jLabel1");
+        userPicProfile.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/avatar.png"))); // NOI18N
+        userPicProfile.setText("jLabel1");
 
-        jLabel2.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel2.setText("Username");
+        userNameTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        userNameTxt.setText("Username");
 
         javax.swing.GroupLayout topBarLayout = new javax.swing.GroupLayout(topBar);
         topBar.setLayout(topBarLayout);
@@ -71,13 +71,13 @@ public class MainApp extends javax.swing.JFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 412, Short.MAX_VALUE)
                 .addComponent(restaurantsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(verticalSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(restaurantsBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(myOrdersBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userPicProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 43, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(userNameTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(23, 23, 23))
         );
         topBarLayout.setVerticalGroup(
@@ -89,16 +89,16 @@ public class MainApp extends javax.swing.JFrame {
                     .addGroup(topBarLayout.createSequentialGroup()
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(jLabel1)
-                            .addComponent(jLabel2))))
+                            .addComponent(userPicProfile)
+                            .addComponent(userNameTxt))))
                 .addGap(10, 10, 10))
             .addGroup(topBarLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                        .addComponent(jSeparator1)
+                        .addComponent(verticalSeparator)
                         .addComponent(restaurantsBtn))
-                    .addComponent(restaurantsBtn1, javax.swing.GroupLayout.Alignment.TRAILING))
+                    .addComponent(myOrdersBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
@@ -110,7 +110,7 @@ public class MainApp extends javax.swing.JFrame {
         mainPanel.setLayout(mainPanelLayout);
         mainPanelLayout.setHorizontalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 0, Short.MAX_VALUE)
+            .addGap(0, 800, Short.MAX_VALUE)
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -158,13 +158,13 @@ public class MainApp extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JSeparator jSeparator1;
     private javax.swing.JLabel logo;
     private javax.swing.JPanel mainPanel;
+    private javax.swing.JLabel myOrdersBtn;
     private javax.swing.JLabel restaurantsBtn;
-    private javax.swing.JLabel restaurantsBtn1;
     private javax.swing.JPanel topBar;
+    private javax.swing.JLabel userNameTxt;
+    private javax.swing.JLabel userPicProfile;
+    private javax.swing.JSeparator verticalSeparator;
     // End of variables declaration//GEN-END:variables
 }

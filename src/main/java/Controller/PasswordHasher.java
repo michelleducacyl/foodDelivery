@@ -11,6 +11,8 @@ import java.util.Scanner;
  *
  * @author Michelle Arias García
  */
+
+//Clase que genera las contraseñas encriptadas
 public class PasswordHasher {
     
     public static String generarHash(String password){
@@ -21,6 +23,8 @@ public class PasswordHasher {
  
         return hashedPassword;
     }
+    
+    //Metodo que verifica que una contraseña y un hash sean lo mismo
 
     public static boolean comprobarHash( String hashedPassword, String password) {
         var bcrypt = BcryptFunction.getInstance(12);

@@ -13,13 +13,13 @@ import java.util.regex.Pattern;
  */
 public class EmailValidator {
 
-    
+    //Metodo para verificar que el email tenga el formato email.
     public static boolean checkEmailFormat(String email) {
         String emailPattern = "^[A-Za-z0-9+_.-]+@(.+)$";
 
         Pattern pattern = Pattern.compile(emailPattern);
         Matcher matcher = pattern.matcher(email);
-
+        //Devuelve un booleano
         return matcher.matches();
     }
 }

@@ -40,7 +40,7 @@ public class MainLogin extends javax.swing.JFrame {
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
-        background.setBackground(new java.awt.Color(255, 0, 102));
+        background.setBackground(new java.awt.Color(105, 123, 255));
 
         media.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Media.png"))); // NOI18N
         media.setText("jLabel1");

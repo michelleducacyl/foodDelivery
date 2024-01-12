@@ -31,16 +31,17 @@ public class ForgotPasswordController {
         // Obtén la sesión de Hibernate
         org.hibernate.Session session = HibernateUtil.getSessionFactory().openSession();
 
-        // Comienza una transacción
+        // Creamos la variable para la transacción
         Transaction transaction = null;
 
         try {
+            //Asignamos valor a la transacción
             transaction = session.beginTransaction();
-
+            //Ejecutamos el query que busca el usuario para cambiar la contraseña
             Query query = session.createQuery("FROM Users WHERE email = :email");
             query.setParameter("email", email);
             Users user = (Users) query.uniqueResult();
-
+            //Si el usuario existe asignamos el codigo de verificación a ese.
             if (user != null) {
                 // Actualiza el código de verificación
                 user.setVerificationCode(verificationCode);
@@ -53,6 +54,7 @@ public class ForgotPasswordController {
                 sendEmail(email, Integer.toString(verificationCode));
 
             } else {
+                //Si el usuario no existe no podemos asignarle el codigo.
                 System.out.println("Usuario no encontrado con email: " + email);
             }
         } catch (Exception e) {
@@ -61,10 +63,12 @@ public class ForgotPasswordController {
             }
             e.printStackTrace();
         } finally {
+            //Cerramos la sesión
             session.close();
         }
     }
 
+    //Método para enviar el email con el codigo de verificación
     public static void sendEmail(String email, String verificationCode) throws Exception {
         final String fromemail = "foodeliveryapps1@gmail.com"; 
         final String password = "msmwwmnglytwbvkp";

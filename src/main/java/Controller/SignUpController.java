@@ -21,14 +21,17 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class SignUpController {
 
+    //Método para verificar que un email existe dentro de la base de datos
     public static boolean verificarCredenciales(String email) {
         boolean existeUsuario = false;
+        //Creamos la sesión
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session sesion = sessionFactory.openSession();
+        //Iniciamos la transacción
         Transaction tx = sesion.beginTransaction();
 
         try {
-            // Crear la consulta HQL
+            // Crear la consulta HQL para buscar el email
             String hql = "SELECT u FROM Users u WHERE email = :email";
             Query<Users> query = sesion.createQuery(hql, Users.class);
             query.setParameter("email", email);
@@ -50,6 +53,7 @@ public class SignUpController {
         return existeUsuario;
     }
 
+    //Metodo para dar de alta un usuario dentro de la base de datos
     public static void introducirUsuario(String email, String password) {
 
         // Obtén la sesión de Hibernate

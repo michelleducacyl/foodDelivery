@@ -10,6 +10,9 @@ import java.security.SecureRandom;
  * @author Michelle Arias García
  */
 
+//Clase que genera las contraseñas en caso de querer asignarlas al resetearla
+//DEPRECATED NOW
+
 public class PasswordGenerator {
     private static final String CARACTERES = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
     private static SecureRandom rnd = new SecureRandom();

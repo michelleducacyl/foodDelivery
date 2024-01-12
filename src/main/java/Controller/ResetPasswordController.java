@@ -18,16 +18,19 @@ import org.mindrot.jbcrypt.BCrypt;
  */
 public class ResetPasswordController {
 
+    //Metodo que verifica que el codigo de verificación ingresado por el usuario coincida con el del email.
     public static boolean verificarCodigoDeVerificacion(String email, int codigoVerificacion) {
         boolean codigoValido = false;
+        //Iniciamos una session de hibernate usando la instancia de la factoria de sesiones.
         SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
         Session sesion = sessionFactory.openSession();
         Transaction tx = null;
 
         try {
+            //Iniciamos una transacción
             tx = sesion.beginTransaction();
 
-            // Crear la consulta HQL
+            // Crear la consulta HQL para comprobar que el email y el codigo son pareja
             String hql = "SELECT u FROM Users u WHERE u.email = :email AND u.verificationCode = :codigo";
             Query<Users> query = sesion.createQuery(hql, Users.class);
             query.setParameter("email", email);
@@ -51,9 +54,11 @@ public class ResetPasswordController {
             sesion.close();
         }
 
+        //Devolvemos el resultado 
         return codigoValido;
     }
     
+    //Metodo para hacer update de la contraseña nueva ingresada por el usuario
     public static void updatePassword(String email, String nuevaContraseña) {
     // Obtén la sesión de Hibernate
     Session session = HibernateUtil.getSessionFactory().openSession();

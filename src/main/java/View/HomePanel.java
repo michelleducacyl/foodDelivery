@@ -31,42 +31,42 @@ public class HomePanel extends javax.swing.JPanel {
 
         separator = new javax.swing.JSeparator();
         nearbyTxt = new javax.swing.JLabel();
-        jScrollPane1 = new javax.swing.JScrollPane();
-        jPanel1 = new javax.swing.JPanel();
+        scrollRestaurants = new javax.swing.JScrollPane();
+        backgroundRest = new javax.swing.JPanel();
         sushiHouse = new View.PanelRound();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
+        sushiPic = new javax.swing.JLabel();
+        sushiTitle = new javax.swing.JLabel();
+        sushiTime = new javax.swing.JLabel();
         mexicanPalace = new View.PanelRound();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
+        mexPic = new javax.swing.JLabel();
+        mexTitle = new javax.swing.JLabel();
+        mexTime = new javax.swing.JLabel();
         burgersAndPizza = new View.PanelRound();
-        jLabel3 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
+        burgerPic = new javax.swing.JLabel();
+        burgerTitle = new javax.swing.JLabel();
+        burgerTime = new javax.swing.JLabel();
         shawarmaQueen = new View.PanelRound();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jLabel14 = new javax.swing.JLabel();
+        shawarmaPic = new javax.swing.JLabel();
+        shawarmaTitle = new javax.swing.JLabel();
+        shawarmaTime = new javax.swing.JLabel();
         coffeeTime = new View.PanelRound();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel15 = new javax.swing.JLabel();
-        jLabel16 = new javax.swing.JLabel();
-        burgersAndPizza1 = new View.PanelRound();
-        jLabel19 = new javax.swing.JLabel();
-        jLabel20 = new javax.swing.JLabel();
-        jLabel21 = new javax.swing.JLabel();
-        deals2 = new View.PanelRound();
-        jLabel6 = new javax.swing.JLabel();
-        jLabel17 = new javax.swing.JLabel();
-        jLabel18 = new javax.swing.JLabel();
-        jLabel22 = new javax.swing.JLabel();
-        deals3 = new View.PanelRound();
-        jLabel23 = new javax.swing.JLabel();
-        jLabel24 = new javax.swing.JLabel();
-        jLabel25 = new javax.swing.JLabel();
-        jLabel26 = new javax.swing.JLabel();
+        coffePic = new javax.swing.JLabel();
+        coffeTitle = new javax.swing.JLabel();
+        coffeTime = new javax.swing.JLabel();
+        trattoriaBtn = new View.PanelRound();
+        trattoriaPic = new javax.swing.JLabel();
+        trattoriaTitle = new javax.swing.JLabel();
+        trattoriaTime = new javax.swing.JLabel();
+        dealBurgers = new View.PanelRound();
+        dealBig = new javax.swing.JLabel();
+        discountBurger = new javax.swing.JLabel();
+        couponB = new javax.swing.JLabel();
+        burgersPic = new javax.swing.JLabel();
+        dealDessert = new View.PanelRound();
+        allDesserts = new javax.swing.JLabel();
+        dessertDiscount = new javax.swing.JLabel();
+        coupon = new javax.swing.JLabel();
+        cupcake = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -75,12 +75,12 @@ public class HomePanel extends javax.swing.JPanel {
         nearbyTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         nearbyTxt.setText("Nearby restaurants");
 
-        jScrollPane1.setBackground(new java.awt.Color(255, 255, 255));
-        jScrollPane1.setBorder(null);
-        jScrollPane1.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        jScrollPane1.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        scrollRestaurants.setBackground(new java.awt.Color(255, 255, 255));
+        scrollRestaurants.setBorder(null);
+        scrollRestaurants.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
+        scrollRestaurants.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
 
-        jPanel1.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundRest.setBackground(new java.awt.Color(255, 255, 255));
 
         sushiHouse.setBackground(new java.awt.Color(243, 244, 255));
         sushiHouse.setRoundBottomLeft(30);
@@ -88,35 +88,35 @@ public class HomePanel extends javax.swing.JPanel {
         sushiHouse.setRoundTopLeft(30);
         sushiHouse.setRoundTopRight(30);
 
-        jLabel1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sushi.png"))); // NOI18N
+        sushiPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sushi.png"))); // NOI18N
 
-        jLabel7.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel7.setText("Royal Sushi House");
+        sushiTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        sushiTitle.setText("Royal Sushi House");
 
-        jLabel8.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("30-40 min     ");
+        sushiTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        sushiTime.setForeground(new java.awt.Color(153, 153, 153));
+        sushiTime.setText("30-40 min     ");
 
         javax.swing.GroupLayout sushiHouseLayout = new javax.swing.GroupLayout(sushiHouse);
         sushiHouse.setLayout(sushiHouseLayout);
         sushiHouseLayout.setHorizontalGroup(
             sushiHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(sushiPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(sushiHouseLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(sushiHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel7, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel8))
+                    .addComponent(sushiTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(sushiTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         sushiHouseLayout.setVerticalGroup(
             sushiHouseLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(sushiHouseLayout.createSequentialGroup()
-                .addComponent(jLabel1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(sushiPic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel7)
+                .addComponent(sushiTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel8)
+                .addComponent(sushiTime)
                 .addGap(0, 37, Short.MAX_VALUE))
         );
 
@@ -126,35 +126,35 @@ public class HomePanel extends javax.swing.JPanel {
         mexicanPalace.setRoundTopLeft(30);
         mexicanPalace.setRoundTopRight(30);
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mex.png"))); // NOI18N
+        mexPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mex.png"))); // NOI18N
 
-        jLabel9.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel9.setText("Mexican Palace");
+        mexTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        mexTitle.setText("Mexican Palace");
 
-        jLabel10.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel10.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel10.setText("30-40 min     ");
+        mexTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        mexTime.setForeground(new java.awt.Color(153, 153, 153));
+        mexTime.setText("30-40 min     ");
 
         javax.swing.GroupLayout mexicanPalaceLayout = new javax.swing.GroupLayout(mexicanPalace);
         mexicanPalace.setLayout(mexicanPalaceLayout);
         mexicanPalaceLayout.setHorizontalGroup(
             mexicanPalaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel2, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(mexPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(mexicanPalaceLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(mexicanPalaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel9, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel10))
+                    .addComponent(mexTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(mexTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         mexicanPalaceLayout.setVerticalGroup(
             mexicanPalaceLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(mexicanPalaceLayout.createSequentialGroup()
-                .addComponent(jLabel2, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(mexPic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel9)
+                .addComponent(mexTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel10)
+                .addComponent(mexTime)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -164,35 +164,35 @@ public class HomePanel extends javax.swing.JPanel {
         burgersAndPizza.setRoundTopLeft(30);
         burgersAndPizza.setRoundTopRight(30);
 
-        jLabel3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burgers.png"))); // NOI18N
+        burgerPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burgers.png"))); // NOI18N
 
-        jLabel11.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel11.setText("Burgers & Pizza");
+        burgerTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        burgerTitle.setText("Burgers & Pizza");
 
-        jLabel12.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel12.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel12.setText("30-40 min     ");
+        burgerTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        burgerTime.setForeground(new java.awt.Color(153, 153, 153));
+        burgerTime.setText("30-40 min     ");
 
         javax.swing.GroupLayout burgersAndPizzaLayout = new javax.swing.GroupLayout(burgersAndPizza);
         burgersAndPizza.setLayout(burgersAndPizzaLayout);
         burgersAndPizzaLayout.setHorizontalGroup(
             burgersAndPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel3, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(burgerPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(burgersAndPizzaLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(burgersAndPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel12))
+                    .addComponent(burgerTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(burgerTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         burgersAndPizzaLayout.setVerticalGroup(
             burgersAndPizzaLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(burgersAndPizzaLayout.createSequentialGroup()
-                .addComponent(jLabel3, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(burgerPic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel11)
+                .addComponent(burgerTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel12)
+                .addComponent(burgerTime)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -202,35 +202,35 @@ public class HomePanel extends javax.swing.JPanel {
         shawarmaQueen.setRoundTopLeft(30);
         shawarmaQueen.setRoundTopRight(30);
 
-        jLabel4.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shawarma.png"))); // NOI18N
+        shawarmaPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shawarma.png"))); // NOI18N
 
-        jLabel13.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel13.setText("Shawarma Queen");
+        shawarmaTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        shawarmaTitle.setText("Shawarma Queen");
 
-        jLabel14.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel14.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel14.setText("30-40 min     ");
+        shawarmaTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        shawarmaTime.setForeground(new java.awt.Color(153, 153, 153));
+        shawarmaTime.setText("30-40 min     ");
 
         javax.swing.GroupLayout shawarmaQueenLayout = new javax.swing.GroupLayout(shawarmaQueen);
         shawarmaQueen.setLayout(shawarmaQueenLayout);
         shawarmaQueenLayout.setHorizontalGroup(
             shawarmaQueenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel4, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(shawarmaPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(shawarmaQueenLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(shawarmaQueenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel13, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel14))
+                    .addComponent(shawarmaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shawarmaTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         shawarmaQueenLayout.setVerticalGroup(
             shawarmaQueenLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(shawarmaQueenLayout.createSequentialGroup()
-                .addComponent(jLabel4, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(shawarmaPic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel13)
+                .addComponent(shawarmaTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel14)
+                .addComponent(shawarmaTime)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
@@ -240,209 +240,209 @@ public class HomePanel extends javax.swing.JPanel {
         coffeeTime.setRoundTopLeft(30);
         coffeeTime.setRoundTopRight(30);
 
-        jLabel5.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
+        coffePic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
 
-        jLabel15.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel15.setText("Coffee Time");
+        coffeTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        coffeTitle.setText("Coffee Time");
 
-        jLabel16.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel16.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel16.setText("30-40 min     ");
+        coffeTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        coffeTime.setForeground(new java.awt.Color(153, 153, 153));
+        coffeTime.setText("30-40 min     ");
 
         javax.swing.GroupLayout coffeeTimeLayout = new javax.swing.GroupLayout(coffeeTime);
         coffeeTime.setLayout(coffeeTimeLayout);
         coffeeTimeLayout.setHorizontalGroup(
             coffeeTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel5, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addComponent(coffePic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
             .addGroup(coffeeTimeLayout.createSequentialGroup()
                 .addContainerGap()
                 .addGroup(coffeeTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel15, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel16))
+                    .addComponent(coffeTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coffeTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         coffeeTimeLayout.setVerticalGroup(
             coffeeTimeLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(coffeeTimeLayout.createSequentialGroup()
-                .addComponent(jLabel5, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(coffePic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel15)
+                .addComponent(coffeTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel16)
+                .addComponent(coffeTime)
                 .addGap(0, 37, Short.MAX_VALUE))
         );
 
-        burgersAndPizza1.setBackground(new java.awt.Color(243, 244, 255));
-        burgersAndPizza1.setRoundBottomLeft(30);
-        burgersAndPizza1.setRoundBottomRight(30);
-        burgersAndPizza1.setRoundTopLeft(30);
-        burgersAndPizza1.setRoundTopRight(30);
+        trattoriaBtn.setBackground(new java.awt.Color(243, 244, 255));
+        trattoriaBtn.setRoundBottomLeft(30);
+        trattoriaBtn.setRoundBottomRight(30);
+        trattoriaBtn.setRoundTopLeft(30);
+        trattoriaBtn.setRoundTopRight(30);
 
-        jLabel19.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/italian.png"))); // NOI18N
+        trattoriaPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/italian.png"))); // NOI18N
 
-        jLabel20.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
-        jLabel20.setText("Le Trattoria");
+        trattoriaTitle.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        trattoriaTitle.setText("Le Trattoria");
 
-        jLabel21.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
-        jLabel21.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel21.setText("30-40 min     ");
+        trattoriaTime.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        trattoriaTime.setForeground(new java.awt.Color(153, 153, 153));
+        trattoriaTime.setText("30-40 min     ");
 
-        javax.swing.GroupLayout burgersAndPizza1Layout = new javax.swing.GroupLayout(burgersAndPizza1);
-        burgersAndPizza1.setLayout(burgersAndPizza1Layout);
-        burgersAndPizza1Layout.setHorizontalGroup(
-            burgersAndPizza1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(jLabel19, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-            .addGroup(burgersAndPizza1Layout.createSequentialGroup()
+        javax.swing.GroupLayout trattoriaBtnLayout = new javax.swing.GroupLayout(trattoriaBtn);
+        trattoriaBtn.setLayout(trattoriaBtnLayout);
+        trattoriaBtnLayout.setHorizontalGroup(
+            trattoriaBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(trattoriaPic, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(trattoriaBtnLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(burgersAndPizza1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel20, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel21))
+                .addGroup(trattoriaBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(trattoriaTitle, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trattoriaTime))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
-        burgersAndPizza1Layout.setVerticalGroup(
-            burgersAndPizza1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(burgersAndPizza1Layout.createSequentialGroup()
-                .addComponent(jLabel19, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+        trattoriaBtnLayout.setVerticalGroup(
+            trattoriaBtnLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trattoriaBtnLayout.createSequentialGroup()
+                .addComponent(trattoriaPic, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel20)
+                .addComponent(trattoriaTitle)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel21)
+                .addComponent(trattoriaTime)
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        javax.swing.GroupLayout backgroundRestLayout = new javax.swing.GroupLayout(backgroundRest);
+        backgroundRest.setLayout(backgroundRestLayout);
+        backgroundRestLayout.setHorizontalGroup(
+            backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundRestLayout.createSequentialGroup()
                 .addContainerGap()
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                .addGroup(backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(backgroundRestLayout.createSequentialGroup()
                         .addComponent(sushiHouse, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(mexicanPalace, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(burgersAndPizza, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                    .addGroup(jPanel1Layout.createSequentialGroup()
+                    .addGroup(backgroundRestLayout.createSequentialGroup()
                         .addComponent(shawarmaQueen, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(coffeeTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(burgersAndPizza1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addComponent(trattoriaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addGap(0, 169, Short.MAX_VALUE))
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(jPanel1Layout.createSequentialGroup()
+        backgroundRestLayout.setVerticalGroup(
+            backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundRestLayout.createSequentialGroup()
                 .addGap(25, 25, 25)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
+                .addGroup(backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
                     .addComponent(sushiHouse, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(mexicanPalace, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(burgersAndPizza, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addGap(28, 28, 28)
-                .addGroup(jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                .addGroup(backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(coffeeTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(shawarmaQueen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(burgersAndPizza1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(trattoriaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(1394, Short.MAX_VALUE))
         );
 
-        jScrollPane1.setViewportView(jPanel1);
+        scrollRestaurants.setViewportView(backgroundRest);
 
-        deals2.setBackground(new java.awt.Color(255, 243, 237));
-        deals2.setRoundBottomLeft(20);
-        deals2.setRoundBottomRight(20);
-        deals2.setRoundTopLeft(20);
-        deals2.setRoundTopRight(20);
+        dealBurgers.setBackground(new java.awt.Color(255, 243, 237));
+        dealBurgers.setRoundBottomLeft(20);
+        dealBurgers.setRoundBottomRight(20);
+        dealBurgers.setRoundTopLeft(20);
+        dealBurgers.setRoundTopRight(20);
 
-        jLabel6.setFont(new java.awt.Font("Nunito SemiBold", 0, 14)); // NOI18N
-        jLabel6.setText("Big Burgers");
+        dealBig.setFont(new java.awt.Font("Nunito SemiBold", 0, 14)); // NOI18N
+        dealBig.setText("Big Burgers");
 
-        jLabel17.setFont(new java.awt.Font("Nunito ExtraBold", 0, 24)); // NOI18N
-        jLabel17.setForeground(new java.awt.Color(253, 109, 34));
-        jLabel17.setText("50% OFF");
+        discountBurger.setFont(new java.awt.Font("Nunito ExtraBold", 0, 24)); // NOI18N
+        discountBurger.setForeground(new java.awt.Color(253, 109, 34));
+        discountBurger.setText("50% OFF");
 
-        jLabel18.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel18.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel18.setText("Foodies");
+        couponB.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        couponB.setForeground(new java.awt.Color(204, 204, 204));
+        couponB.setText("Foodies");
 
-        jLabel22.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burger.png"))); // NOI18N
+        burgersPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burger.png"))); // NOI18N
 
-        javax.swing.GroupLayout deals2Layout = new javax.swing.GroupLayout(deals2);
-        deals2.setLayout(deals2Layout);
-        deals2Layout.setHorizontalGroup(
-            deals2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deals2Layout.createSequentialGroup()
+        javax.swing.GroupLayout dealBurgersLayout = new javax.swing.GroupLayout(dealBurgers);
+        dealBurgers.setLayout(dealBurgersLayout);
+        dealBurgersLayout.setHorizontalGroup(
+            dealBurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dealBurgersLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
-                .addComponent(jLabel22)
+                .addComponent(burgersPic)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(deals2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel17, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel6)
-                    .addComponent(jLabel18))
+                .addGroup(dealBurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(discountBurger, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dealBig)
+                    .addComponent(couponB))
                 .addGap(18, 18, 18))
         );
-        deals2Layout.setVerticalGroup(
-            deals2Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(deals2Layout.createSequentialGroup()
+        dealBurgersLayout.setVerticalGroup(
+            dealBurgersLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dealBurgersLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel6)
+                .addComponent(dealBig)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel17)
+                .addComponent(discountBurger)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel18)
+                .addComponent(couponB)
                 .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deals2Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dealBurgersLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel22, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(burgersPic, javax.swing.GroupLayout.PREFERRED_SIZE, 84, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
-        deals3.setBackground(new java.awt.Color(243, 244, 255));
-        deals3.setRoundBottomLeft(20);
-        deals3.setRoundBottomRight(20);
-        deals3.setRoundTopLeft(20);
-        deals3.setRoundTopRight(20);
+        dealDessert.setBackground(new java.awt.Color(243, 244, 255));
+        dealDessert.setRoundBottomLeft(20);
+        dealDessert.setRoundBottomRight(20);
+        dealDessert.setRoundTopLeft(20);
+        dealDessert.setRoundTopRight(20);
 
-        jLabel23.setFont(new java.awt.Font("Nunito SemiBold", 0, 14)); // NOI18N
-        jLabel23.setText("All deserts");
+        allDesserts.setFont(new java.awt.Font("Nunito SemiBold", 0, 14)); // NOI18N
+        allDesserts.setText("All deserts");
 
-        jLabel24.setFont(new java.awt.Font("Nunito ExtraBold", 0, 24)); // NOI18N
-        jLabel24.setForeground(new java.awt.Color(78, 96, 255));
-        jLabel24.setText("20% OFF");
+        dessertDiscount.setFont(new java.awt.Font("Nunito ExtraBold", 0, 24)); // NOI18N
+        dessertDiscount.setForeground(new java.awt.Color(78, 96, 255));
+        dessertDiscount.setText("20% OFF");
 
-        jLabel25.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel25.setForeground(new java.awt.Color(204, 204, 204));
-        jLabel25.setText("Deserty");
+        coupon.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        coupon.setForeground(new java.awt.Color(204, 204, 204));
+        coupon.setText("Deserty");
 
-        jLabel26.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cupcake.png"))); // NOI18N
+        cupcake.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/cupcake.png"))); // NOI18N
 
-        javax.swing.GroupLayout deals3Layout = new javax.swing.GroupLayout(deals3);
-        deals3.setLayout(deals3Layout);
-        deals3Layout.setHorizontalGroup(
-            deals3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deals3Layout.createSequentialGroup()
+        javax.swing.GroupLayout dealDessertLayout = new javax.swing.GroupLayout(dealDessert);
+        dealDessert.setLayout(dealDessertLayout);
+        dealDessertLayout.setHorizontalGroup(
+            dealDessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dealDessertLayout.createSequentialGroup()
                 .addContainerGap()
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(cupcake, javax.swing.GroupLayout.PREFERRED_SIZE, 149, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 35, Short.MAX_VALUE)
-                .addGroup(deals3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel24, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel23)
-                    .addComponent(jLabel25))
+                .addGroup(dealDessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(dessertDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 106, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(allDesserts)
+                    .addComponent(coupon))
                 .addGap(18, 18, 18))
         );
-        deals3Layout.setVerticalGroup(
-            deals3Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(deals3Layout.createSequentialGroup()
+        dealDessertLayout.setVerticalGroup(
+            dealDessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(dealDessertLayout.createSequentialGroup()
                 .addGap(12, 12, 12)
-                .addComponent(jLabel23)
+                .addComponent(allDesserts)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel24)
+                .addComponent(dessertDiscount)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jLabel25)
+                .addComponent(coupon)
                 .addContainerGap(15, Short.MAX_VALUE))
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, deals3Layout.createSequentialGroup()
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, dealDessertLayout.createSequentialGroup()
                 .addGap(0, 0, Short.MAX_VALUE)
-                .addComponent(jLabel26, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(cupcake, javax.swing.GroupLayout.PREFERRED_SIZE, 90, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -455,11 +455,11 @@ public class HomePanel extends javax.swing.JPanel {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
                     .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                         .addComponent(nearbyTxt)
-                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
+                        .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(deals3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(deals2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addComponent(dealBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(20, 20, 20)))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
@@ -469,54 +469,54 @@ public class HomePanel extends javax.swing.JPanel {
                 .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(21, 21, 21)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(deals2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(deals3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dealBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 103, Short.MAX_VALUE)
                 .addComponent(nearbyTxt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JLabel allDesserts;
+    private javax.swing.JPanel backgroundRest;
+    private javax.swing.JLabel burgerPic;
+    private javax.swing.JLabel burgerTime;
+    private javax.swing.JLabel burgerTitle;
     private View.PanelRound burgersAndPizza;
-    private View.PanelRound burgersAndPizza1;
+    private javax.swing.JLabel burgersPic;
+    private javax.swing.JLabel coffePic;
+    private javax.swing.JLabel coffeTime;
+    private javax.swing.JLabel coffeTitle;
     private View.PanelRound coffeeTime;
-    private View.PanelRound deals2;
-    private View.PanelRound deals3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
-    private javax.swing.JLabel jLabel14;
-    private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel16;
-    private javax.swing.JLabel jLabel17;
-    private javax.swing.JLabel jLabel18;
-    private javax.swing.JLabel jLabel19;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel20;
-    private javax.swing.JLabel jLabel21;
-    private javax.swing.JLabel jLabel22;
-    private javax.swing.JLabel jLabel23;
-    private javax.swing.JLabel jLabel24;
-    private javax.swing.JLabel jLabel25;
-    private javax.swing.JLabel jLabel26;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JPanel jPanel1;
-    private javax.swing.JScrollPane jScrollPane1;
+    private javax.swing.JLabel coupon;
+    private javax.swing.JLabel couponB;
+    private javax.swing.JLabel cupcake;
+    private javax.swing.JLabel dealBig;
+    private View.PanelRound dealBurgers;
+    private View.PanelRound dealDessert;
+    private javax.swing.JLabel dessertDiscount;
+    private javax.swing.JLabel discountBurger;
+    private javax.swing.JLabel mexPic;
+    private javax.swing.JLabel mexTime;
+    private javax.swing.JLabel mexTitle;
     private View.PanelRound mexicanPalace;
     private javax.swing.JLabel nearbyTxt;
+    private javax.swing.JScrollPane scrollRestaurants;
     private javax.swing.JSeparator separator;
+    private javax.swing.JLabel shawarmaPic;
     private View.PanelRound shawarmaQueen;
+    private javax.swing.JLabel shawarmaTime;
+    private javax.swing.JLabel shawarmaTitle;
     private View.PanelRound sushiHouse;
+    private javax.swing.JLabel sushiPic;
+    private javax.swing.JLabel sushiTime;
+    private javax.swing.JLabel sushiTitle;
+    private View.PanelRound trattoriaBtn;
+    private javax.swing.JLabel trattoriaPic;
+    private javax.swing.JLabel trattoriaTime;
+    private javax.swing.JLabel trattoriaTitle;
     // End of variables declaration//GEN-END:variables
 }

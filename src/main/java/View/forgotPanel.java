@@ -5,7 +5,9 @@
 package View;
 
 import Controller.ForgotPasswordController;
+import Controller.SignUpController;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
@@ -127,7 +129,13 @@ public class forgotPanel extends javax.swing.JPanel {
 
     private void instructionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsBtnActionPerformed
         // TODO add your handling code here:
-        ForgotPasswordController.changePassword(inputEmailReset.getText());
+        if(SignUpController.verificarCredenciales(inputEmailReset.getText())){
+            ForgotPasswordController.changePassword(inputEmailReset.getText());
+        }else{
+            JOptionPane.showMessageDialog(null, "The email is not registred", "User not found", JOptionPane.WARNING_MESSAGE);
+
+        }
+        
        
     }//GEN-LAST:event_instructionsBtnActionPerformed
 
