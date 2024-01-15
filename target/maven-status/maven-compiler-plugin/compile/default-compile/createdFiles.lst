@@ -28,6 +28,7 @@ Controller\ResetPasswordController.class
 View\forgotPanel$1.class
 Controller\PasswordGenerator.class
 Model\Users.class
+View\RestaurantPanel.class
 Controller\LoginController.class
 View\MainLogin.class
 View\PanelRound.class
