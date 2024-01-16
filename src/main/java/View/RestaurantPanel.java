@@ -31,32 +31,51 @@ public class RestaurantPanel extends javax.swing.JPanel {
 
         separator = new javax.swing.JSeparator();
         backgroundTitle = new javax.swing.JPanel();
-        dessertDiscount = new javax.swing.JLabel();
-        dealDessert = new View.PanelRound();
+        titleRestaurant = new javax.swing.JLabel();
+        backgroundIcon = new View.PanelRound();
+        iconImageSushi = new javax.swing.JLabel();
+        descriptionTxt = new javax.swing.JLabel();
+        priceTimeTxt = new javax.swing.JLabel();
+        menuTxt = new javax.swing.JLabel();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
         separator.setForeground(new java.awt.Color(237, 238, 242));
 
-        dessertDiscount.setFont(new java.awt.Font("Nunito ExtraBold", 0, 24)); // NOI18N
-        dessertDiscount.setText("Royal Suhi House");
+        titleRestaurant.setFont(new java.awt.Font("Nunito ExtraBold", 0, 22)); // NOI18N
+        titleRestaurant.setText("Royal Suhi House");
 
-        dealDessert.setBackground(new java.awt.Color(255, 255, 255));
-        dealDessert.setRoundBottomLeft(20);
-        dealDessert.setRoundBottomRight(20);
-        dealDessert.setRoundTopLeft(20);
-        dealDessert.setRoundTopRight(20);
+        backgroundIcon.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundIcon.setRoundBottomLeft(20);
+        backgroundIcon.setRoundBottomRight(20);
+        backgroundIcon.setRoundTopLeft(20);
+        backgroundIcon.setRoundTopRight(20);
 
-        javax.swing.GroupLayout dealDessertLayout = new javax.swing.GroupLayout(dealDessert);
-        dealDessert.setLayout(dealDessertLayout);
-        dealDessertLayout.setHorizontalGroup(
-            dealDessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 117, Short.MAX_VALUE)
+        iconImageSushi.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/royalSushi.png"))); // NOI18N
+
+        javax.swing.GroupLayout backgroundIconLayout = new javax.swing.GroupLayout(backgroundIcon);
+        backgroundIcon.setLayout(backgroundIconLayout);
+        backgroundIconLayout.setHorizontalGroup(
+            backgroundIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundIconLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iconImageSushi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addContainerGap())
         );
-        dealDessertLayout.setVerticalGroup(
-            dealDessertLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 104, Short.MAX_VALUE)
+        backgroundIconLayout.setVerticalGroup(
+            backgroundIconLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(backgroundIconLayout.createSequentialGroup()
+                .addContainerGap()
+                .addComponent(iconImageSushi, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        descriptionTxt.setFont(new java.awt.Font("Nunito Medium", 0, 12)); // NOI18N
+        descriptionTxt.setForeground(new java.awt.Color(102, 102, 102));
+        descriptionTxt.setText("<html>Exquisite sushi delivered to your door!.  Fresh, flavorful, and fast – experience the best with our delivery app service </html>");
+
+        priceTimeTxt.setFont(new java.awt.Font("Nunito Medium", 1, 11)); // NOI18N
+        priceTimeTxt.setForeground(new java.awt.Color(153, 153, 153));
+        priceTimeTxt.setText("30 - 40 min · $32 min sum.");
 
         javax.swing.GroupLayout backgroundTitleLayout = new javax.swing.GroupLayout(backgroundTitle);
         backgroundTitle.setLayout(backgroundTitleLayout);
@@ -64,20 +83,31 @@ public class RestaurantPanel extends javax.swing.JPanel {
             backgroundTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundTitleLayout.createSequentialGroup()
                 .addGap(43, 43, 43)
-                .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(backgroundIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
-                .addComponent(dessertDiscount, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(350, Short.MAX_VALUE))
+                .addGroup(backgroundTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(titleRestaurant, javax.swing.GroupLayout.PREFERRED_SIZE, 214, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(descriptionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(priceTimeTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 362, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(207, Short.MAX_VALUE))
         );
         backgroundTitleLayout.setVerticalGroup(
             backgroundTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(backgroundTitleLayout.createSequentialGroup()
-                .addGap(15, 15, 15)
+                .addContainerGap()
                 .addGroup(backgroundTitleLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(dessertDiscount)
-                    .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(31, Short.MAX_VALUE))
+                    .addComponent(backgroundIcon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(backgroundTitleLayout.createSequentialGroup()
+                        .addComponent(titleRestaurant)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(descriptionTxt, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                        .addComponent(priceTimeTxt)))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
+
+        menuTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        menuTxt.setText("Menu");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -85,22 +115,32 @@ public class RestaurantPanel extends javax.swing.JPanel {
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addComponent(separator, javax.swing.GroupLayout.Alignment.TRAILING)
             .addComponent(backgroundTitle, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(layout.createSequentialGroup()
+                .addGap(51, 51, 51)
+                .addComponent(menuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addComponent(separator, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(33, 33, 33)
+                .addGap(31, 31, 31)
                 .addComponent(backgroundTitle, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(398, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addComponent(menuTxt)
+                .addContainerGap(386, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private View.PanelRound backgroundIcon;
     private javax.swing.JPanel backgroundTitle;
-    private View.PanelRound dealDessert;
-    private javax.swing.JLabel dessertDiscount;
+    private javax.swing.JLabel descriptionTxt;
+    private javax.swing.JLabel iconImageSushi;
+    private javax.swing.JLabel menuTxt;
+    private javax.swing.JLabel priceTimeTxt;
     private javax.swing.JSeparator separator;
+    private javax.swing.JLabel titleRestaurant;
     // End of variables declaration//GEN-END:variables
 }

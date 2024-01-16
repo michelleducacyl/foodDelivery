@@ -4,6 +4,8 @@
  */
 package View;
 
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 /**
@@ -87,6 +89,11 @@ public class HomePanel extends javax.swing.JPanel {
         sushiHouse.setRoundBottomRight(30);
         sushiHouse.setRoundTopLeft(30);
         sushiHouse.setRoundTopRight(30);
+        sushiHouse.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                sushiHouseMouseClicked(evt);
+            }
+        });
 
         sushiPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/sushi.png"))); // NOI18N
 
@@ -477,6 +484,14 @@ public class HomePanel extends javax.swing.JPanel {
                 .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
+
+    private void sushiHouseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseClicked
+        // TODO add your handling code here:
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel();
+        }
+    }//GEN-LAST:event_sushiHouseMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

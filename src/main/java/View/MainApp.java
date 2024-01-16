@@ -22,6 +22,11 @@ public class MainApp extends javax.swing.JFrame {
         manager.mostrarPanel(home);
     }
 
+     public  void restaurantPanel(){
+        RestaurantPanel restPanel = new RestaurantPanel();
+        PanelManager manager = new PanelManager(mainPanel, 800, 550);
+        manager.mostrarPanel(restPanel);
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -49,6 +54,11 @@ public class MainApp extends javax.swing.JFrame {
 
         restaurantsBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         restaurantsBtn.setText("Restaurants");
+        restaurantsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                restaurantsBtnMouseClicked(evt);
+            }
+        });
 
         myOrdersBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         myOrdersBtn.setText("My Orders");
@@ -82,16 +92,6 @@ public class MainApp extends javax.swing.JFrame {
         );
         topBarLayout.setVerticalGroup(
             topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addComponent(logo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addGroup(topBarLayout.createSequentialGroup()
-                        .addGap(0, 0, Short.MAX_VALUE)
-                        .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                            .addComponent(userPicProfile)
-                            .addComponent(userNameTxt))))
-                .addGap(10, 10, 10))
             .addGroup(topBarLayout.createSequentialGroup()
                 .addGap(17, 17, 17)
                 .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -100,6 +100,16 @@ public class MainApp extends javax.swing.JFrame {
                         .addComponent(restaurantsBtn))
                     .addComponent(myOrdersBtn, javax.swing.GroupLayout.Alignment.TRAILING))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, topBarLayout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
+                    .addComponent(logo, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(0, 0, Short.MAX_VALUE)
+                        .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(userPicProfile, javax.swing.GroupLayout.PREFERRED_SIZE, 40, javax.swing.GroupLayout.PREFERRED_SIZE)
+                            .addComponent(userNameTxt))))
+                .addGap(10, 10, 10))
         );
 
         getContentPane().add(topBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, 50));
@@ -121,6 +131,13 @@ public class MainApp extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void restaurantsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_restaurantsBtnMouseClicked
+        // TODO add your handling code here:
+        HomePanel home = new HomePanel();
+        PanelManager manager = new PanelManager(mainPanel, 800, 550);
+        manager.mostrarPanel(home);
+    }//GEN-LAST:event_restaurantsBtnMouseClicked
 
     /**
      * @param args the command line arguments
