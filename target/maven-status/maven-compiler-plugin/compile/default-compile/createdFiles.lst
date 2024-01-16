@@ -7,6 +7,7 @@ View\ResetPasswordPanel$2.class
 View\LoginPanel$1.class
 Model\Dishes.class
 Controller\PasswordHasher.class
+Load\loading.class
 Model\Restaurant.class
 View\SignUpPanel.class
 Controller\ForgotPasswordController.class
@@ -19,6 +20,8 @@ View\MainLogin$1.class
 View\forgotPanel.class
 Controller\PanelManager.class
 View\HomePanel.class
+Load\loading$1.class
+Load\Load.class
 View\LoginPanel$3.class
 View\SignUpPanel$1.class
 View\ResetPasswordPanel$1.class
