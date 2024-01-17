@@ -59,6 +59,7 @@ public class forgotPanel extends javax.swing.JPanel {
         instructionsBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         instructionsBtn.setForeground(new java.awt.Color(255, 255, 255));
         instructionsBtn.setText("Send instructions");
+        instructionsBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         instructionsBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 instructionsBtnActionPerformed(evt);

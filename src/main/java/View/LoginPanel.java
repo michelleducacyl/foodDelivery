@@ -74,6 +74,7 @@ public class LoginPanel extends javax.swing.JPanel {
         loginBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         loginBtn.setForeground(new java.awt.Color(255, 255, 255));
         loginBtn.setText("Login");
+        loginBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         loginBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 loginBtnMousePressed(evt);

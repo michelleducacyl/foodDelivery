@@ -82,6 +82,7 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
         resetBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         resetBtn.setForeground(new java.awt.Color(255, 255, 255));
         resetBtn.setText("Change Password");
+        resetBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         resetBtn.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 resetBtnActionPerformed(evt);
