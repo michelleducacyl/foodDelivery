@@ -22,6 +22,7 @@ public class MainLogin extends javax.swing.JFrame {
         initComponents();
         LoginPanel loginPanel = new LoginPanel();
         PanelManager manager = new PanelManager(containerForms, 400, 600);
+        this.setLocationRelativeTo(null);
         manager.mostrarPanel(loginPanel);
     }
 
@@ -95,8 +96,10 @@ public class MainLogin extends javax.swing.JFrame {
         FlatCyanLightIJTheme.setup();
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
-            public void run() {
+            public void run() 
+            {
                 new MainLogin().setVisible(true);
+                 
             }
         });
     }

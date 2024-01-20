@@ -29,9 +29,12 @@ public class PanelManager {
     public void mostrarPanel(JPanel panel) {
         panel.setSize(witdh, height);
         panel.setLocation(0, 0);
+      
         container.removeAll();
         container.add(panel, BorderLayout.CENTER);
         container.revalidate();
         container.repaint();
+
+       
     }
 }

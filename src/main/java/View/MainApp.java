@@ -18,6 +18,7 @@ public class MainApp extends javax.swing.JFrame {
     public MainApp() {
         initComponents();
         HomePanel home = new HomePanel();
+        this.setLocationRelativeTo(null);
         PanelManager manager = new PanelManager(mainPanel, 800, 550);
         manager.mostrarPanel(home);
     }

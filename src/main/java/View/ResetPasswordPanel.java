@@ -24,6 +24,7 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
 
     public ResetPasswordPanel() {
         initComponents();
+        this.setLocationRelativeTo(null);
         inputCode.putClientProperty("JTextField.placeholderText", "6 characters");
         inputPassword.putClientProperty("JTextField.placeholderText", "min. 8 characters");
         inputRepeat.putClientProperty("JTextField.placeholderText", "min. 8 characters");
