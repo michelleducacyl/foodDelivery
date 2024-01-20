@@ -178,6 +178,8 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
                                 ResetPasswordController.updatePassword(userEmail, cont);
                                 JOptionPane.showMessageDialog(null, "Password updated successfully", "Success", JOptionPane.INFORMATION_MESSAGE);
                                 dispose();
+                                MainLogin m = new MainLogin();
+                                m.setVisible(true);
                             } else {
                                 JOptionPane.showMessageDialog(null, "Invalid verification code", "Error", JOptionPane.ERROR_MESSAGE);
                             }
