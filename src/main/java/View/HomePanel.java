@@ -4,6 +4,7 @@
  */
 package View;
 
+import java.awt.Cursor;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
@@ -59,6 +60,18 @@ public class HomePanel extends javax.swing.JPanel {
         trattoriaPic = new javax.swing.JLabel();
         trattoriaTitle = new javax.swing.JLabel();
         trattoriaTime = new javax.swing.JLabel();
+        shawarmaQueen1 = new View.PanelRound();
+        shawarmaPic1 = new javax.swing.JLabel();
+        shawarmaTitle1 = new javax.swing.JLabel();
+        shawarmaTime1 = new javax.swing.JLabel();
+        coffeeTime1 = new View.PanelRound();
+        coffePic1 = new javax.swing.JLabel();
+        coffeTitle1 = new javax.swing.JLabel();
+        coffeTime1 = new javax.swing.JLabel();
+        trattoriaBtn1 = new View.PanelRound();
+        trattoriaPic1 = new javax.swing.JLabel();
+        trattoriaTitle1 = new javax.swing.JLabel();
+        trattoriaTime1 = new javax.swing.JLabel();
         dealBurgers = new View.PanelRound();
         dealBig = new javax.swing.JLabel();
         discountBurger = new javax.swing.JLabel();
@@ -80,9 +93,15 @@ public class HomePanel extends javax.swing.JPanel {
         scrollRestaurants.setBackground(new java.awt.Color(255, 255, 255));
         scrollRestaurants.setBorder(null);
         scrollRestaurants.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
-        scrollRestaurants.setCursor(new java.awt.Cursor(java.awt.Cursor.DEFAULT_CURSOR));
+        scrollRestaurants.setToolTipText("");
+        scrollRestaurants.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
+        scrollRestaurants.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        scrollRestaurants.setMaximumSize(new java.awt.Dimension(600, 300));
+        scrollRestaurants.setPreferredSize(new java.awt.Dimension(600, 300));
 
         backgroundRest.setBackground(new java.awt.Color(255, 255, 255));
+        backgroundRest.setMaximumSize(new java.awt.Dimension(300, 600));
+        backgroundRest.setPreferredSize(new java.awt.Dimension(300, 600));
 
         sushiHouse.setBackground(new java.awt.Color(243, 244, 255));
         sushiHouse.setRoundBottomLeft(30);
@@ -92,6 +111,12 @@ public class HomePanel extends javax.swing.JPanel {
         sushiHouse.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mouseClicked(java.awt.event.MouseEvent evt) {
                 sushiHouseMouseClicked(evt);
+            }
+            public void mouseEntered(java.awt.event.MouseEvent evt) {
+                sushiHouseMouseEntered(evt);
+            }
+            public void mouseExited(java.awt.event.MouseEvent evt) {
+                sushiHouseMouseExited(evt);
             }
         });
 
@@ -317,6 +342,120 @@ public class HomePanel extends javax.swing.JPanel {
                 .addGap(0, 0, Short.MAX_VALUE))
         );
 
+        shawarmaQueen1.setBackground(new java.awt.Color(243, 244, 255));
+        shawarmaQueen1.setRoundBottomLeft(30);
+        shawarmaQueen1.setRoundBottomRight(30);
+        shawarmaQueen1.setRoundTopLeft(30);
+        shawarmaQueen1.setRoundTopRight(30);
+
+        shawarmaPic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shawarma.png"))); // NOI18N
+
+        shawarmaTitle1.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        shawarmaTitle1.setText("Shawarma Queen");
+
+        shawarmaTime1.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        shawarmaTime1.setForeground(new java.awt.Color(153, 153, 153));
+        shawarmaTime1.setText("30-40 min     ");
+
+        javax.swing.GroupLayout shawarmaQueen1Layout = new javax.swing.GroupLayout(shawarmaQueen1);
+        shawarmaQueen1.setLayout(shawarmaQueen1Layout);
+        shawarmaQueen1Layout.setHorizontalGroup(
+            shawarmaQueen1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(shawarmaPic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(shawarmaQueen1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(shawarmaQueen1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(shawarmaTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(shawarmaTime1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        shawarmaQueen1Layout.setVerticalGroup(
+            shawarmaQueen1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(shawarmaQueen1Layout.createSequentialGroup()
+                .addComponent(shawarmaPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(shawarmaTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(shawarmaTime1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
+        coffeeTime1.setBackground(new java.awt.Color(243, 244, 255));
+        coffeeTime1.setRoundBottomLeft(30);
+        coffeeTime1.setRoundBottomRight(30);
+        coffeeTime1.setRoundTopLeft(30);
+        coffeeTime1.setRoundTopRight(30);
+
+        coffePic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
+
+        coffeTitle1.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        coffeTitle1.setText("Coffee Time");
+
+        coffeTime1.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        coffeTime1.setForeground(new java.awt.Color(153, 153, 153));
+        coffeTime1.setText("30-40 min     ");
+
+        javax.swing.GroupLayout coffeeTime1Layout = new javax.swing.GroupLayout(coffeeTime1);
+        coffeeTime1.setLayout(coffeeTime1Layout);
+        coffeeTime1Layout.setHorizontalGroup(
+            coffeeTime1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(coffePic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(coffeeTime1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(coffeeTime1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(coffeTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(coffeTime1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        coffeeTime1Layout.setVerticalGroup(
+            coffeeTime1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(coffeeTime1Layout.createSequentialGroup()
+                .addComponent(coffePic1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(coffeTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(coffeTime1)
+                .addGap(0, 37, Short.MAX_VALUE))
+        );
+
+        trattoriaBtn1.setBackground(new java.awt.Color(243, 244, 255));
+        trattoriaBtn1.setRoundBottomLeft(30);
+        trattoriaBtn1.setRoundBottomRight(30);
+        trattoriaBtn1.setRoundTopLeft(30);
+        trattoriaBtn1.setRoundTopRight(30);
+
+        trattoriaPic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/italian.png"))); // NOI18N
+
+        trattoriaTitle1.setFont(new java.awt.Font("Nunito Medium", 1, 12)); // NOI18N
+        trattoriaTitle1.setText("Le Trattoria");
+
+        trattoriaTime1.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
+        trattoriaTime1.setForeground(new java.awt.Color(153, 153, 153));
+        trattoriaTime1.setText("30-40 min     ");
+
+        javax.swing.GroupLayout trattoriaBtn1Layout = new javax.swing.GroupLayout(trattoriaBtn1);
+        trattoriaBtn1.setLayout(trattoriaBtn1Layout);
+        trattoriaBtn1Layout.setHorizontalGroup(
+            trattoriaBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(trattoriaPic1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+            .addGroup(trattoriaBtn1Layout.createSequentialGroup()
+                .addContainerGap()
+                .addGroup(trattoriaBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(trattoriaTitle1, javax.swing.GroupLayout.PREFERRED_SIZE, 116, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(trattoriaTime1))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+        );
+        trattoriaBtn1Layout.setVerticalGroup(
+            trattoriaBtn1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGroup(trattoriaBtn1Layout.createSequentialGroup()
+                .addComponent(trattoriaPic1, javax.swing.GroupLayout.PREFERRED_SIZE, 60, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(trattoriaTitle1)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addComponent(trattoriaTime1)
+                .addGap(0, 0, Short.MAX_VALUE))
+        );
+
         javax.swing.GroupLayout backgroundRestLayout = new javax.swing.GroupLayout(backgroundRest);
         backgroundRest.setLayout(backgroundRestLayout);
         backgroundRestLayout.setHorizontalGroup(
@@ -335,8 +474,14 @@ public class HomePanel extends javax.swing.JPanel {
                         .addGap(18, 18, 18)
                         .addComponent(coffeeTime, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
-                        .addComponent(trattoriaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 169, Short.MAX_VALUE))
+                        .addComponent(trattoriaBtn, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(backgroundRestLayout.createSequentialGroup()
+                        .addComponent(shawarmaQueen1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(coffeeTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(trattoriaBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addGap(0, 16, Short.MAX_VALUE))
         );
         backgroundRestLayout.setVerticalGroup(
             backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -351,7 +496,12 @@ public class HomePanel extends javax.swing.JPanel {
                     .addComponent(coffeeTime, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(shawarmaQueen, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                     .addComponent(trattoriaBtn, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(1394, Short.MAX_VALUE))
+                .addGap(28, 28, 28)
+                .addGroup(backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
+                    .addComponent(coffeeTime1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(shawarmaQueen1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                    .addComponent(trattoriaBtn1, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addContainerGap(84, Short.MAX_VALUE))
         );
 
         scrollRestaurants.setViewportView(backgroundRest);
@@ -459,16 +609,19 @@ public class HomePanel extends javax.swing.JPanel {
             .addComponent(separator, javax.swing.GroupLayout.Alignment.TRAILING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(70, 70, 70)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                    .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                        .addComponent(nearbyTxt)
-                        .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(18, 18, 18)
-                        .addComponent(dealBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                        .addGap(20, 20, 20)))
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                        .addGap(8, 8, 8)
+                        .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 658, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(0, 6, Short.MAX_VALUE))
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                            .addComponent(nearbyTxt)
+                            .addGroup(layout.createSequentialGroup()
+                                .addComponent(dealDessert, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                                .addGap(18, 18, 18)
+                                .addComponent(dealBurgers, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                        .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -493,6 +646,17 @@ public class HomePanel extends javax.swing.JPanel {
         }
     }//GEN-LAST:event_sushiHouseMouseClicked
 
+    private void sushiHouseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseEntered
+        // TODO add your handling code here:
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
+        
+    }//GEN-LAST:event_sushiHouseMouseEntered
+
+    private void sushiHouseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseExited
+        // TODO add your handling code here:
+        this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
+    }//GEN-LAST:event_sushiHouseMouseExited
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel allDesserts;
@@ -503,9 +667,13 @@ public class HomePanel extends javax.swing.JPanel {
     private View.PanelRound burgersAndPizza;
     private javax.swing.JLabel burgersPic;
     private javax.swing.JLabel coffePic;
+    private javax.swing.JLabel coffePic1;
     private javax.swing.JLabel coffeTime;
+    private javax.swing.JLabel coffeTime1;
     private javax.swing.JLabel coffeTitle;
+    private javax.swing.JLabel coffeTitle1;
     private View.PanelRound coffeeTime;
+    private View.PanelRound coffeeTime1;
     private javax.swing.JLabel coupon;
     private javax.swing.JLabel couponB;
     private javax.swing.JLabel cupcake;
@@ -522,16 +690,24 @@ public class HomePanel extends javax.swing.JPanel {
     private javax.swing.JScrollPane scrollRestaurants;
     private javax.swing.JSeparator separator;
     private javax.swing.JLabel shawarmaPic;
+    private javax.swing.JLabel shawarmaPic1;
     private View.PanelRound shawarmaQueen;
+    private View.PanelRound shawarmaQueen1;
     private javax.swing.JLabel shawarmaTime;
+    private javax.swing.JLabel shawarmaTime1;
     private javax.swing.JLabel shawarmaTitle;
+    private javax.swing.JLabel shawarmaTitle1;
     private View.PanelRound sushiHouse;
     private javax.swing.JLabel sushiPic;
     private javax.swing.JLabel sushiTime;
     private javax.swing.JLabel sushiTitle;
     private View.PanelRound trattoriaBtn;
+    private View.PanelRound trattoriaBtn1;
     private javax.swing.JLabel trattoriaPic;
+    private javax.swing.JLabel trattoriaPic1;
     private javax.swing.JLabel trattoriaTime;
+    private javax.swing.JLabel trattoriaTime1;
     private javax.swing.JLabel trattoriaTitle;
+    private javax.swing.JLabel trattoriaTitle1;
     // End of variables declaration//GEN-END:variables
 }

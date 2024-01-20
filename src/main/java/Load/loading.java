@@ -37,20 +37,22 @@ public class loading extends javax.swing.JFrame {
         setBackground(new java.awt.Color(255, 255, 255));
         setUndecorated(true);
         getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
-        getContentPane().add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 360, 450, 30));
+
+        barra.setForeground(new java.awt.Color(78, 96, 255));
+        getContentPane().add(barra, new org.netbeans.lib.awtextra.AbsoluteConstraints(10, 360, 430, 20));
 
         jPanel1.setBackground(new java.awt.Color(255, 255, 255));
         jPanel1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/progress2.gif"))); // NOI18N
-        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(100, 100, 230, 150));
+        jLabel2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/loading.gif"))); // NOI18N
+        jPanel1.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(30, 30, 350, 290));
 
-        porcentaje.setFont(new java.awt.Font("Roboto Black", 2, 12)); // NOI18N
+        porcentaje.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
         porcentaje.setHorizontalAlignment(javax.swing.SwingConstants.CENTER);
         porcentaje.setText("0%");
         jPanel1.add(porcentaje, new org.netbeans.lib.awtextra.AbsoluteConstraints(210, 330, 37, 23));
 
-        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 360));
+        getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 450, 390));
 
         pack();
         setLocationRelativeTo(null);
