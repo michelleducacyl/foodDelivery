@@ -70,6 +70,9 @@ public class MainApp extends javax.swing.JFrame {
         myOrdersBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         myOrdersBtn.setText("My Orders");
         myOrdersBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                myOrdersBtnMouseClicked(evt);
+            }
             public void mouseEntered(java.awt.event.MouseEvent evt) {
                 myOrdersBtnMouseEntered(evt);
             }
@@ -193,6 +196,13 @@ public class MainApp extends javax.swing.JFrame {
         MainLogin m = new MainLogin();
         m.setVisible(true);
     }//GEN-LAST:event_logoutBtnActionPerformed
+
+    private void myOrdersBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_myOrdersBtnMouseClicked
+        // TODO add your handling code here:
+        OrdersPanel orders = new OrdersPanel();
+        PanelManager manager = new PanelManager(mainPanel, 800, 550);
+        manager.mostrarPanel(orders);
+    }//GEN-LAST:event_myOrdersBtnMouseClicked
 
     /**
      * @param args the command line arguments
