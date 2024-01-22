@@ -17,6 +17,7 @@ Controller\ForgotPasswordController.class
 View\LoginPanel$2.class
 Controller\SignUpController.class
 View\ResetPasswordPanel.class
+View\MainApp$5.class
 Controller\EmailValidator.class
 Controller\InitApp.class
 Model\Orders.class
@@ -34,6 +35,7 @@ View\OrdersPanel$1.class
 View\RestaurantPanel$2.class
 View\ResetPasswordPanel$1.class
 Controller\ForgotPasswordController$1.class
+View\CartPanel.class
 Controller\RestaurantsController.class
 View\LoginPanel.class
 Controller\ResetPasswordController.class
@@ -43,6 +45,7 @@ Controller\PasswordGenerator.class
 Model\Users.class
 View\RestaurantPanel.class
 View\RestaurantPanel$1.class
+View\CartPanel$1.class
 Controller\LoginController.class
 View\MainLogin.class
 View\PanelRound.class

@@ -88,6 +88,11 @@ public class MainApp extends javax.swing.JFrame {
         shoppingCartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopping.png"))); // NOI18N
         shoppingCartBtn.setBorder(null);
         shoppingCartBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
+        shoppingCartBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shoppingCartBtnMouseClicked(evt);
+            }
+        });
 
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
         logoutBtn.setBorder(null);
@@ -205,6 +210,13 @@ public class MainApp extends javax.swing.JFrame {
         PanelManager manager = new PanelManager(mainPanel, 800, 550);
         manager.mostrarPanel(orders);
     }//GEN-LAST:event_myOrdersBtnMouseClicked
+
+    private void shoppingCartBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shoppingCartBtnMouseClicked
+        // TODO add your handling code here:
+        CartPanel cart = new CartPanel();
+        PanelManager manager = new PanelManager(mainPanel, 800, 550);
+        manager.mostrarPanel(cart);
+    }//GEN-LAST:event_shoppingCartBtnMouseClicked
 
     /**
      * @param args the command line arguments
