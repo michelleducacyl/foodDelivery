@@ -14,17 +14,19 @@ public class Dishes implements java.io.Serializable {
 	private String name;
 	private String description;
 	private Double price;
+        private String image;
 	private Set orderses = new HashSet(0);
 
 	public Dishes() {
 	}
 
-	public Dishes(Restaurant restaurant, String name, String description, Double price, Set orderses) {
+	public Dishes(Restaurant restaurant, String name, String description, String image, Double price, Set orderses) {
 		this.restaurant = restaurant;
 		this.name = name;
 		this.description = description;
 		this.price = price;
 		this.orderses = orderses;
+                this.image = image;
 	}
 
 	public Integer getId() {
@@ -67,6 +69,13 @@ public class Dishes implements java.io.Serializable {
 		this.price = price;
 	}
 
+        public String getImage(){
+            return this.image;
+        }
+        
+        public void setImage(String image){
+            this.image=image;
+        }
 	public Set getOrderses() {
 		return this.orderses;
 	}

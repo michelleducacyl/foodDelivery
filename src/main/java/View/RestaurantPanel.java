@@ -4,22 +4,55 @@
  */
 package View;
 
+import java.util.ArrayList;
+import java.util.List;
+import javax.swing.ImageIcon;
 import javax.swing.UIManager;
+import model.Dishes;
 
 /**
  *
  * @author Michelle Arias
  */
 public class RestaurantPanel extends javax.swing.JPanel {
-
+    
+    List<Dishes> cart = new ArrayList<>();
+    Dishes dishO1;
+    Dishes dishO2;
+    Dishes dishO3;
+            
     /**
      * Creates new form HomePanel
      */
-    public RestaurantPanel() {
-        initComponents();
-        UIManager.put( "panelRestaurant.arc", 9);
-    }
+    public RestaurantPanel(List<Dishes> dishes) {
+    
+    initComponents();
+    UIManager.put("panelRestaurant.arc", 9);
 
+    dishO1 = dishes.get(0);
+    dishO2 = dishes.get(1);
+    dishO3 = dishes.get(2);
+
+    nameDish1.setText(dishO1.getName());
+    descriptionDish1.setText(dishO1.getDescription());
+    priceDish1.setText("$ " + dishO1.getPrice().toString());
+    ImageIcon icono1 = new ImageIcon(getClass().getResource(dishO1.getImage()));
+    photoDish1.setIcon(icono1);
+
+    nameDish2.setText(dishO2.getName());
+    descriptionDish2.setText(dishO2.getDescription());
+    priceDish2.setText("$ " + dishO2.getPrice().toString());
+    ImageIcon icono2 = new ImageIcon(getClass().getResource(dishO2.getImage()));
+    photoDish2.setIcon(icono2); 
+
+    nameDish3.setText(dishO3.getName());
+    descriptionDish3.setText(dishO3.getDescription());
+    priceDish3.setText("$ " + dishO3.getPrice().toString());
+    ImageIcon icono3 = new ImageIcon(getClass().getResource(dishO3.getImage()));
+    photoDish3.setIcon(icono3);  
+}
+    
+    
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -37,27 +70,27 @@ public class RestaurantPanel extends javax.swing.JPanel {
         descriptionTxt = new javax.swing.JLabel();
         priceTimeTxt = new javax.swing.JLabel();
         menuTxt = new javax.swing.JLabel();
-        sushiRoll = new View.PanelRound();
-        logoRoll = new javax.swing.JLabel();
-        jLabel1 = new javax.swing.JLabel();
-        jLabel2 = new javax.swing.JLabel();
-        jLabel3 = new javax.swing.JLabel();
-        jSpinner1 = new javax.swing.JSpinner();
-        jButton1 = new javax.swing.JButton();
-        takoyaki = new View.PanelRound();
-        logoRoll1 = new javax.swing.JLabel();
-        jLabel4 = new javax.swing.JLabel();
-        jLabel5 = new javax.swing.JLabel();
-        jLabel6 = new javax.swing.JLabel();
-        jSpinner2 = new javax.swing.JSpinner();
-        jButton2 = new javax.swing.JButton();
-        udon = new View.PanelRound();
-        logoRoll2 = new javax.swing.JLabel();
-        jLabel7 = new javax.swing.JLabel();
-        jLabel8 = new javax.swing.JLabel();
-        jLabel9 = new javax.swing.JLabel();
-        jSpinner3 = new javax.swing.JSpinner();
-        jButton3 = new javax.swing.JButton();
+        dish1 = new View.PanelRound();
+        photoDish1 = new javax.swing.JLabel();
+        nameDish1 = new javax.swing.JLabel();
+        descriptionDish1 = new javax.swing.JLabel();
+        priceDish1 = new javax.swing.JLabel();
+        spinnerDish1 = new javax.swing.JSpinner();
+        addCartDish1 = new javax.swing.JButton();
+        dish2 = new View.PanelRound();
+        photoDish2 = new javax.swing.JLabel();
+        nameDish2 = new javax.swing.JLabel();
+        descriptionDish2 = new javax.swing.JLabel();
+        priceDish2 = new javax.swing.JLabel();
+        spinnerDish2 = new javax.swing.JSpinner();
+        addCartDish2 = new javax.swing.JButton();
+        dish3 = new View.PanelRound();
+        photoDish3 = new javax.swing.JLabel();
+        nameDish3 = new javax.swing.JLabel();
+        descriptionDish3 = new javax.swing.JLabel();
+        priceDish3 = new javax.swing.JLabel();
+        spinnerDish3 = new javax.swing.JSpinner();
+        addCartDish3 = new javax.swing.JButton();
 
         setBackground(new java.awt.Color(255, 255, 255));
 
@@ -130,125 +163,125 @@ public class RestaurantPanel extends javax.swing.JPanel {
         menuTxt.setFont(new java.awt.Font("Nunito SemiBold", 1, 12)); // NOI18N
         menuTxt.setText("Menu");
 
-        sushiRoll.setBackground(new java.awt.Color(255, 255, 255));
-        sushiRoll.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        sushiRoll.setRoundBottomLeft(17);
-        sushiRoll.setRoundBottomRight(17);
-        sushiRoll.setRoundTopLeft(17);
-        sushiRoll.setRoundTopRight(17);
-        sushiRoll.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dish1.setBackground(new java.awt.Color(255, 255, 255));
+        dish1.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        dish1.setRoundBottomLeft(17);
+        dish1.setRoundBottomRight(17);
+        dish1.setRoundTopLeft(17);
+        dish1.setRoundTopRight(17);
+        dish1.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoRoll.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/classicRoll.png"))); // NOI18N
-        sushiRoll.add(logoRoll, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
+        photoDish1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/classicRoll.png"))); // NOI18N
+        dish1.add(photoDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
 
-        jLabel1.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel1.setText("Classic Roll");
-        sushiRoll.add(jLabel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 70, -1));
+        nameDish1.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        nameDish1.setText("Classic Roll");
+        dish1.add(nameDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 70, -1));
 
-        jLabel2.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
-        jLabel2.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel2.setText("<html> Uramaki tempurizado de salmón,");
-        sushiRoll.add(jLabel2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
+        descriptionDish1.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
+        descriptionDish1.setForeground(new java.awt.Color(153, 153, 153));
+        descriptionDish1.setText("<html> Uramaki tempurizado de salmón,");
+        dish1.add(descriptionDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
 
-        jLabel3.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
-        jLabel3.setText("12.99 €");
-        sushiRoll.add(jLabel3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
+        priceDish1.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+        priceDish1.setText("12.99 €");
+        dish1.add(priceDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        jSpinner1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        jSpinner1.setBorder(null);
-        sushiRoll.add(jSpinner1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        spinnerDish1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish1.setBorder(null);
+        dish1.add(spinnerDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
-        jButton1.setBackground(new java.awt.Color(243, 244, 255));
-        jButton1.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
-        jButton1.setForeground(new java.awt.Color(78, 96, 255));
-        jButton1.setText("+ Add to cart");
-        jButton1.setBorderPainted(false);
-        jButton1.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton1ActionPerformed(evt);
+        addCartDish1.setBackground(new java.awt.Color(243, 244, 255));
+        addCartDish1.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
+        addCartDish1.setForeground(new java.awt.Color(78, 96, 255));
+        addCartDish1.setText("+ Add to cart");
+        addCartDish1.setBorderPainted(false);
+        addCartDish1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addCartDish1MouseClicked(evt);
             }
         });
-        sushiRoll.add(jButton1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        dish1.add(addCartDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
-        takoyaki.setBackground(new java.awt.Color(255, 255, 255));
-        takoyaki.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        takoyaki.setRoundBottomLeft(17);
-        takoyaki.setRoundBottomRight(17);
-        takoyaki.setRoundTopLeft(17);
-        takoyaki.setRoundTopRight(17);
-        takoyaki.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dish2.setBackground(new java.awt.Color(255, 255, 255));
+        dish2.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        dish2.setRoundBottomLeft(17);
+        dish2.setRoundBottomRight(17);
+        dish2.setRoundTopLeft(17);
+        dish2.setRoundTopRight(17);
+        dish2.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoRoll1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Takoyaki.png"))); // NOI18N
-        takoyaki.add(logoRoll1, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
+        photoDish2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/Takoyaki.png"))); // NOI18N
+        dish2.add(photoDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
 
-        jLabel4.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel4.setText("Takoyaki");
-        takoyaki.add(jLabel4, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 70, -1));
+        nameDish2.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        nameDish2.setText("Takoyaki");
+        dish2.add(nameDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 70, -1));
 
-        jLabel5.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
-        jLabel5.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel5.setText("Bolitas de pulpo tradicional");
-        takoyaki.add(jLabel5, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
+        descriptionDish2.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
+        descriptionDish2.setForeground(new java.awt.Color(153, 153, 153));
+        descriptionDish2.setText("Bolitas de pulpo tradicional");
+        dish2.add(descriptionDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
 
-        jLabel6.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
-        jLabel6.setText("7.99€");
-        takoyaki.add(jLabel6, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
+        priceDish2.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+        priceDish2.setText("7.99€");
+        dish2.add(priceDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        jSpinner2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        jSpinner2.setBorder(null);
-        takoyaki.add(jSpinner2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        spinnerDish2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish2.setBorder(null);
+        dish2.add(spinnerDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
-        jButton2.setBackground(new java.awt.Color(243, 244, 255));
-        jButton2.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
-        jButton2.setForeground(new java.awt.Color(78, 96, 255));
-        jButton2.setText("+ Add to cart");
-        jButton2.setBorderPainted(false);
-        jButton2.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton2ActionPerformed(evt);
+        addCartDish2.setBackground(new java.awt.Color(243, 244, 255));
+        addCartDish2.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
+        addCartDish2.setForeground(new java.awt.Color(78, 96, 255));
+        addCartDish2.setText("+ Add to cart");
+        addCartDish2.setBorderPainted(false);
+        addCartDish2.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addCartDish2MouseClicked(evt);
             }
         });
-        takoyaki.add(jButton2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        dish2.add(addCartDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
-        udon.setBackground(new java.awt.Color(255, 255, 255));
-        udon.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
-        udon.setRoundBottomLeft(17);
-        udon.setRoundBottomRight(17);
-        udon.setRoundTopLeft(17);
-        udon.setRoundTopRight(17);
-        udon.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
+        dish3.setBackground(new java.awt.Color(255, 255, 255));
+        dish3.setBorder(new javax.swing.border.LineBorder(new java.awt.Color(204, 204, 204), 1, true));
+        dish3.setRoundBottomLeft(17);
+        dish3.setRoundBottomRight(17);
+        dish3.setRoundTopLeft(17);
+        dish3.setRoundTopRight(17);
+        dish3.setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
-        logoRoll2.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/udon.png"))); // NOI18N
-        udon.add(logoRoll2, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
+        photoDish3.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/udon.png"))); // NOI18N
+        dish3.add(photoDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(7, 7, 101, 94));
 
-        jLabel7.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        jLabel7.setText("Kinoku Udon");
-        udon.add(jLabel7, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 100, -1));
+        nameDish3.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        nameDish3.setText("Kinoku Udon");
+        dish3.add(nameDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 20, 100, -1));
 
-        jLabel8.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
-        jLabel8.setForeground(new java.awt.Color(153, 153, 153));
-        jLabel8.setText("Fideos udon salteados con mix de setas ");
-        udon.add(jLabel8, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
+        descriptionDish3.setFont(new java.awt.Font("Nunito Light", 0, 10)); // NOI18N
+        descriptionDish3.setForeground(new java.awt.Color(153, 153, 153));
+        descriptionDish3.setText("Fideos udon salteados con mix de setas ");
+        dish3.add(descriptionDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 40, 230, 20));
 
-        jLabel9.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
-        jLabel9.setText("25€");
-        udon.add(jLabel9, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
+        priceDish3.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
+        priceDish3.setText("25€");
+        dish3.add(priceDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        jSpinner3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
-        jSpinner3.setBorder(null);
-        udon.add(jSpinner3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
+        spinnerDish3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish3.setBorder(null);
+        dish3.add(spinnerDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
-        jButton3.setBackground(new java.awt.Color(243, 244, 255));
-        jButton3.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
-        jButton3.setForeground(new java.awt.Color(78, 96, 255));
-        jButton3.setText("+ Add to cart");
-        jButton3.setBorderPainted(false);
-        jButton3.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jButton3ActionPerformed(evt);
+        addCartDish3.setBackground(new java.awt.Color(243, 244, 255));
+        addCartDish3.setFont(new java.awt.Font("Nunito Black", 0, 12)); // NOI18N
+        addCartDish3.setForeground(new java.awt.Color(78, 96, 255));
+        addCartDish3.setText("+ Add to cart");
+        addCartDish3.setBorderPainted(false);
+        addCartDish3.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addCartDish3MouseClicked(evt);
             }
         });
-        udon.add(jButton3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
+        dish3.add(addCartDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(320, 60, -1, -1));
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
         this.setLayout(layout);
@@ -260,9 +293,9 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 .addGap(51, 51, 51)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(menuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 104, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(sushiRoll, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(takoyaki, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(udon, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(dish1, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dish2, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(dish3, javax.swing.GroupLayout.PREFERRED_SIZE, 431, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
         layout.setVerticalGroup(
@@ -274,57 +307,65 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 .addGap(18, 18, 18)
                 .addComponent(menuTxt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(sushiRoll, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dish1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(takoyaki, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dish2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
-                .addComponent(udon, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addComponent(dish3, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addContainerGap(63, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jButton1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton1ActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButton1ActionPerformed
+    private void addCartDish1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish1MouseClicked
+        
+        //Guardamos la cantidad del producto seleccionado
+        int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+        for(int i =0; i <= cantidad; i++){
+            cart.add(dishO1);
+        }
+        
+        
+            
+    }//GEN-LAST:event_addCartDish1MouseClicked
 
-    private void jButton2ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton2ActionPerformed
+    private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton2ActionPerformed
+    }//GEN-LAST:event_addCartDish2MouseClicked
 
-    private void jButton3ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton3ActionPerformed
+    private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
-    }//GEN-LAST:event_jButton3ActionPerformed
+    }//GEN-LAST:event_addCartDish3MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton addCartDish1;
+    private javax.swing.JButton addCartDish2;
+    private javax.swing.JButton addCartDish3;
     private View.PanelRound backgroundIcon;
     private javax.swing.JPanel backgroundTitle;
+    private javax.swing.JLabel descriptionDish1;
+    private javax.swing.JLabel descriptionDish2;
+    private javax.swing.JLabel descriptionDish3;
     private javax.swing.JLabel descriptionTxt;
+    private View.PanelRound dish1;
+    private View.PanelRound dish2;
+    private View.PanelRound dish3;
     private javax.swing.JLabel iconImageSushi;
-    private javax.swing.JButton jButton1;
-    private javax.swing.JButton jButton2;
-    private javax.swing.JButton jButton3;
-    private javax.swing.JLabel jLabel1;
-    private javax.swing.JLabel jLabel2;
-    private javax.swing.JLabel jLabel3;
-    private javax.swing.JLabel jLabel4;
-    private javax.swing.JLabel jLabel5;
-    private javax.swing.JLabel jLabel6;
-    private javax.swing.JLabel jLabel7;
-    private javax.swing.JLabel jLabel8;
-    private javax.swing.JLabel jLabel9;
-    private javax.swing.JSpinner jSpinner1;
-    private javax.swing.JSpinner jSpinner2;
-    private javax.swing.JSpinner jSpinner3;
-    private javax.swing.JLabel logoRoll;
-    private javax.swing.JLabel logoRoll1;
-    private javax.swing.JLabel logoRoll2;
     private javax.swing.JLabel menuTxt;
+    private javax.swing.JLabel nameDish1;
+    private javax.swing.JLabel nameDish2;
+    private javax.swing.JLabel nameDish3;
+    private javax.swing.JLabel photoDish1;
+    private javax.swing.JLabel photoDish2;
+    private javax.swing.JLabel photoDish3;
+    private javax.swing.JLabel priceDish1;
+    private javax.swing.JLabel priceDish2;
+    private javax.swing.JLabel priceDish3;
     private javax.swing.JLabel priceTimeTxt;
     private javax.swing.JSeparator separator;
-    private View.PanelRound sushiRoll;
-    private View.PanelRound takoyaki;
+    private javax.swing.JSpinner spinnerDish1;
+    private javax.swing.JSpinner spinnerDish2;
+    private javax.swing.JSpinner spinnerDish3;
     private javax.swing.JLabel titleRestaurant;
-    private View.PanelRound udon;
     // End of variables declaration//GEN-END:variables
 }

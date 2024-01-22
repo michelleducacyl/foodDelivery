@@ -4,10 +4,13 @@
  */
 package View;
 
+import Controller.RestaurantsController;
 import java.awt.Cursor;
+import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
+import model.Dishes;
 
 /**
  *
@@ -94,7 +97,6 @@ public class HomePanel extends javax.swing.JPanel {
         scrollRestaurants.setBorder(null);
         scrollRestaurants.setHorizontalScrollBarPolicy(javax.swing.ScrollPaneConstants.HORIZONTAL_SCROLLBAR_NEVER);
         scrollRestaurants.setToolTipText("");
-        scrollRestaurants.setVerticalScrollBarPolicy(javax.swing.ScrollPaneConstants.VERTICAL_SCROLLBAR_NEVER);
         scrollRestaurants.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         scrollRestaurants.setMaximumSize(new java.awt.Dimension(600, 300));
         scrollRestaurants.setPreferredSize(new java.awt.Dimension(600, 300));
@@ -481,7 +483,7 @@ public class HomePanel extends javax.swing.JPanel {
                         .addComponent(coffeeTime1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(trattoriaBtn1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addGap(0, 16, Short.MAX_VALUE))
+                .addGap(0, 6, Short.MAX_VALUE))
         );
         backgroundRestLayout.setVerticalGroup(
             backgroundRestLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -640,10 +642,15 @@ public class HomePanel extends javax.swing.JPanel {
 
     private void sushiHouseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseClicked
         // TODO add your handling code here:
+        // Obtén la lista de platos del restaurante
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId("RSH");
+
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         if (mainFrame instanceof MainApp) {
-            ((MainApp) mainFrame).restaurantPanel();
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
+        
+       
     }//GEN-LAST:event_sushiHouseMouseClicked
 
     private void sushiHouseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseEntered

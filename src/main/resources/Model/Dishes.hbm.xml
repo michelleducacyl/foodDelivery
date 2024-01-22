@@ -15,6 +15,9 @@
         <property name="description" type="string">
             <column length="200" name="description"/>
         </property>
+        <property name="image" type="string">
+            <column length="255" name="image"/>
+        </property>
         <property name="price" type="java.lang.Double">
             <column name="price" precision="22" scale="0"/>
         </property>

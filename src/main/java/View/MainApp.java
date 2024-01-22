@@ -6,6 +6,8 @@ package View;
 
 import Controller.PanelManager;
 import java.awt.Cursor;
+import java.util.List;
+import model.Dishes;
 
 /**
  *
@@ -24,8 +26,8 @@ public class MainApp extends javax.swing.JFrame {
         manager.mostrarPanel(home);
     }
 
-     public  void restaurantPanel(){
-        RestaurantPanel restPanel = new RestaurantPanel();
+     public  void restaurantPanel(List<Dishes> dishesList){
+        RestaurantPanel restPanel = new RestaurantPanel(dishesList);
         PanelManager manager = new PanelManager(mainPanel, 800, 550);
         manager.mostrarPanel(restPanel);
     }
