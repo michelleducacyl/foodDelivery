@@ -9,11 +9,10 @@ import java.awt.Container;
 import javax.swing.JPanel;
 
 /**
- *
+ * Esta clase se utiliza para enseñar los paneles dentro de la aplicación.
  * @author Michelle Arias
  */
 
-//Clase para asignar el tamaño de los paneles a instanciar
 public class PanelManager {
     private Container container;
     private int witdh;
@@ -25,7 +24,11 @@ public class PanelManager {
         this.height = height;
         
     }
-
+    
+    /**
+     * Este método se encarga de enseñar el panel que se le pasa como parámetro
+     * @param panel un JPanel a enseñar
+     */
     public void mostrarPanel(JPanel panel) {
         panel.setSize(witdh, height);
         panel.setLocation(0, 0);

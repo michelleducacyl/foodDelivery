@@ -16,12 +16,16 @@ import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- *
+ * Esta clase controla todos los métodos relacionados al sign up.
  * @author Michelle Arias García
  */
 public class SignUpController {
 
-    //Método para verificar que un email existe dentro de la base de datos
+    /**
+     * Método para verificar que un email existe dentro de la base de datos
+     * @param email argumento tipo String del email a verificar
+     * @return booleano de la existencia del usuario dentro de la base de datos
+     */
     public static boolean verificarCredenciales(String email) {
         boolean existeUsuario = false;
         //Creamos la sesión
@@ -53,7 +57,11 @@ public class SignUpController {
         return existeUsuario;
     }
 
-    //Metodo para dar de alta un usuario dentro de la base de datos
+    /**
+     * Metodo para dar de alta un usuario dentro de la base de datos
+     * @param email argumento de tipo String del email del usuario
+     * @param password argumento de tipo String de la contraseña del usuario.
+     */
     public static void introducirUsuario(String email, String password) {
 
         // Obtén la sesión de Hibernate

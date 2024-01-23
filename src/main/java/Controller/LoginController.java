@@ -17,12 +17,17 @@ import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- *
+ * Esta clase controla el inicio de sesión del usuario 
+ * con sus métodos correspondientes.
  * @author Michelle Arias García
  */
 public class LoginController {
    
-    
+    /**
+     * Este método busca la contraseña de un email especifico dentro de la base de datos.
+     * @param email este argumeto será un String del email del usuario
+     * @return devolverá la contraseña del usuario en un String.
+     */
     public static String obtenerContrasenaDeUsuario(String email) {
     SessionFactory sessionFactory = HibernateUtil.getSessionFactory();
     Session sesion = sessionFactory.openSession();
@@ -40,7 +45,13 @@ public class LoginController {
     }
   }
 
-    // Método para verificar si la contraseña coincide (puedes usar BCrypt)
+  /**
+   * Método para verificar que una contraseña escrita coincide con la encriptada
+   * dentro de la base de datos
+   * @param contrasenaInput este argumento de tipo String será la contraseña escrita por el usuario.
+   * @param contrasenaAlmacenada este argumento de tipo String será la contraseña recuperada de la base de datos.
+   * @return booleano de la comprobación
+   */
   public static boolean verificarContrasena(String contrasenaInput, String contrasenaAlmacenada) {
      BCrypt.gensalt();
       System.out.println("Hasheada: " + BCrypt.hashpw(contrasenaInput, BCrypt.gensalt()));

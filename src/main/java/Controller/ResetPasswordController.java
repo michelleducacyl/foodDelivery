@@ -13,12 +13,17 @@ import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- *
+ * Clase que controla el reseteo de la contraseña de un usuario
  * @author Michelle Arias
  */
 public class ResetPasswordController {
 
-    //Metodo que verifica que el codigo de verificación ingresado por el usuario coincida con el del email.
+    /**
+     * Metodo que verifica que el codigo de verificación ingresado por el usuario coincida con el del email aportado
+     * @param email este argumento es un tipo String que coincide con el ingresado por el usuario
+     * @param codigoVerificacion este argumento es un tipo entero que deberá coincidir con el guardado dentro de la base de datos.
+     * @return booleano que será verdadero en caso que los parámetros coincidan con los guardados en la base de datos.
+     */
     public static boolean verificarCodigoDeVerificacion(String email, int codigoVerificacion) {
         boolean codigoValido = false;
         //Iniciamos una session de hibernate usando la instancia de la factoria de sesiones.
@@ -58,7 +63,11 @@ public class ResetPasswordController {
         return codigoValido;
     }
     
-    //Metodo para hacer update de la contraseña nueva ingresada por el usuario
+    /**
+     * Metodo para hacer update de la nueva contraseña ingresada por el usuario en la base de datos.
+     * @param email este argumento será un String que corresponde al email ingresado.
+     * @param nuevaContraseña este argumento es un tipo String de la contraseña ingresada por el usuario.
+     */
     public static void updatePassword(String email, String nuevaContraseña) {
     // Obtén la sesión de Hibernate
     Session session = HibernateUtil.getSessionFactory().openSession();

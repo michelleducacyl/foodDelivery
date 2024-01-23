@@ -12,12 +12,16 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 /**
- *
+ * Esta clase controla la pantalla donde se enseñan los restaurantes
  * @author Michelle Arias García
  */
 public class RestaurantsController {
     
-    //Método que obtiene todos los platos de un restaurante específico
+    /**
+     * Método que obtiene todos los platos de un restaurante específico
+     * @param restaurantId argumento de tipo String que corresponde al identificador del restaurante dentro de la base de datos.
+     * @return una lista de platos que pertenecen a ese restaurante.
+     */
     public static List<Dishes> getDishesByRestaurantId(String restaurantId) {
         //Declaramos la lista de platos a rellenar
         List<Dishes> dishesList = null;

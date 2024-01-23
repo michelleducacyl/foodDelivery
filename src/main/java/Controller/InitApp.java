@@ -8,7 +8,7 @@ import Load.Load;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 
 /**
- *
+ * Esta clase se encarga de iniciar la aplicación con el splash screen.
  * @author Michelle Arias
  */
 public class InitApp {

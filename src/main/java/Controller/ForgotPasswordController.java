@@ -18,11 +18,17 @@ import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
 /**
- *
+ * Esta clase controla todas las funciones relacionadas a la pantalla de olvidar contraseña
  * @author Michelle Arias García
  */
 public class ForgotPasswordController {
 
+    /**
+     * Este método se encarga de generar un de verificación código aleatorio
+     * para cambiar la contraseña del usuario que se pasa por parámetro, una vez
+     * generado el código de envía por mail ese código.
+     * @param email este argumento es un String y sera el email íngresado por el usuario 
+     */
     public static void changePassword(String email) {
 
         // Genera un código de verificación de 6 dígitos
@@ -68,7 +74,12 @@ public class ForgotPasswordController {
         }
     }
 
-    //Método para enviar el email con el codigo de verificación
+    /**
+     * Método para enviar el email al usuario con su código de verificación.
+     * @param email este parámetro es un tipo String con el email al que hay que enviar el correo.
+     * @param verificationCode este parámetro tipo String será el código de verificación a enviar. 
+     * @throws Exception retornará en caso de no poder haber enviado el mail.
+     */
     public static void sendEmail(String email, String verificationCode) throws Exception {
         final String fromemail = "foodeliveryapps1@gmail.com"; 
         final String password = "msmwwmnglytwbvkp";
