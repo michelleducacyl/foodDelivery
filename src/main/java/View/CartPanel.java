@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.CartController;
+
 /**
  *
  * @author Michelle Arias
@@ -16,6 +18,7 @@ public class CartPanel extends javax.swing.JPanel {
     public CartPanel() {
         initComponents();
         checkoutBtn.putClientProperty("JComponent.arc", "arc:40");
+        CartController.fillCart(this);
     }
 
     /**
@@ -50,20 +53,20 @@ public class CartPanel extends javax.swing.JPanel {
 
         cart.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null},
-                {null, null, null, null}
+                {null, null, null},
+                {null, null, null},
+                {null, null, null},
+                {null, null, null}
             },
             new String [] {
-                "Name", "Description", "Quantity", "Price"
+                "Name", "Description", "Price"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.Integer.class, java.lang.Double.class
+                java.lang.String.class, java.lang.String.class, java.lang.Double.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {
@@ -166,6 +169,11 @@ public class CartPanel extends javax.swing.JPanel {
         addMealsBtn.setForeground(new java.awt.Color(78, 96, 255));
         addMealsBtn.setText(" <  Add more meals ");
         addMealsBtn.setBorder(null);
+        addMealsBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                addMealsBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
@@ -211,11 +219,16 @@ public class CartPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void addMealsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMealsBtnMouseClicked
+        
+        
+    }//GEN-LAST:event_addMealsBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMealsBtn;
     private javax.swing.JPanel background;
-    private javax.swing.JTable cart;
+    public javax.swing.JTable cart;
     private javax.swing.JButton checkoutBtn;
     private javax.swing.JLabel menuTxt;
     private javax.swing.JScrollPane scrollCart;

@@ -16,7 +16,7 @@ import model.Dishes;
  */
 public class RestaurantPanel extends javax.swing.JPanel {
     
-    List<Dishes> cart = new ArrayList<>();
+    public static List<Dishes> cart = new ArrayList<>();
     Dishes dishO1;
     Dishes dishO2;
     Dishes dishO3;
@@ -32,6 +32,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
     dishO1 = dishes.get(0);
     dishO2 = dishes.get(1);
     dishO3 = dishes.get(2);
+    
 
     nameDish1.setText(dishO1.getName());
     descriptionDish1.setText(dishO1.getDescription());
@@ -320,12 +321,11 @@ public class RestaurantPanel extends javax.swing.JPanel {
         
         //Guardamos la cantidad del producto seleccionado
         int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
-        for(int i =0; i <= cantidad; i++){
+        for(int i =0; i < cantidad; i++){
             cart.add(dishO1);
         }
+        System.out.println("Cantidad de platos: " +cart.size());
         
-        
-            
     }//GEN-LAST:event_addCartDish1MouseClicked
 
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked

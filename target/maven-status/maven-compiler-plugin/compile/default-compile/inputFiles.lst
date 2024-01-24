@@ -1,6 +1,7 @@
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\SignUpPanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Utils\EmailUtil.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\OrdersPanel.java
+C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\CartController.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\ForgotPasswordController.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\HomePanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\forgotPanel.java
@@ -14,7 +15,6 @@ C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Load\loadi
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\RestaurantPanel.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\ResetPasswordController.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\PanelRound.java
-C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\PasswordHasher.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Load\Load.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\InitApp.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\CartPanel.java
@@ -25,5 +25,4 @@ C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\Orde
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\SignUpController.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Utils\HibernateUtil.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Model\Restaurant.java
-C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\Controller\PasswordGenerator.java
 C:\Users\Alumno\Documents\NetBeansProjects\foodDelivery\src\main\java\View\MainLogin.java
