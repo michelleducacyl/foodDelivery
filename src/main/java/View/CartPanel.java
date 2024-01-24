@@ -5,6 +5,7 @@
 package View;
 
 import Controller.CartController;
+import static View.RestaurantPanel.cart;
 
 /**
  *
@@ -18,7 +19,15 @@ public class CartPanel extends javax.swing.JPanel {
     public CartPanel() {
         initComponents();
         checkoutBtn.putClientProperty("JComponent.arc", "arc:40");
-        CartController.fillCart(this);
+        double suma = CartController.fillCart(this);
+        summTxt.setText(String.valueOf(suma));
+        double total = suma + 20;
+        totalPriceTxt.setText(String.valueOf(total));
+        if(suma <= 0){
+            checkoutBtn.setEnabled(false);
+        }else{
+             checkoutBtn.setEnabled(true);
+        }
     }
 
     /**
@@ -120,6 +129,12 @@ public class CartPanel extends javax.swing.JPanel {
         checkoutBtn.setFont(new java.awt.Font("Nunito", 1, 14)); // NOI18N
         checkoutBtn.setForeground(new java.awt.Color(255, 255, 255));
         checkoutBtn.setText("Checkout");
+        checkoutBtn.setEnabled(false);
+        checkoutBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                checkoutBtnMouseClicked(evt);
+            }
+        });
 
         javax.swing.GroupLayout summaryPanelLayout = new javax.swing.GroupLayout(summaryPanel);
         summaryPanel.setLayout(summaryPanelLayout);
@@ -224,6 +239,12 @@ public class CartPanel extends javax.swing.JPanel {
         
     }//GEN-LAST:event_addMealsBtnMouseClicked
 
+    private void checkoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBtnMouseClicked
+        // TODO add your handling code here:
+        
+        
+    }//GEN-LAST:event_checkoutBtnMouseClicked
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMealsBtn;
@@ -235,7 +256,7 @@ public class CartPanel extends javax.swing.JPanel {
     private javax.swing.JLabel shipTxt;
     private javax.swing.JLabel shippingPrice;
     private javax.swing.JLabel subTxt;
-    private javax.swing.JLabel summTxt;
+    public javax.swing.JLabel summTxt;
     private View.PanelRound summaryPanel;
     private javax.swing.JLabel titleSumTxt;
     private javax.swing.JLabel titleTxt;

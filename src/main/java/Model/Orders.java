@@ -9,7 +9,7 @@ import java.util.Set;
  */
 public class Orders implements java.io.Serializable {
 
-	private String id;
+	private int id;
 	private Users users;
 	private Double total;
 	private Set disheses = new HashSet(0);
@@ -17,18 +17,18 @@ public class Orders implements java.io.Serializable {
 	public Orders() {
 	}
 
-	public Orders(String id, Users users, Double total, Set disheses) {
+	public Orders(int id, Users users, Double total, Set disheses) {
 		this.id = id;
 		this.users = users;
 		this.total = total;
 		this.disheses = disheses;
 	}
 
-	public String getId() {
+	public int getId() {
 		return this.id;
 	}
 
-	public void setId(String id) {
+	public void setId(int id) {
 		this.id = id;
 	}
 

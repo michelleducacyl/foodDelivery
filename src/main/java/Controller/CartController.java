@@ -16,8 +16,7 @@ import model.Dishes;
 public class CartController {
     
     
-    public static void fillCart(CartPanel cartPanel) {
-    System.out.println("Cantidad de dishes: " +cart.size());
+    public static double fillCart(CartPanel cartPanel) {
     DefaultTableModel model = (DefaultTableModel) cartPanel.cart.getModel();
 
     // Limpia todas las filas existentes en la tabla
@@ -25,6 +24,9 @@ public class CartController {
 
     // Verifica si la lista cart contiene elementos
     System.out.println("Número de elementos en cart: " + cart.size());
+
+    // Inicializa la variable para el precio total
+    double totalPrice = 0.0;
 
     // Recorre la lista y agrega cada elemento a la tabla
     for (Dishes dish : cart) {
@@ -34,7 +36,18 @@ public class CartController {
 
         // Agrega una fila al modelo de la tabla con los valores obtenidos
         model.addRow(new Object[]{name, description, price});
+
+        // Suma el precio al precio total
+        totalPrice += price;
     }
+
+    // Actualiza la tabla para que muestre los datos
+    cartPanel.cart.setModel(model);
+    
+    // Muestra el precio total (puedes hacer lo que quieras con esta información)
+    System.out.println("Precio total: " + totalPrice);
+    
+    return totalPrice;
 }
     
 }

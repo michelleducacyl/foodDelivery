@@ -320,10 +320,12 @@ public class RestaurantPanel extends javax.swing.JPanel {
     private void addCartDish1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish1MouseClicked
         
         //Guardamos la cantidad del producto seleccionado
+        
         int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
         for(int i =0; i < cantidad; i++){
             cart.add(dishO1);
         }
+        
         System.out.println("Cantidad de platos: " +cart.size());
         
     }//GEN-LAST:event_addCartDish1MouseClicked

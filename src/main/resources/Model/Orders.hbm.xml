@@ -2,10 +2,10 @@
 <!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class catalog="food_delivery" name="model.Orders" optimistic-lock="none" table="orders">
-        <id name="id" type="string">
-            <column length="50" name="id"/>
-            <generator class="assigned"/>
-        </id>
+        <id name="id" type="int">
+    <column name="id" />
+    <generator class="native" />
+</id>
         <many-to-one class="model.Users" fetch="select" name="users">
             <column name="id_user"/>
         </many-to-one>

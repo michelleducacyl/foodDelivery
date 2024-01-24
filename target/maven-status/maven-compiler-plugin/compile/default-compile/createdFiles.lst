@@ -23,6 +23,7 @@ Model\Orders.class
 View\MainLogin$1.class
 View\forgotPanel.class
 Controller\PanelManager.class
+View\CartPanel$3.class
 View\HomePanel.class
 View\MainApp$2.class
 Load\loading$1.class
