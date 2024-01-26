@@ -7,6 +7,7 @@ package View;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import model.Dishes;
 
@@ -327,15 +328,30 @@ public class RestaurantPanel extends javax.swing.JPanel {
         }
         
         System.out.println("Cantidad de platos: " +cart.size());
+        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_addCartDish1MouseClicked
 
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
+        int cantidad = Integer.parseInt(spinnerDish2.getValue().toString());
+        for(int i =0; i < cantidad; i++){
+            cart.add(dishO2);
+        }
+        
+        System.out.println("Cantidad de platos: " +cart.size());
+        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish2MouseClicked
 
     private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
+         int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());
+        for(int i =0; i < cantidad; i++){
+            cart.add(dishO3);
+        }
+        
+        System.out.println("Cantidad de platos: " +cart.size());
+        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish3MouseClicked
 
 
