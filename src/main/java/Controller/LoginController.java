@@ -11,8 +11,10 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 
 import com.password4j.types.Bcrypt;
+import model.Users;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
+import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;
 
@@ -58,6 +60,32 @@ public class LoginController {
     // Implementa aquí la lógica para verificar la contraseña (puedes usar BCrypt)
     return BCrypt.checkpw(contrasenaInput, contrasenaAlmacenada); // Esto es solo un ejemplo, debes utilizar una función de verificación segura
   }
+  
+  public static Users getUserByEmail(String email) {
+    Session session = HibernateUtil.getSessionFactory().openSession();
+    Transaction tx = null;
+    Users user = null;
+
+    try {
+        tx = session.beginTransaction();
+
+        // Utiliza HQL para obtener el usuario por su correo electrónico
+        Query query = session.createQuery("FROM Users WHERE email = :email");
+        query.setParameter("email", email);
+        user = (Users) query.uniqueResult();
+
+        tx.commit();
+    } catch (Exception ex) {
+        if (tx != null) {
+            tx.rollback();
+        }
+        ex.printStackTrace();
+    } finally {
+        session.close();
+    }
+
+    return user;
+}
   
 }
 

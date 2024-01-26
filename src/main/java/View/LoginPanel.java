@@ -18,6 +18,7 @@ import model.Users;
  */
 public class LoginPanel extends javax.swing.JPanel {
 
+    public static Users USERLOGIN;
     /**
      * Creates new form LoginPanel
      */
@@ -220,9 +221,9 @@ public class LoginPanel extends javax.swing.JPanel {
                         
                     } else {
                         //// Si el inicio de sesión es exitoso, guarda el usuario
-                        Users userLogin = new Users();
-                        userLogin.setEmail(email);
-                        userLogin.setPassword(password);
+                        USERLOGIN = new Users();
+                        USERLOGIN.setEmail(email);
+                        USERLOGIN.setPassword(password);
                         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
                         if (mainFrame instanceof MainLogin) {
                             ((MainLogin) mainFrame).login();

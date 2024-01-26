@@ -26,7 +26,7 @@ public class CartController {
     System.out.println("Número de elementos en cart: " + cart.size());
 
     // Inicializa la variable para el precio total
-    double totalPrice = 0.0;
+    double totalPrice = 0;
 
     // Recorre la lista y agrega cada elemento a la tabla
     for (Dishes dish : cart) {
@@ -49,5 +49,14 @@ public class CartController {
     
     return totalPrice;
 }
+    
+    public static void removeFromCart(int index) {
+    if (index >= 0 && index < cart.size()) {
+        cart.remove(index); // Elimina el plato en el índice especificado de la lista cart
+    } else {
+        System.out.println("Índice fuera de rango: " + index);
+    }
+}
+    
     
 }

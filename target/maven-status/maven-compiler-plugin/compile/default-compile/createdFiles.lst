@@ -42,7 +42,9 @@ View\LoginPanel.class
 Controller\ResetPasswordController.class
 View\OrdersPanel.class
 View\forgotPanel$1.class
+View\CartPanel$4.class
 Controller\CartController.class
+Controller\OrdersController.class
 Model\Users.class
 View\RestaurantPanel.class
 View\RestaurantPanel$1.class

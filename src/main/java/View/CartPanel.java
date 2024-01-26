@@ -5,7 +5,10 @@
 package View;
 
 import Controller.CartController;
+import Controller.OrdersController;
 import static View.RestaurantPanel.cart;
+import java.text.DecimalFormat;
+import javax.swing.table.DefaultTableModel;
 
 /**
  *
@@ -16,14 +19,35 @@ public class CartPanel extends javax.swing.JPanel {
     /**
      * Creates new form OrdersPanel
      */
+    double total;
     public CartPanel() {
         initComponents();
         checkoutBtn.putClientProperty("JComponent.arc", "arc:40");
+        DecimalFormat decimalFormat = new DecimalFormat("#.##"); // Define el formato
         double suma = CartController.fillCart(this);
-        summTxt.setText(String.valueOf(suma));
-        double total = suma + 20;
-        totalPriceTxt.setText(String.valueOf(total));
+        summTxt.setText(decimalFormat.format(suma)); // Formatea y establece el texto
+        shippingPrice.setText("20");
+         total = suma + 20;
+        totalPriceTxt.setText(decimalFormat.format(total));
         if(suma <= 0){
+            checkoutBtn.setEnabled(false);
+        }else{
+             checkoutBtn.setEnabled(true);
+        }
+        
+    }
+    
+    
+     /**
+     * Actualiza el total después de eliminar un plato.
+     */
+    private void updateTotal() {
+         total = 0;
+        for (int i = 0; i < cart.getRowCount(); i++) {
+            total += (double) cart.getValueAt(i, 2); // La columna 2 contiene el precio
+        }
+        totalPriceTxt.setText(String.valueOf(total + 20)); // Suma 20 por envío
+        if(total <= 0){
             checkoutBtn.setEnabled(false);
         }else{
              checkoutBtn.setEnabled(true);
@@ -54,6 +78,7 @@ public class CartPanel extends javax.swing.JPanel {
         totalPriceTxt = new javax.swing.JLabel();
         checkoutBtn = new javax.swing.JButton();
         addMealsBtn = new javax.swing.JButton();
+        deleteDishButton = new javax.swing.JButton();
 
         background.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -114,16 +139,16 @@ public class CartPanel extends javax.swing.JPanel {
 
         summTxt.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         summTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        summTxt.setText("$120");
+        summTxt.setText("0");
 
         shippingPrice.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         shippingPrice.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        shippingPrice.setText("$20");
+        shippingPrice.setText("0");
 
         totalPriceTxt.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
         totalPriceTxt.setForeground(new java.awt.Color(78, 96, 255));
         totalPriceTxt.setHorizontalAlignment(javax.swing.SwingConstants.RIGHT);
-        totalPriceTxt.setText("$140");
+        totalPriceTxt.setText("0");
 
         checkoutBtn.setBackground(new java.awt.Color(78, 96, 255));
         checkoutBtn.setFont(new java.awt.Font("Nunito", 1, 14)); // NOI18N
@@ -190,6 +215,16 @@ public class CartPanel extends javax.swing.JPanel {
             }
         });
 
+        deleteDishButton.setBackground(new java.awt.Color(255, 51, 51));
+        deleteDishButton.setFont(new java.awt.Font("Nunito", 0, 14)); // NOI18N
+        deleteDishButton.setForeground(new java.awt.Color(255, 255, 255));
+        deleteDishButton.setText("Delete");
+        deleteDishButton.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                deleteDishButtonMouseClicked(evt);
+            }
+        });
+
         javax.swing.GroupLayout backgroundLayout = new javax.swing.GroupLayout(background);
         background.setLayout(backgroundLayout);
         backgroundLayout.setHorizontalGroup(
@@ -198,7 +233,10 @@ public class CartPanel extends javax.swing.JPanel {
                 .addGap(30, 30, 30)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(titleTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(menuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(backgroundLayout.createSequentialGroup()
+                        .addComponent(menuTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 101, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                        .addComponent(deleteDishButton))
                     .addComponent(scrollCart, javax.swing.GroupLayout.PREFERRED_SIZE, 688, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, backgroundLayout.createSequentialGroup()
                         .addComponent(addMealsBtn)
@@ -212,14 +250,16 @@ public class CartPanel extends javax.swing.JPanel {
                 .addGap(14, 14, 14)
                 .addComponent(titleTxt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(menuTxt)
+                .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                    .addComponent(menuTxt)
+                    .addComponent(deleteDishButton))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(scrollCart, javax.swing.GroupLayout.PREFERRED_SIZE, 277, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
                 .addGroup(backgroundLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                     .addComponent(summaryPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(addMealsBtn))
-                .addContainerGap(84, Short.MAX_VALUE))
+                .addContainerGap(75, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(this);
@@ -241,16 +281,29 @@ public class CartPanel extends javax.swing.JPanel {
 
     private void checkoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBtnMouseClicked
         // TODO add your handling code here:
-        
-        
+        OrdersController.insertOrder(total, RestaurantPanel.cart);
     }//GEN-LAST:event_checkoutBtnMouseClicked
 
+    private void deleteDishButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteDishButtonMouseClicked
+        // TODO add your handling code here:
+       
+        int selectedRow = cart.getSelectedRow();
+        if (selectedRow != -1) { // Verifica si se ha seleccionado una fila
+            DefaultTableModel model = (DefaultTableModel) cart.getModel();
+            double priceToRemove = (double) model.getValueAt(selectedRow, 2); // Obtiene el precio del plato a eliminar
+            model.removeRow(selectedRow); // Elimina la fila seleccionada del modelo de la tabla
+            CartController.removeFromCart(selectedRow); // Elimina el plato correspondiente de la lista Cart
+            updateTotal(); // Actualiza el precio total
+       
+    }//GEN-LAST:event_deleteDishButtonMouseClicked
+    }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMealsBtn;
     private javax.swing.JPanel background;
     public javax.swing.JTable cart;
     private javax.swing.JButton checkoutBtn;
+    private javax.swing.JButton deleteDishButton;
     private javax.swing.JLabel menuTxt;
     private javax.swing.JScrollPane scrollCart;
     private javax.swing.JLabel shipTxt;
