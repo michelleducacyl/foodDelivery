@@ -5,6 +5,7 @@
 package View;
 
 import Controller.PanelManager;
+import static View.RestaurantPanel.cart;
 import java.awt.Cursor;
 import java.util.List;
 import model.Dishes;
@@ -24,6 +25,9 @@ public class MainApp extends javax.swing.JFrame {
         this.setLocationRelativeTo(null);
         PanelManager manager = new PanelManager(mainPanel, 800, 550);
         manager.mostrarPanel(home);
+        updatePointVisibility();
+       
+       
     }
 
      public  void restaurantPanel(List<Dishes> dishesList){
@@ -31,6 +35,17 @@ public class MainApp extends javax.swing.JFrame {
         PanelManager manager = new PanelManager(mainPanel, 800, 550);
         manager.mostrarPanel(restPanel);
     }
+     
+    public  void updatePointVisibility() {
+    System.out.print("Actualizando punto");
+    if (cart.isEmpty()) {
+        point.setVisible(false); // Ocultar si el carrito tiene elementos
+    } else {
+        point.setVisible(true); // Mostrar si el carrito está vacío
+    }
+     point.revalidate();
+    point.repaint();
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -45,11 +60,13 @@ public class MainApp extends javax.swing.JFrame {
         restaurantsBtn = new javax.swing.JLabel();
         myOrdersBtn = new javax.swing.JLabel();
         verticalSeparator = new javax.swing.JSeparator();
+        point = new javax.swing.JLabel();
         shoppingCartBtn = new javax.swing.JButton();
         logoutBtn = new javax.swing.JButton();
         mainPanel = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        getContentPane().setLayout(new org.netbeans.lib.awtextra.AbsoluteLayout());
 
         topBar.setBackground(new java.awt.Color(255, 255, 255));
 
@@ -85,6 +102,10 @@ public class MainApp extends javax.swing.JFrame {
 
         verticalSeparator.setOrientation(javax.swing.SwingConstants.VERTICAL);
 
+        point.setFont(new java.awt.Font("Segoe UI", 0, 22)); // NOI18N
+        point.setForeground(new java.awt.Color(255, 0, 51));
+        point.setText(" ●");
+
         shoppingCartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopping.png"))); // NOI18N
         shoppingCartBtn.setBorder(null);
         shoppingCartBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
@@ -110,36 +131,50 @@ public class MainApp extends javax.swing.JFrame {
             .addGroup(topBarLayout.createSequentialGroup()
                 .addGap(15, 15, 15)
                 .addComponent(logo)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 448, Short.MAX_VALUE)
+                .addGap(448, 448, 448)
                 .addComponent(restaurantsBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 71, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(verticalSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 8, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
+                .addGap(6, 6, 6)
                 .addComponent(myOrdersBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 77, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(29, 29, 29)
-                .addComponent(shoppingCartBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(23, 23, 23))
+                .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(10, 10, 10)
+                        .addComponent(point, javax.swing.GroupLayout.PREFERRED_SIZE, 30, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addComponent(shoppingCartBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 38, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addGap(4, 4, 4)
+                .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 23, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
         topBarLayout.setVerticalGroup(
             topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(topBarLayout.createSequentialGroup()
-                .addContainerGap()
-                .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                .addGap(10, 10, 10))
-            .addGroup(topBarLayout.createSequentialGroup()
-                .addGap(14, 14, 14)
-                .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING, false)
-                    .addComponent(shoppingCartBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.PREFERRED_SIZE, 0, Short.MAX_VALUE)
-                    .addComponent(verticalSeparator, javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(restaurantsBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(myOrdersBtn, javax.swing.GroupLayout.Alignment.LEADING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
-                    .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addContainerGap(18, Short.MAX_VALUE))
+                .addGroup(topBarLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(6, 6, 6)
+                        .addComponent(logo, javax.swing.GroupLayout.PREFERRED_SIZE, 34, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(restaurantsBtn))
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(verticalSeparator, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(myOrdersBtn))
+                    .addComponent(point)
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(shoppingCartBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE))
+                    .addGroup(topBarLayout.createSequentialGroup()
+                        .addGap(14, 14, 14)
+                        .addComponent(logoutBtn, javax.swing.GroupLayout.PREFERRED_SIZE, 18, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(8, Short.MAX_VALUE))
         );
 
-        mainPanel.setBackground(new java.awt.Color(204, 204, 204));
+        getContentPane().add(topBar, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 800, -1));
+
+        mainPanel.setBackground(new java.awt.Color(255, 255, 255));
 
         javax.swing.GroupLayout mainPanelLayout = new javax.swing.GroupLayout(mainPanel);
         mainPanel.setLayout(mainPanelLayout);
@@ -149,23 +184,10 @@ public class MainApp extends javax.swing.JFrame {
         );
         mainPanelLayout.setVerticalGroup(
             mainPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 550, Short.MAX_VALUE)
+            .addGap(0, 580, Short.MAX_VALUE)
         );
 
-        javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
-        getContentPane().setLayout(layout);
-        layout.setHorizontalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addComponent(topBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-            .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-        );
-        layout.setVerticalGroup(
-            layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGroup(layout.createSequentialGroup()
-                .addComponent(topBar, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(0, 0, 0)
-                .addComponent(mainPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-        );
+        getContentPane().add(mainPanel, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 47, -1, 580));
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
@@ -258,6 +280,7 @@ public class MainApp extends javax.swing.JFrame {
     private javax.swing.JButton logoutBtn;
     private javax.swing.JPanel mainPanel;
     private javax.swing.JLabel myOrdersBtn;
+    private javax.swing.JLabel point;
     private javax.swing.JLabel restaurantsBtn;
     private javax.swing.JButton shoppingCartBtn;
     private javax.swing.JPanel topBar;

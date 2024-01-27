@@ -18,6 +18,7 @@ import model.Dishes;
  */
 public class HomePanel extends javax.swing.JPanel {
 
+    static String restaurantId;
     /**
      * Creates new form HomePanel
      */
@@ -643,7 +644,8 @@ public class HomePanel extends javax.swing.JPanel {
     private void sushiHouseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseClicked
         // TODO add your handling code here:
         // Obtén la lista de platos del restaurante
-        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId("RSH");
+        restaurantId = "RSH";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
 
         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
         if (mainFrame instanceof MainApp) {

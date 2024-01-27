@@ -5,6 +5,7 @@
 package Controller;
 
 import View.CartPanel;
+import View.MainApp;
 import static View.RestaurantPanel.cart;
 import javax.swing.table.DefaultTableModel;
 import model.Dishes;
@@ -18,37 +19,34 @@ public class CartController {
     
     public static double fillCart(CartPanel cartPanel) {
     DefaultTableModel model = (DefaultTableModel) cartPanel.cart.getModel();
-
-    // Limpia todas las filas existentes en la tabla
-    model.setRowCount(0);
+    model.setRowCount(0);  // Limpia todas las filas existentes en la tabla
 
     // Verifica si la lista cart contiene elementos
     System.out.println("Número de elementos en cart: " + cart.size());
 
-    // Inicializa la variable para el precio total
-    double totalPrice = 0;
+    double totalPrice = 0;  // Inicializa la variable para el precio total
 
-    // Recorre la lista y agrega cada elemento a la tabla
     for (Dishes dish : cart) {
-        String name = dish.getName();
-        String description = dish.getDescription();
-        double price = dish.getPrice();
+        if (dish != null) {
+            String name = dish.getName();
+            String description = dish.getDescription();
+            double price = dish.getPrice();
 
-        // Agrega una fila al modelo de la tabla con los valores obtenidos
-        model.addRow(new Object[]{name, description, price});
+            // Agrega una fila al modelo de la tabla con los valores obtenidos
+            model.addRow(new Object[]{name, description, price});
 
-        // Suma el precio al precio total
-        totalPrice += price;
+            totalPrice += price;  // Suma el precio al precio total
+        } else {
+            System.out.println("Elemento nulo detectado en la lista cart");
+        }
     }
 
-    // Actualiza la tabla para que muestre los datos
-    cartPanel.cart.setModel(model);
-    
-    // Muestra el precio total (puedes hacer lo que quieras con esta información)
-    System.out.println("Precio total: " + totalPrice);
-    
+    cartPanel.cart.setModel(model);  // Actualiza la tabla para que muestre los datos
+    System.out.println("Precio total: " + totalPrice);  // Muestra el precio total
+
     return totalPrice;
 }
+
     
     public static void removeFromCart(int index) {
     if (index >= 0 && index < cart.size()) {
@@ -56,6 +54,9 @@ public class CartController {
     } else {
         System.out.println("Índice fuera de rango: " + index);
     }
+    
+    MainApp mainApp = new MainApp();
+    mainApp.updatePointVisibility();
 }
     
     

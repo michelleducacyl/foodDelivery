@@ -4,11 +4,15 @@
  */
 package View;
 
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
 import javax.swing.ImageIcon;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.UIManager;
+import javax.swing.event.ChangeEvent;
+import javax.swing.event.ChangeListener;
 import model.Dishes;
 
 /**
@@ -30,28 +34,70 @@ public class RestaurantPanel extends javax.swing.JPanel {
     initComponents();
     UIManager.put("panelRestaurant.arc", 9);
 
-    dishO1 = dishes.get(0);
-    dishO2 = dishes.get(1);
-    dishO3 = dishes.get(2);
+    addCartDish1.setVisible(false);
+    addCartDish2.setVisible(false);
+    addCartDish3.setVisible(false);
     
+    spinnerDish1.addChangeListener((ChangeEvent e) -> {
+        // Este método se llama cada vez que cambia el valor del JSpinner
+        int newValue = (int) spinnerDish1.getValue(); // Obtener el nuevo valor del JSpinner
+       if(newValue > 0){
+            addCartDish1.setVisible(true);
+        }else{
+            addCartDish1.setVisible(false);
+        }
+    });
+    spinnerDish2.addChangeListener((ChangeEvent e) -> {
+        // Este método se llama cada vez que cambia el valor del JSpinner
+        int newValue = (int) spinnerDish2.getValue(); // Obtener el nuevo valor del JSpinner
+       if(newValue > 0){
+            addCartDish2.setVisible(true);
+        }else{
+            addCartDish2.setVisible(false);
+        }
+    });
+    spinnerDish3.addChangeListener((ChangeEvent e) -> {
+        // Este método se llama cada vez que cambia el valor del JSpinner
+        int newValue = (int) spinnerDish3.getValue(); // Obtener el nuevo valor del JSpinner
+       if(newValue > 0){
+            addCartDish3.setVisible(true);
+        }else{
+            addCartDish3.setVisible(false);
+        }
+    });
+    
+     if (dishes != null && dishes.size() >= 3) {
+            // Asignar y configurar el primer plato
+            dishO1 = dishes.get(0);
+            setupDish(dishO1, nameDish1, descriptionDish1, priceDish1, photoDish1);
 
-    nameDish1.setText(dishO1.getName());
-    descriptionDish1.setText(dishO1.getDescription());
-    priceDish1.setText("$ " + dishO1.getPrice().toString());
-    ImageIcon icono1 = new ImageIcon(getClass().getResource(dishO1.getImage()));
-    photoDish1.setIcon(icono1);
+            // Asignar y configurar el segundo plato
+            dishO2 = dishes.get(1);
+            setupDish(dishO2, nameDish2, descriptionDish2, priceDish2, photoDish2);
 
-    nameDish2.setText(dishO2.getName());
-    descriptionDish2.setText(dishO2.getDescription());
-    priceDish2.setText("$ " + dishO2.getPrice().toString());
-    ImageIcon icono2 = new ImageIcon(getClass().getResource(dishO2.getImage()));
-    photoDish2.setIcon(icono2); 
+            // Asignar y configurar el tercer plato
+            dishO3 = dishes.get(2);
+            setupDish(dishO3, nameDish3, descriptionDish3, priceDish3, photoDish3);
+        
+    }
+}
+     private void setupDish(Dishes dish, JLabel nameLabel, JLabel descriptionLabel, JLabel priceLabel, JLabel photoLabel) {
+        if (dish != null) {
+            nameLabel.setText(dish.getName());
+            descriptionLabel.setText(dish.getDescription());
+            priceLabel.setText("$ " + dish.getPrice().toString());
 
-    nameDish3.setText(dishO3.getName());
-    descriptionDish3.setText(dishO3.getDescription());
-    priceDish3.setText("$ " + dishO3.getPrice().toString());
-    ImageIcon icono3 = new ImageIcon(getClass().getResource(dishO3.getImage()));
-    photoDish3.setIcon(icono3);  
+            String imagePath = dish.getImage();
+            if (imagePath != null) {
+                URL imageUrl = getClass().getResource(imagePath);
+                if (imageUrl != null) {
+                    ImageIcon icon = new ImageIcon(imageUrl);
+                    photoLabel.setIcon(icon);
+                } else {
+                    System.out.println("Imagen no encontrada: " + imagePath);
+                }
+            }
+        }
 }
     
     
@@ -189,7 +235,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         priceDish1.setText("12.99 €");
         dish1.add(priceDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        spinnerDish1.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish1.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
         spinnerDish1.setBorder(null);
         dish1.add(spinnerDish1, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
@@ -229,7 +275,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         priceDish2.setText("7.99€");
         dish2.add(priceDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        spinnerDish2.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish2.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
         spinnerDish2.setBorder(null);
         dish2.add(spinnerDish2, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
@@ -269,7 +315,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         priceDish3.setText("25€");
         dish3.add(priceDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(110, 60, 60, -1));
 
-        spinnerDish3.setModel(new javax.swing.SpinnerNumberModel(1, 1, 10, 1));
+        spinnerDish3.setModel(new javax.swing.SpinnerNumberModel(0, 0, 10, 1));
         spinnerDish3.setBorder(null);
         dish3.add(spinnerDish3, new org.netbeans.lib.awtextra.AbsoluteConstraints(330, 30, -1, -1));
 
@@ -328,6 +374,8 @@ public class RestaurantPanel extends javax.swing.JPanel {
         }
         
         System.out.println("Cantidad de platos: " +cart.size());
+        MainApp mainApp = new MainApp();
+        mainApp.updatePointVisibility();
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
         
     }//GEN-LAST:event_addCartDish1MouseClicked
@@ -338,7 +386,8 @@ public class RestaurantPanel extends javax.swing.JPanel {
         for(int i =0; i < cantidad; i++){
             cart.add(dishO2);
         }
-        
+        MainApp mainApp = new MainApp();
+        mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " +cart.size());
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish2MouseClicked
@@ -349,7 +398,8 @@ public class RestaurantPanel extends javax.swing.JPanel {
         for(int i =0; i < cantidad; i++){
             cart.add(dishO3);
         }
-        
+        MainApp mainApp = new MainApp();
+        mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " +cart.size());
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish3MouseClicked

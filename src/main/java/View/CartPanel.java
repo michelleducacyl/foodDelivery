@@ -6,9 +6,15 @@ package View;
 
 import Controller.CartController;
 import Controller.OrdersController;
+import Controller.RestaurantsController;
+import static View.HomePanel.restaurantId;
 import static View.RestaurantPanel.cart;
 import java.text.DecimalFormat;
+import java.util.List;
+import javax.swing.JFrame;
+import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
+import model.Dishes;
 
 /**
  *
@@ -36,17 +42,15 @@ public class CartPanel extends javax.swing.JPanel {
         }
         
     }
-    
-    
-     /**
-     * Actualiza el total después de eliminar un plato.
-     */
+ 
     private void updateTotal() {
-         total = 0;
+        DecimalFormat decimalFormat = new DecimalFormat("#.##");
+        total = 0;
+        shippingPrice.setText("20");
         for (int i = 0; i < cart.getRowCount(); i++) {
             total += (double) cart.getValueAt(i, 2); // La columna 2 contiene el precio
         }
-        totalPriceTxt.setText(String.valueOf(total + 20)); // Suma 20 por envío
+        totalPriceTxt.setText(String.valueOf(decimalFormat.format(total + 20))); // Suma 20 por envío
         if(total <= 0){
             checkoutBtn.setEnabled(false);
         }else{
@@ -274,11 +278,6 @@ public class CartPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
-    private void addMealsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMealsBtnMouseClicked
-        
-        
-    }//GEN-LAST:event_addMealsBtnMouseClicked
-
     private void checkoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBtnMouseClicked
         // TODO add your handling code here:
         OrdersController.insertOrder(total, RestaurantPanel.cart);
@@ -294,9 +293,18 @@ public class CartPanel extends javax.swing.JPanel {
             model.removeRow(selectedRow); // Elimina la fila seleccionada del modelo de la tabla
             CartController.removeFromCart(selectedRow); // Elimina el plato correspondiente de la lista Cart
             updateTotal(); // Actualiza el precio total
-       
+        }
     }//GEN-LAST:event_deleteDishButtonMouseClicked
-    }
+
+    private void addMealsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMealsBtnMouseClicked
+        // TODO add your handling code here:
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_addMealsBtnMouseClicked
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMealsBtn;
