@@ -160,6 +160,11 @@ public class HomePanel extends javax.swing.JPanel {
         mexicanPalace.setRoundBottomRight(30);
         mexicanPalace.setRoundTopLeft(30);
         mexicanPalace.setRoundTopRight(30);
+        mexicanPalace.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                mexicanPalaceMouseClicked(evt);
+            }
+        });
 
         mexPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/mex.png"))); // NOI18N
 
@@ -198,6 +203,11 @@ public class HomePanel extends javax.swing.JPanel {
         burgersAndPizza.setRoundBottomRight(30);
         burgersAndPizza.setRoundTopLeft(30);
         burgersAndPizza.setRoundTopRight(30);
+        burgersAndPizza.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                burgersAndPizzaMouseClicked(evt);
+            }
+        });
 
         burgerPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/burgers.png"))); // NOI18N
 
@@ -236,6 +246,11 @@ public class HomePanel extends javax.swing.JPanel {
         shawarmaQueen.setRoundBottomRight(30);
         shawarmaQueen.setRoundTopLeft(30);
         shawarmaQueen.setRoundTopRight(30);
+        shawarmaQueen.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shawarmaQueenMouseClicked(evt);
+            }
+        });
 
         shawarmaPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shawarma.png"))); // NOI18N
 
@@ -274,6 +289,11 @@ public class HomePanel extends javax.swing.JPanel {
         coffeeTime.setRoundBottomRight(30);
         coffeeTime.setRoundTopLeft(30);
         coffeeTime.setRoundTopRight(30);
+        coffeeTime.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coffeeTimeMouseClicked(evt);
+            }
+        });
 
         coffePic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
 
@@ -312,6 +332,11 @@ public class HomePanel extends javax.swing.JPanel {
         trattoriaBtn.setRoundBottomRight(30);
         trattoriaBtn.setRoundTopLeft(30);
         trattoriaBtn.setRoundTopRight(30);
+        trattoriaBtn.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trattoriaBtnMouseClicked(evt);
+            }
+        });
 
         trattoriaPic.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/italian.png"))); // NOI18N
 
@@ -665,6 +690,61 @@ public class HomePanel extends javax.swing.JPanel {
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_sushiHouseMouseExited
+
+    private void mexicanPalaceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mexicanPalaceMouseClicked
+        // TODO add your handling code here:
+        restaurantId = "MP";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_mexicanPalaceMouseClicked
+
+    private void burgersAndPizzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_burgersAndPizzaMouseClicked
+        // TODO add your handling code here:
+        restaurantId = "BP";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_burgersAndPizzaMouseClicked
+
+    private void shawarmaQueenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shawarmaQueenMouseClicked
+        // TODO add your handling code here:
+        restaurantId = "SQ";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_shawarmaQueenMouseClicked
+
+    private void coffeeTimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coffeeTimeMouseClicked
+        // TODO add your handling code here:
+        restaurantId = "CT";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_coffeeTimeMouseClicked
+
+    private void trattoriaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trattoriaBtnMouseClicked
+        // TODO add your handling code here:
+        restaurantId = "LT";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_trattoriaBtnMouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

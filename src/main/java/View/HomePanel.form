@@ -255,6 +255,9 @@
                 <Property name="roundTopLeft" type="int" value="30"/>
                 <Property name="roundTopRight" type="int" value="30"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="mexicanPalaceMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -322,6 +325,9 @@
                 <Property name="roundTopLeft" type="int" value="30"/>
                 <Property name="roundTopRight" type="int" value="30"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="burgersAndPizzaMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -389,6 +395,9 @@
                 <Property name="roundTopLeft" type="int" value="30"/>
                 <Property name="roundTopRight" type="int" value="30"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="shawarmaQueenMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -456,6 +465,9 @@
                 <Property name="roundTopLeft" type="int" value="30"/>
                 <Property name="roundTopRight" type="int" value="30"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="coffeeTimeMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">
@@ -523,6 +535,9 @@
                 <Property name="roundTopLeft" type="int" value="30"/>
                 <Property name="roundTopRight" type="int" value="30"/>
               </Properties>
+              <Events>
+                <EventHandler event="mouseClicked" listener="java.awt.event.MouseListener" parameters="java.awt.event.MouseEvent" handler="trattoriaBtnMouseClicked"/>
+              </Events>
 
               <Layout>
                 <DimensionLayout dim="0">

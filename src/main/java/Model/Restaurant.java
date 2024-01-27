@@ -11,17 +11,17 @@ public class Restaurant implements java.io.Serializable {
 
 	private String id;
 	private String name;
-	private String address;
+	private String description;
 	private String image;
 	private Set disheses = new HashSet(0);
 
 	public Restaurant() {
 	}
 
-	public Restaurant(String id, String name, String address, String image, Set disheses) {
+	public Restaurant(String id, String name, String description, String image, Set disheses) {
 		this.id = id;
 		this.name = name;
-		this.address = address;
+		this.description = description;
 		this.image = image;
 		this.disheses = disheses;
 	}
@@ -42,12 +42,12 @@ public class Restaurant implements java.io.Serializable {
 		this.name = name;
 	}
 
-	public String getAddress() {
-		return this.address;
+	public String getDescription() {
+		return this.description;
 	}
 
-	public void setAddress(String address) {
-		this.address = address;
+	public void setDescription(String description) {
+		this.description = description;
 	}
 
 	public String getImage() {

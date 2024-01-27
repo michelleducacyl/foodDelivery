@@ -4,6 +4,8 @@
  */
 package View;
 
+import Controller.RestaurantsController;
+import static View.HomePanel.restaurantId;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
@@ -14,59 +16,60 @@ import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
 import model.Dishes;
+import model.Restaurant;
 
 /**
  *
  * @author Michelle Arias
  */
 public class RestaurantPanel extends javax.swing.JPanel {
-    
+
     public static List<Dishes> cart = new ArrayList<>();
     Dishes dishO1;
     Dishes dishO2;
     Dishes dishO3;
-            
+
     /**
      * Creates new form HomePanel
      */
     public RestaurantPanel(List<Dishes> dishes) {
-    
-    initComponents();
-    UIManager.put("panelRestaurant.arc", 9);
 
-    addCartDish1.setVisible(false);
-    addCartDish2.setVisible(false);
-    addCartDish3.setVisible(false);
-    
-    spinnerDish1.addChangeListener((ChangeEvent e) -> {
-        // Este método se llama cada vez que cambia el valor del JSpinner
-        int newValue = (int) spinnerDish1.getValue(); // Obtener el nuevo valor del JSpinner
-       if(newValue > 0){
-            addCartDish1.setVisible(true);
-        }else{
-            addCartDish1.setVisible(false);
-        }
-    });
-    spinnerDish2.addChangeListener((ChangeEvent e) -> {
-        // Este método se llama cada vez que cambia el valor del JSpinner
-        int newValue = (int) spinnerDish2.getValue(); // Obtener el nuevo valor del JSpinner
-       if(newValue > 0){
-            addCartDish2.setVisible(true);
-        }else{
-            addCartDish2.setVisible(false);
-        }
-    });
-    spinnerDish3.addChangeListener((ChangeEvent e) -> {
-        // Este método se llama cada vez que cambia el valor del JSpinner
-        int newValue = (int) spinnerDish3.getValue(); // Obtener el nuevo valor del JSpinner
-       if(newValue > 0){
-            addCartDish3.setVisible(true);
-        }else{
-            addCartDish3.setVisible(false);
-        }
-    });
-    
-     if (dishes != null && dishes.size() >= 3) {
+        initComponents();
+        UIManager.put("panelRestaurant.arc", 9);
+        setRest();
+        addCartDish1.setVisible(false);
+        addCartDish2.setVisible(false);
+        addCartDish3.setVisible(false);
+
+        spinnerDish1.addChangeListener((ChangeEvent e) -> {
+            // Este método se llama cada vez que cambia el valor del JSpinner
+            int newValue = (int) spinnerDish1.getValue(); // Obtener el nuevo valor del JSpinner
+            if (newValue > 0) {
+                addCartDish1.setVisible(true);
+            } else {
+                addCartDish1.setVisible(false);
+            }
+        });
+        spinnerDish2.addChangeListener((ChangeEvent e) -> {
+            // Este método se llama cada vez que cambia el valor del JSpinner
+            int newValue = (int) spinnerDish2.getValue(); // Obtener el nuevo valor del JSpinner
+            if (newValue > 0) {
+                addCartDish2.setVisible(true);
+            } else {
+                addCartDish2.setVisible(false);
+            }
+        });
+        spinnerDish3.addChangeListener((ChangeEvent e) -> {
+            // Este método se llama cada vez que cambia el valor del JSpinner
+            int newValue = (int) spinnerDish3.getValue(); // Obtener el nuevo valor del JSpinner
+            if (newValue > 0) {
+                addCartDish3.setVisible(true);
+            } else {
+                addCartDish3.setVisible(false);
+            }
+        });
+
+        if (dishes != null && dishes.size() >= 3) {
             // Asignar y configurar el primer plato
             dishO1 = dishes.get(0);
             setupDish(dishO1, nameDish1, descriptionDish1, priceDish1, photoDish1);
@@ -78,10 +81,26 @@ public class RestaurantPanel extends javax.swing.JPanel {
             // Asignar y configurar el tercer plato
             dishO3 = dishes.get(2);
             setupDish(dishO3, nameDish3, descriptionDish3, priceDish3, photoDish3);
-        
+
+        }
     }
-}
-     private void setupDish(Dishes dish, JLabel nameLabel, JLabel descriptionLabel, JLabel priceLabel, JLabel photoLabel) {
+
+    private void setRest(){
+        Restaurant rest = RestaurantsController.getRestaurantById(restaurantId);
+        titleRestaurant.setText(rest.getName());
+        descriptionTxt.setText(rest.getDescription());
+        String imagePath = rest.getImage();
+        if (imagePath != null) {
+            URL imageUrl = getClass().getResource(imagePath);
+            if (imageUrl != null) {
+                ImageIcon icon = new ImageIcon(imageUrl);
+                iconImageSushi.setIcon(icon);
+            } else {
+                System.out.println("Imagen no encontrada: " + imagePath);
+            }
+        }
+    }
+    private void setupDish(Dishes dish, JLabel nameLabel, JLabel descriptionLabel, JLabel priceLabel, JLabel photoLabel) {
         if (dish != null) {
             nameLabel.setText(dish.getName());
             descriptionLabel.setText(dish.getDescription());
@@ -98,9 +117,8 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 }
             }
         }
-}
-    
-    
+    }
+
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -365,42 +383,41 @@ public class RestaurantPanel extends javax.swing.JPanel {
     }// </editor-fold>//GEN-END:initComponents
 
     private void addCartDish1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish1MouseClicked
-        
+
         //Guardamos la cantidad del producto seleccionado
-        
         int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
-        for(int i =0; i < cantidad; i++){
+        for (int i = 0; i < cantidad; i++) {
             cart.add(dishO1);
         }
-        
-        System.out.println("Cantidad de platos: " +cart.size());
+
+        System.out.println("Cantidad de platos: " + cart.size());
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
-        
+
     }//GEN-LAST:event_addCartDish1MouseClicked
 
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
         int cantidad = Integer.parseInt(spinnerDish2.getValue().toString());
-        for(int i =0; i < cantidad; i++){
+        for (int i = 0; i < cantidad; i++) {
             cart.add(dishO2);
         }
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
-        System.out.println("Cantidad de platos: " +cart.size());
+        System.out.println("Cantidad de platos: " + cart.size());
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish2MouseClicked
 
     private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
-         int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());
-        for(int i =0; i < cantidad; i++){
+        int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());
+        for (int i = 0; i < cantidad; i++) {
             cart.add(dishO3);
         }
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
-        System.out.println("Cantidad de platos: " +cart.size());
+        System.out.println("Cantidad de platos: " + cart.size());
         JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish3MouseClicked
 
