@@ -1,16 +1,23 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
+<!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final -->
+<!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
     <class catalog="food_delivery" name="model.Orders" optimistic-lock="none" table="orders">
-        <id name="id" type="int">
-    <column name="id" />
-    <generator class="native" />
-</id>
+        <id name="id" type="int"> <!-- Cambiado a tipo "int" -->
+            <column name="id" />
+            <generator class="native" /> <!-- Cambiado a "native" para autoincremento -->
+        </id>
         <many-to-one class="model.Users" fetch="select" name="users">
             <column name="id_user"/>
         </many-to-one>
         <property name="total" type="java.lang.Double">
             <column name="total" precision="22" scale="0"/>
+        </property>
+        <property name="orderDate" type="timestamp"> <!-- Nueva propiedad para la fecha -->
+            <column name="order_date" />
+        </property>
+        <property name="restaurantId" type="string"> <!-- Nueva propiedad para el ID del restaurante -->
+            <column name="restaurant_id" />
         </property>
         <set fetch="select" inverse="false" lazy="true" name="disheses" table="orders_dishes">
             <key>
@@ -22,3 +29,4 @@
         </set>
     </class>
 </hibernate-mapping>
+

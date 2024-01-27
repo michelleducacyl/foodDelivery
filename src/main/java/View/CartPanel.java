@@ -12,6 +12,7 @@ import static View.RestaurantPanel.cart;
 import java.text.DecimalFormat;
 import java.util.List;
 import javax.swing.JFrame;
+import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
 import model.Dishes;
@@ -26,6 +27,7 @@ public class CartPanel extends javax.swing.JPanel {
      * Creates new form OrdersPanel
      */
     double total;
+
     public CartPanel() {
         initComponents();
         checkoutBtn.putClientProperty("JComponent.arc", "arc:40");
@@ -33,28 +35,35 @@ public class CartPanel extends javax.swing.JPanel {
         double suma = CartController.fillCart(this);
         summTxt.setText(decimalFormat.format(suma)); // Formatea y establece el texto
         shippingPrice.setText("20");
-         total = suma + 20;
+        total = suma + 20;
         totalPriceTxt.setText(decimalFormat.format(total));
-        if(suma <= 0){
+        if (suma <= 0) {
             checkoutBtn.setEnabled(false);
-        }else{
-             checkoutBtn.setEnabled(true);
+        } else {
+            checkoutBtn.setEnabled(true);
         }
-        
+
     }
- 
-    private void updateTotal() {
+
+    public void updateTotal() {
         DecimalFormat decimalFormat = new DecimalFormat("#.##");
         total = 0;
         shippingPrice.setText("20");
-        for (int i = 0; i < cart.getRowCount(); i++) {
-            total += (double) cart.getValueAt(i, 2); // La columna 2 contiene el precio
+        for (int i = 0; i < cartTable.getRowCount(); i++) {
+            int columnIndex = 2; // Índice de la columna que deseas acceder
+            if (columnIndex >= 0 && columnIndex < cartTable.getColumnCount()) {
+                total += (double) cartTable.getValueAt(i, columnIndex);
+            } else {
+                // Manejo de error o mensaje de registro
+                System.out.println("Índice de columna fuera de rango: " + columnIndex);
+            }
         }
+        summTxt.setText(decimalFormat.format(total));
         totalPriceTxt.setText(String.valueOf(decimalFormat.format(total + 20))); // Suma 20 por envío
-        if(total <= 0){
+        if (total <= 0) {
             checkoutBtn.setEnabled(false);
-        }else{
-             checkoutBtn.setEnabled(true);
+        } else {
+            checkoutBtn.setEnabled(true);
         }
     }
 
@@ -70,7 +79,7 @@ public class CartPanel extends javax.swing.JPanel {
         background = new javax.swing.JPanel();
         titleTxt = new javax.swing.JLabel();
         scrollCart = new javax.swing.JScrollPane();
-        cart = new javax.swing.JTable();
+        cartTable = new javax.swing.JTable();
         menuTxt = new javax.swing.JLabel();
         summaryPanel = new View.PanelRound();
         titleSumTxt = new javax.swing.JLabel();
@@ -89,7 +98,7 @@ public class CartPanel extends javax.swing.JPanel {
         titleTxt.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
         titleTxt.setText("My Cart");
 
-        cart.setModel(new javax.swing.table.DefaultTableModel(
+        cartTable.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null},
                 {null, null, null},
@@ -115,7 +124,7 @@ public class CartPanel extends javax.swing.JPanel {
                 return canEdit [columnIndex];
             }
         });
-        scrollCart.setViewportView(cart);
+        scrollCart.setViewportView(cartTable);
 
         menuTxt.setFont(new java.awt.Font("Nunito", 1, 12)); // NOI18N
         menuTxt.setForeground(new java.awt.Color(204, 204, 204));
@@ -280,15 +289,25 @@ public class CartPanel extends javax.swing.JPanel {
 
     private void checkoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBtnMouseClicked
         // TODO add your handling code here:
-        OrdersController.insertOrder(total, RestaurantPanel.cart);
+        try {
+            OrdersController.insertOrder(total, RestaurantPanel.cart);
+            //// Si la compra se guardó
+            JOptionPane.showMessageDialog(null, "Order succesfully", "Success", JOptionPane.INFORMATION_MESSAGE);
+            cart.clear();
+            DefaultTableModel model = (DefaultTableModel) cartTable.getModel();
+            model.setColumnCount(0);
+            updateTotal();
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }//GEN-LAST:event_checkoutBtnMouseClicked
 
     private void deleteDishButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteDishButtonMouseClicked
         // TODO add your handling code here:
-       
-        int selectedRow = cart.getSelectedRow();
+
+        int selectedRow = cartTable.getSelectedRow();
         if (selectedRow != -1) { // Verifica si se ha seleccionado una fila
-            DefaultTableModel model = (DefaultTableModel) cart.getModel();
+            DefaultTableModel model = (DefaultTableModel) cartTable.getModel();
             double priceToRemove = (double) model.getValueAt(selectedRow, 2); // Obtiene el precio del plato a eliminar
             model.removeRow(selectedRow); // Elimina la fila seleccionada del modelo de la tabla
             CartController.removeFromCart(selectedRow); // Elimina el plato correspondiente de la lista Cart
@@ -304,12 +323,12 @@ public class CartPanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_addMealsBtnMouseClicked
-    
+
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JButton addMealsBtn;
     private javax.swing.JPanel background;
-    public javax.swing.JTable cart;
+    public javax.swing.JTable cartTable;
     private javax.swing.JButton checkoutBtn;
     private javax.swing.JButton deleteDishButton;
     private javax.swing.JLabel menuTxt;

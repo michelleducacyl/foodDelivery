@@ -19,6 +19,7 @@ import model.Users;
 public class LoginPanel extends javax.swing.JPanel {
 
     public static Users USERLOGIN;
+
     /**
      * Creates new form LoginPanel
      */
@@ -218,10 +219,11 @@ public class LoginPanel extends javax.swing.JPanel {
                     if (!comprueba) {
 
                         errorLogin.setText("User and password not match");
-                        
+
                     } else {
                         //// Si el inicio de sesión es exitoso, guarda el usuario
                         USERLOGIN = new Users();
+
                         USERLOGIN.setEmail(email);
                         USERLOGIN.setPassword(password);
                         JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);

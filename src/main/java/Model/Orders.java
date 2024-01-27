@@ -1,6 +1,6 @@
 package model;
-// Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final
 
+import java.util.Date;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -9,51 +9,70 @@ import java.util.Set;
  */
 public class Orders implements java.io.Serializable {
 
-	private int id;
-	private Users users;
-	private Double total;
-	private Set disheses = new HashSet(0);
+    private int id; // Cambiado a tipo int
+    private Users users;
+    private Double total;
+    private Date orderDate; // Nueva propiedad para la fecha
+    private String restaurantId; // Nueva propiedad para el ID del restaurante
+    private Set<Dishes> disheses = new HashSet<>(0); // Cambiado el tipo a Set<Dishes>
 
-	public Orders() {
-	}
+    public Orders() {
+    }
 
-	public Orders(int id, Users users, Double total, Set disheses) {
-		this.id = id;
-		this.users = users;
-		this.total = total;
-		this.disheses = disheses;
-	}
+    public Orders(int id, Users users, Double total, Date orderDate, String restaurantId, Set<Dishes> disheses) {
+        this.id = id;
+        this.users = users;
+        this.total = total;
+        this.orderDate = orderDate;
+        this.restaurantId = restaurantId;
+        this.disheses = disheses;
+    }
 
-	public int getId() {
-		return this.id;
-	}
+    public int getId() {
+        return this.id;
+    }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(int id) {
+        this.id = id;
+    }
 
-	public Users getUsers() {
-		return this.users;
-	}
+    public Users getUsers() {
+        return this.users;
+    }
 
-	public void setUsers(Users users) {
-		this.users = users;
-	}
+    public void setUsers(Users users) {
+        this.users = users;
+    }
 
-	public Double getTotal() {
-		return this.total;
-	}
+    public Double getTotal() {
+        return this.total;
+    }
 
-	public void setTotal(Double total) {
-		this.total = total;
-	}
+    public void setTotal(Double total) {
+        this.total = total;
+    }
 
-	public Set getDisheses() {
-		return this.disheses;
-	}
+    public Date getOrderDate() {
+        return this.orderDate;
+    }
 
-	public void setDisheses(Set disheses) {
-		this.disheses = disheses;
-	}
+    public void setOrderDate(Date orderDate) {
+        this.orderDate = orderDate;
+    }
 
+    public String getRestaurantId() {
+        return this.restaurantId;
+    }
+
+    public void setRestaurantId(String restaurantId) {
+        this.restaurantId = restaurantId;
+    }
+
+    public Set<Dishes> getDisheses() {
+        return this.disheses;
+    }
+
+    public void setDisheses(Set<Dishes> disheses) {
+        this.disheses = disheses;
+    }
 }

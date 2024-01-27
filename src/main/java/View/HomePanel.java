@@ -18,7 +18,7 @@ import model.Dishes;
  */
 public class HomePanel extends javax.swing.JPanel {
 
-    static String restaurantId;
+    public static String restaurantId;
     /**
      * Creates new form HomePanel
      */
