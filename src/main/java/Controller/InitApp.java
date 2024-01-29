@@ -4,8 +4,10 @@
  */
 package Controller;
 
-import Load.Load;
+
+import View.MainLogin;
 import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
+import java.awt.SplashScreen;
 
 /**
  * Esta clase se encarga de iniciar la aplicación con el splash screen.
@@ -14,7 +16,21 @@ import com.formdev.flatlaf.intellijthemes.FlatCyanLightIJTheme;
 public class InitApp {
      public static void main(String[] args) {
         FlatCyanLightIJTheme.setup();
-        Load load = new Load();
-        load.startLoading();
+        
+       
+        SplashScreen splash = SplashScreen.getSplashScreen();
+        if (splash == null) {
+            System.out.println("SplashScreen.getSplashScreen() returned null");
+            return;
+        }
+        try {
+            Thread.sleep(1000); // Mantener la imagen por un segundo, cambia el tiempo según necesites
+        } catch (InterruptedException e) {
+            // Manejar la excepción
+        }
+        splash.close(); 
+        
+        MainLogin m = new MainLogin();
+        m.setVisible(true);
     }
 }
