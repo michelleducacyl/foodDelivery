@@ -47,6 +47,7 @@ View\MainApp$3.class
 View\SignUpPanel$1.class
 View\OrdersPanel$1.class
 View\ResetPasswordPanel$1.class
+View\CustomDialog.class
 View\CartPanel.class
 Controller\RestaurantsController.class
 Controller\ResetPasswordController.class

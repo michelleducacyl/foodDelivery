@@ -14,7 +14,7 @@ import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 
 /**
- *
+ * Clase del panel de registrarse en la aplicación
  * @author Michelle Arias
  */
 public class SignUpPanel extends javax.swing.JPanel {

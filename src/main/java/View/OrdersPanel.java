@@ -13,7 +13,7 @@ import model.Dishes;
 import model.Orders;
 
 /**
- *
+ * Clase que muestra las ordenes de un usuario
  * @author Michelle Arias
  */
 public class OrdersPanel extends javax.swing.JPanel {

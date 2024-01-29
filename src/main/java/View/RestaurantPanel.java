@@ -19,7 +19,7 @@ import model.Dishes;
 import model.Restaurant;
 
 /**
- *
+ * Clase donde se muestra la información de cada restaurante
  * @author Michelle Arias
  */
 public class RestaurantPanel extends javax.swing.JPanel {

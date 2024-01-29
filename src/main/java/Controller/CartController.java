@@ -11,11 +11,19 @@ import javax.swing.table.DefaultTableModel;
 import model.Dishes;
 
 /**
- *
+ * Esta clase contiene todos los métodos del carro de compra de la aplicación
  * @author Michelle Arias García
  */
 public class CartController {
 
+    /**
+     * Este método actualiza el contenido de la lista de compras (CartPanel) con los elementos
+     * actuales en la lista cart. Primero, limpia todas las filas existentes en la tabla. Luego, recorre la lista
+     * cart y agrega cada elemento como una fila en la tabla, mostrando el nombre, descripción y precio del plato.
+     * Calcula y devuelve el precio total de todos los elementos en la carretilla de compras.
+     * @param cartPanel el panel de la carretilla de compras donde se muestra la tabla
+     * @return el precio total de todos los elementos en la carretilla de compras
+     */
     public static double fillCart(CartPanel cartPanel) {
         DefaultTableModel model = (DefaultTableModel) cartPanel.cartTable.getModel();
         model.setRowCount(0);  // Limpia todas las filas existentes en la tabla
@@ -46,6 +54,10 @@ public class CartController {
         return totalPrice;
     }
 
+    /**
+     * Elimina un plato de la carretilla de compras en el índice especificado.
+     * @param index el índice del plato a eliminar de la carretilla de compras
+     */
     public static void removeFromCart(int index) {
         if (index >= 0 && index < cart.size()) {
             cart.remove(index); // Elimina el plato en el índice especificado de la lista cart

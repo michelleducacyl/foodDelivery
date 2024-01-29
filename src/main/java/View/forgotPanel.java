@@ -11,7 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
- *
+ * Clase del panel para solicitar código para resetar contraseña
  * @author Michelle Arias
  */
 public class forgotPanel extends javax.swing.JPanel {

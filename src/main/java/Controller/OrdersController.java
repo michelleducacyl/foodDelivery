@@ -21,11 +21,19 @@ import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 
 /**
- *
+ * Esta clase controla todos los metodos relacionados al manejo de 
+ * ordenes dentro de la base de datos
  * @author Michelle Arias García
  */
 public class OrdersController {
 
+    /**
+     * Inserta una nueva orden en la base de datos con la información
+     * proporcionada.
+     *
+     * @param total el total de la orden, precio
+     * @param dishes la lista de platos asociados a la orden
+     */
     public static void insertOrder(Double total, List<Dishes> dishes) {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
@@ -64,6 +72,12 @@ public class OrdersController {
         }
     }
 
+    /**
+     * Obtiene todas las órdenes asociadas al usuario actualmente autenticado.
+     *
+     * @return una lista de arrays de objetos que contiene información de cada
+     * orden
+     */
     public static List<Object[]> getOrdersByUser() {
         Session session = HibernateUtil.getSessionFactory().openSession();
         Transaction tx = null;
@@ -99,37 +113,48 @@ public class OrdersController {
 
         return orderInfoList;
     }
-    
+
+    /**
+     * Elimina una orden de la base de datos por su ID.
+     *
+     * @param orderId el ID de la orden que se desea eliminar
+     */
     public static void deleteOrderById(int orderId) {
-    Session session = HibernateUtil.getSessionFactory().openSession();
-    Transaction tx = null;
+        // Abre una sesión de Hibernate
+        Session session = HibernateUtil.getSessionFactory().openSession();
+        Transaction tx = null;
 
-    try {
-        tx = session.beginTransaction();
+        try {
+            tx = session.beginTransaction();
 
-        // Consulta HQL para eliminar la orden por su ID
-        String hql = "DELETE FROM Orders WHERE id = :order_id";
-        Query query = session.createQuery(hql);
-        query.setParameter("order_id", orderId);
+            // Consulta HQL para eliminar la orden por su ID
+            String hql = "DELETE FROM Orders WHERE id = :order_id";
+            Query query = session.createQuery(hql);
+            query.setParameter("order_id", orderId);
 
-        int rowCount = query.executeUpdate();
+            // Ejecuta la consulta y obtiene el número de filas afectadas
+            int rowCount = query.executeUpdate();
 
-        if (rowCount > 0) {
-            System.out.println("Orden eliminada correctamente.");
-        } else {
-            System.out.println("La orden con ID " + orderId + " no existe.");
+            // Verifica si se eliminó la orden correctamente
+            if (rowCount > 0) {
+                System.out.println("Orden eliminada correctamente.");
+            } else {
+                System.out.println("La orden con ID " + orderId + " no existe.");
+            }
+
+            // Confirma la transacción
+            tx.commit();
+        } catch (Exception ex) {
+            // En caso de error, realiza un rollback de la transacción
+            if (tx != null) {
+                tx.rollback();
+            }
+            ex.printStackTrace();
+            System.out.println(ex);
+        } finally {
+            // Cierra la sesión de Hibernate
+            session.close();
         }
-
-        tx.commit();
-    } catch (Exception ex) {
-        if (tx != null) {
-            tx.rollback();
-        }
-        ex.printStackTrace();
-        System.out.println(ex);
-    } finally {
-        session.close();
     }
-}
 
 }

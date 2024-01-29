@@ -12,7 +12,7 @@ import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 
 /**
- *
+ * Clase del panel para resetear la contraseña
  * @author Michelle Arias
  */
 public class ResetPasswordPanel extends javax.swing.JFrame {

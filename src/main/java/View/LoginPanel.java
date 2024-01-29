@@ -6,14 +6,16 @@ package View;
 
 import Controller.LoginController;
 import Controller.PanelManager;
+import javax.swing.JDialog;
 import javax.swing.JFrame;
+import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import model.Users;
 
 /**
- *
+ * Clase del panel de login base
  * @author Michelle Arias
  */
 public class LoginPanel extends javax.swing.JPanel {
@@ -203,6 +205,8 @@ public class LoginPanel extends javax.swing.JPanel {
         String password = String.valueOf(inputPasswordLogin.getPassword());
         try {
             errorLogin.setText("");
+// Muestra un mensaje de espera utilizando JOptionPane
+        JOptionPane.showMessageDialog(null, "Logging in... \nClick OK and wait", "Please wait", JOptionPane.INFORMATION_MESSAGE);
             // Obtener la contraseña almacenada del usuario
             // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
             if (email.isEmpty() || password.isEmpty()) {
@@ -234,6 +238,7 @@ public class LoginPanel extends javax.swing.JPanel {
                 }
 
             }
+            
         } catch (Exception e) {
             e.printStackTrace();
         }

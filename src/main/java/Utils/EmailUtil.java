@@ -13,8 +13,8 @@ import javax.mail.internet.InternetAddress;
 import javax.mail.internet.MimeMessage;
 
 /**
- *
- * @author Pedro garcia Vicente
+ * Clase utilizada para enviar emails
+ * @author Michelle Arias García
  */
 public class EmailUtil {
 

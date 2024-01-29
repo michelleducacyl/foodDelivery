@@ -14,13 +14,16 @@ import org.hibernate.query.Query;
 
 /**
  * Esta clase controla la pantalla donde se enseñan los restaurantes
+ *
  * @author Michelle Arias García
  */
 public class RestaurantsController {
-    
+
     /**
      * Método que obtiene todos los platos de un restaurante específico
-     * @param restaurantId argumento de tipo String que corresponde al identificador del restaurante dentro de la base de datos.
+     *
+     * @param restaurantId argumento de tipo String que corresponde al
+     * identificador del restaurante dentro de la base de datos.
      * @return una lista de platos que pertenecen a ese restaurante.
      */
     public static List<Dishes> getDishesByRestaurantId(String restaurantId) {
@@ -47,20 +50,27 @@ public class RestaurantsController {
         }
         return dishesList;
     }
-    
-     public static Restaurant getRestaurantById(String restaurantId) {
+
+    /**
+     * Obtiene un restaurante de la base de datos por su ID.
+     *
+     * @param restaurantId el ID del restaurante que se desea obtener
+     * @return el restaurante correspondiente al ID especificado, o null si no
+     * se encuentra ningún restaurante con ese ID
+     */
+    public static Restaurant getRestaurantById(String restaurantId) {
         Transaction transaction = null;
         Restaurant restaurant = null;
-        
+
         try (Session session = HibernateUtil.getSessionFactory().openSession()) {
             transaction = session.beginTransaction();
 
             // Consulta para obtener un restaurante por su ID
             Query<Restaurant> query = session.createQuery("FROM Restaurant WHERE id = :restaurantId", Restaurant.class);
             query.setParameter("restaurantId", restaurantId);
-            
+
             restaurant = query.uniqueResult(); // Obtener el restaurante único
-            
+
             transaction.commit();
         } catch (Exception e) {
             if (transaction != null) {
@@ -68,9 +78,7 @@ public class RestaurantsController {
             }
             e.printStackTrace();
         }
-        
+
         return restaurant;
     }
 }
-    
-

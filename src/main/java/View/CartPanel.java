@@ -18,7 +18,7 @@ import javax.swing.table.DefaultTableModel;
 import model.Dishes;
 
 /**
- *
+ * Clase que maneja el panel de la lista de compra.
  * @author Michelle Arias
  */
 public class CartPanel extends javax.swing.JPanel {

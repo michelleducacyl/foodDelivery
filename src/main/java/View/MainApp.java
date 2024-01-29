@@ -11,7 +11,7 @@ import java.util.List;
 import model.Dishes;
 
 /**
- *
+ * Clase de la aplicación base
  * @author Michelle Arias
  */
 public class MainApp extends javax.swing.JFrame {
@@ -107,6 +107,7 @@ public class MainApp extends javax.swing.JFrame {
         point.setText(" ●");
 
         shoppingCartBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shopping.png"))); // NOI18N
+        shoppingCartBtn.setToolTipText("Shopping Cart");
         shoppingCartBtn.setBorder(null);
         shoppingCartBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         shoppingCartBtn.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -116,6 +117,7 @@ public class MainApp extends javax.swing.JFrame {
         });
 
         logoutBtn.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/logout.png"))); // NOI18N
+        logoutBtn.setToolTipText("Logout");
         logoutBtn.setBorder(null);
         logoutBtn.setCursor(new java.awt.Cursor(java.awt.Cursor.HAND_CURSOR));
         logoutBtn.addActionListener(new java.awt.event.ActionListener() {

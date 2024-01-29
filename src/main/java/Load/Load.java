@@ -7,7 +7,7 @@ package Load;
 import View.MainLogin;
 
 /**
- *
+ * Clase utilizada previamente para el splash screen
  * @author Michelle Arias García
  */
 public class Load {

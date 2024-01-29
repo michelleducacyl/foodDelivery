@@ -10,7 +10,7 @@ import java.awt.BorderLayout;
 import javax.swing.JPanel;
 
 /**
- *
+ * Clase de la base del login
  * @author Michelle Arias
  */
 public class MainLogin extends javax.swing.JFrame {

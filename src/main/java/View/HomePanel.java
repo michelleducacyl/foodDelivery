@@ -13,7 +13,7 @@ import javax.swing.UIManager;
 import model.Dishes;
 
 /**
- *
+ * Panel que muestra el menú principal
  * @author Michelle Arias
  */
 public class HomePanel extends javax.swing.JPanel {

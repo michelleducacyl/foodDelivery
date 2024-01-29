@@ -14,8 +14,8 @@ import java.awt.geom.RoundRectangle2D;
 import javax.swing.JPanel;
 
 /**
- *
- * @author Alumno
+ * Clase que se encarga de redondear un panel
+ * @author Michelle Arias García
  */
 public class PanelRound extends JPanel{
     public int getRoundTopLeft() {
