@@ -111,6 +111,7 @@
                     <include>**/*.gif</include>
                     <include>**/*.png</include>
                     <include>**/*.jpg</include>
+                    <include>**/*.xml</include>
                 </includes>
             </resource>
         

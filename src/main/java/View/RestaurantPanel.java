@@ -85,7 +85,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         }
     }
 
-    private void setRest(){
+    private void setRest() {
         Restaurant rest = RestaurantsController.getRestaurantById(restaurantId);
         titleRestaurant.setText(rest.getName());
         descriptionTxt.setText(rest.getDescription());
@@ -100,6 +100,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
             }
         }
     }
+
     private void setupDish(Dishes dish, JLabel nameLabel, JLabel descriptionLabel, JLabel priceLabel, JLabel photoLabel) {
         if (dish != null) {
             nameLabel.setText(dish.getName());
@@ -384,41 +385,81 @@ public class RestaurantPanel extends javax.swing.JPanel {
 
     private void addCartDish1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish1MouseClicked
 
-        //Guardamos la cantidad del producto seleccionado
         int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+
         for (int i = 0; i < cantidad; i++) {
-            cart.add(dishO1);
+            // Verificar si la lista está vacía y agregar el plato directamente si es el caso
+            if (cart.isEmpty()) {
+                cart.add(dishO1);
+            } else {
+                // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
+                if (dishO1.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                    cart.add(dishO1);
+                } else {
+                    // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
+                    JOptionPane.showMessageDialog(null, "Los platos deben ser del mismo restaurante.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return; // Salir del método sin agregar el plato a la lista
+                }
+            }
         }
 
-        System.out.println("Cantidad de platos: " + cart.size());
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
-        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
+        System.out.println("Cantidad de platos: " + cart.size());
+        JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_addCartDish1MouseClicked
 
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
-        int cantidad = Integer.parseInt(spinnerDish2.getValue().toString());
+        int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+
         for (int i = 0; i < cantidad; i++) {
-            cart.add(dishO2);
+            // Verificar si la lista está vacía y agregar el plato directamente si es el caso
+            if (cart.isEmpty()) {
+                cart.add(dishO2);
+            } else {
+                // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
+                if (dishO2.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                    cart.add(dishO1);
+                } else {
+                    // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
+                    JOptionPane.showMessageDialog(null, "Los platos deben ser del mismo restaurante.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return; // Salir del método sin agregar el plato a la lista
+                }
+            }
         }
+
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " + cart.size());
-        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish2MouseClicked
 
     private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
-        int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());
+        int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+
         for (int i = 0; i < cantidad; i++) {
-            cart.add(dishO3);
+            // Verificar si la lista está vacía y agregar el plato directamente si es el caso
+            if (cart.isEmpty()) {
+                cart.add(dishO3);
+            } else {
+                // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
+                if (dishO3.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                    cart.add(dishO3);
+                } else {
+                    // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
+                    JOptionPane.showMessageDialog(null, "Los platos deben ser del mismo restaurante.", "Error", JOptionPane.ERROR_MESSAGE);
+                    return; // Salir del método sin agregar el plato a la lista
+                }
+            }
         }
+
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " + cart.size());
-        JOptionPane.showMessageDialog(null, "Dishes added to cart.", "Added", JOptionPane.INFORMATION_MESSAGE);
+        JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
     }//GEN-LAST:event_addCartDish3MouseClicked
 
 
