@@ -24,7 +24,7 @@ public class InitApp {
             return;
         }
         try {
-            Thread.sleep(1000); // Mantener la imagen por un segundo, cambia el tiempo según necesites
+            Thread.sleep(4000); // Mantener la imagen por un segundo, cambia el tiempo según necesites
         } catch (InterruptedException e) {
             // Manejar la excepción
         }
