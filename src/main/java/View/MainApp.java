@@ -8,7 +8,7 @@ import Controller.PanelManager;
 import static View.RestaurantPanel.cart;
 import java.awt.Cursor;
 import java.util.List;
-import model.Dishes;
+import food.model.Dishes;
 
 /**
  * Clase de la aplicación base

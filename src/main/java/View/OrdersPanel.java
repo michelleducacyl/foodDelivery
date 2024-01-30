@@ -9,8 +9,8 @@ import java.util.Date;
 import java.util.List;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
-import model.Dishes;
-import model.Orders;
+import food.model.Dishes;
+import food.model.Orders;
 
 /**
  * Clase que muestra las ordenes de un usuario

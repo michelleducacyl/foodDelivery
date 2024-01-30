@@ -6,8 +6,8 @@ package Controller;
 
 import Utils.HibernateUtil;
 import java.util.List;
-import model.Dishes;
-import model.Restaurant;
+import food.model.Dishes;
+import food.model.Restaurant;
 import org.hibernate.Session;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;

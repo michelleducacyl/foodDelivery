@@ -21,7 +21,7 @@ import javax.swing.JOptionPane;
 import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import model.Users;
+import food.model.Users;
 
 /**
  * Clase del panel de login base

@@ -5,7 +5,7 @@
 package Controller;
 
 import Utils.HibernateUtil;
-import model.Users;
+import food.model.Users;
 import org.hibernate.Session;
 import org.hibernate.SessionFactory;
 import org.hibernate.Transaction;

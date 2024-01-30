@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <!-- Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final --><!DOCTYPE hibernate-mapping PUBLIC "-//Hibernate/Hibernate Mapping DTD 3.0//EN" "http://www.hibernate.org/dtd/hibernate-mapping-3.0.dtd">
 <hibernate-mapping>
-    <class catalog="food_delivery" name="model.Users" optimistic-lock="none" table="users">
+    <class catalog="food_delivery" name="food.model.Users" optimistic-lock="none" table="users">
         <id name="id" type="java.lang.Integer">
             <column name="id"/>
             <generator class="identity"/>
@@ -19,7 +19,7 @@
             <key>
                 <column name="id_user"/>
             </key>
-            <one-to-many class="model.Orders"/>
+            <one-to-many class="food.model.Orders"/>
         </set>
     </class>
 </hibernate-mapping>

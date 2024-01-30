@@ -15,7 +15,7 @@ import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
 import javax.swing.table.DefaultTableModel;
-import model.Dishes;
+import food.model.Dishes;
 
 /**
  * Clase que maneja el panel de la lista de compra.

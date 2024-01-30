@@ -1,4 +1,4 @@
-package model;
+package food.model;
 // Generated 20 dic 2023 17:56:06 by Hibernate Tools 6.3.1.Final
 
 import java.util.HashSet;

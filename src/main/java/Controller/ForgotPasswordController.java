@@ -12,7 +12,7 @@ import java.util.Random;
 import javax.mail.Authenticator;
 import javax.mail.PasswordAuthentication;
 import javax.mail.Session;
-import model.Users;
+import food.model.Users;
 import org.hibernate.Transaction;
 import org.hibernate.query.Query;
 import org.mindrot.jbcrypt.BCrypt;

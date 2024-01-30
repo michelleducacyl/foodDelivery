@@ -8,7 +8,7 @@ import View.CartPanel;
 import View.MainApp;
 import static View.RestaurantPanel.cart;
 import javax.swing.table.DefaultTableModel;
-import model.Dishes;
+import food.model.Dishes;
 
 /**
  * Esta clase contiene todos los métodos del carro de compra de la aplicación

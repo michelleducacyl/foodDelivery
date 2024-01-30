@@ -111,6 +111,7 @@
                     <include>**/*.png</include>
                     <include>**/*.jpg</include>
                     <include>**/*.xml</include>
+                    <include>**/*.hbm.xml</include>
                 </includes>
             </resource>
         

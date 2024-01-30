@@ -15,8 +15,8 @@ import javax.swing.JOptionPane;
 import javax.swing.UIManager;
 import javax.swing.event.ChangeEvent;
 import javax.swing.event.ChangeListener;
-import model.Dishes;
-import model.Restaurant;
+import food.model.Dishes;
+import food.model.Restaurant;
 
 /**
  * Clase donde se muestra la información de cada restaurante

@@ -10,7 +10,7 @@ import java.util.List;
 import javax.swing.JFrame;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
-import model.Dishes;
+import food.model.Dishes;
 
 /**
  * Panel que muestra el menú principal
