@@ -23,6 +23,7 @@ View\LoginPanel.class
 View\HomePanel$3.class
 View\RestaurantPanel$1.class
 View\CartPanel$1.class
+View\LoginPanel$4.class
 Controller\LoginController.class
 View\PanelRound.class
 View\MainApp.class

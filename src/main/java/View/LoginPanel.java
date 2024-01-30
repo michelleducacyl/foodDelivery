@@ -6,16 +6,24 @@ package View;
 
 import Controller.LoginController;
 import Controller.PanelManager;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+import java.awt.event.KeyListener;
+import javax.swing.AbstractAction;
+import javax.swing.JButton;
+import javax.swing.JComponent;
 import javax.swing.JDialog;
 import javax.swing.JFrame;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
+import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import model.Users;
 
 /**
  * Clase del panel de login base
+ *
  * @author Michelle Arias
  */
 public class LoginPanel extends javax.swing.JPanel {
@@ -32,6 +40,77 @@ public class LoginPanel extends javax.swing.JPanel {
         inputEmailLogin.putClientProperty("JComponent.arc", "arc:40");
         inputEmailLogin.putClientProperty("JTextField.placeholderText", "name@example.com");
         inputPasswordLogin.putClientProperty("JTextField.placeholderText", "min. 8 characters");
+        inputEmailLogin.setFocusable(true);
+        // Asignar acciones a las teclas "Enter" en los componentes
+        asignarAccionEnter(inputEmailLogin, inputPasswordLogin);
+        asignarAccionEnter(inputPasswordLogin, loginBtn);
+
+    }
+
+    /**
+     * Método para asignar acción al presionar "Enter" en un componente y cambiar el foco al siguiente
+     * @param componente al que se le va a asignar
+     * @param nextComponent componpente que debe verificar (orden)
+     */
+    private void asignarAccionEnter(JComponent component, final JComponent nextComponent) {
+        KeyStroke enterKey = KeyStroke.getKeyStroke("ENTER");
+        component.getInputMap().put(enterKey, enterKey);
+        component.getActionMap().put(enterKey, new AbstractAction() {
+            @Override
+            public void actionPerformed(ActionEvent e) {
+                nextComponent.requestFocusInWindow();
+                if (nextComponent instanceof JButton) {
+                    loginBtnMousePressed();
+                }
+            }
+        });
+    }
+
+    /**
+     * Métodod que se llama para hacer login
+     */
+    private void loginBtnMousePressed() {
+        String email = inputEmailLogin.getText();
+        String password = String.valueOf(inputPasswordLogin.getPassword());
+        try {
+            errorLogin.setText("");
+// Muestra un mensaje de espera utilizando JOptionPane
+            JOptionPane.showMessageDialog(null, "Logging in... \nClick OK and wait", "Please wait", JOptionPane.INFORMATION_MESSAGE);
+            // Obtener la contraseña almacenada del usuario
+            // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
+            if (email.isEmpty() || password.isEmpty()) {
+                errorLogin.setText("User/password empty");
+            } else {
+                String contrasenaAlmacenada = LoginController.obtenerContrasenaDeUsuario(email);
+                if (contrasenaAlmacenada == null) {
+                    errorLogin.setText("User not found");
+                } else {
+                    System.out.println("CONTRASEÑA Email: " + contrasenaAlmacenada);
+                    System.out.println("Contraseña text:" + password);
+                    errorLogin.setText("");
+                    boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
+                    if (!comprueba) {
+
+                        errorLogin.setText("User and password not match");
+
+                    } else {
+                        //// Si el inicio de sesión es exitoso, guarda el usuario
+                        USERLOGIN = new Users();
+
+                        USERLOGIN.setEmail(email);
+                        USERLOGIN.setPassword(password);
+                        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+                        if (mainFrame instanceof MainLogin) {
+                            ((MainLogin) mainFrame).login();
+                        }
+                    }
+                }
+
+            }
+
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
     }
 
     /**
@@ -200,49 +279,7 @@ public class LoginPanel extends javax.swing.JPanel {
     }//GEN-LAST:event_signUpBtnMousePressed
 
     private void loginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_loginBtnMousePressed
-        // TODO add your handling code here:
-        String email = inputEmailLogin.getText();
-        String password = String.valueOf(inputPasswordLogin.getPassword());
-        try {
-            errorLogin.setText("");
-// Muestra un mensaje de espera utilizando JOptionPane
-        JOptionPane.showMessageDialog(null, "Logging in... \nClick OK and wait", "Please wait", JOptionPane.INFORMATION_MESSAGE);
-            // Obtener la contraseña almacenada del usuario
-            // Verificar si la contraseña almacenada coincide con la ingresada por el usuario
-            if (email.isEmpty() || password.isEmpty()) {
-                errorLogin.setText("User/password empty");
-            } else {
-                String contrasenaAlmacenada = LoginController.obtenerContrasenaDeUsuario(email);
-                if (contrasenaAlmacenada == null) {
-                    errorLogin.setText("User not found");
-                } else {
-                    System.out.println("CONTRASEÑA Email: " + contrasenaAlmacenada);
-                    System.out.println("Contraseña text:" + password);
-                    errorLogin.setText("");
-                    boolean comprueba = LoginController.verificarContrasena(password, contrasenaAlmacenada);
-                    if (!comprueba) {
-
-                        errorLogin.setText("User and password not match");
-
-                    } else {
-                        //// Si el inicio de sesión es exitoso, guarda el usuario
-                        USERLOGIN = new Users();
-
-                        USERLOGIN.setEmail(email);
-                        USERLOGIN.setPassword(password);
-                        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-                        if (mainFrame instanceof MainLogin) {
-                            ((MainLogin) mainFrame).login();
-                        }
-                    }
-                }
-
-            }
-            
-        } catch (Exception e) {
-            e.printStackTrace();
-        }
-
+        loginBtnMousePressed();
 
     }//GEN-LAST:event_loginBtnMousePressed
 
