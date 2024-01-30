@@ -107,7 +107,6 @@
             <resource>
                 <directory>src/main/resources</directory>
                 <includes>
-                
                     <include>**/*.gif</include>
                     <include>**/*.png</include>
                     <include>**/*.jpg</include>

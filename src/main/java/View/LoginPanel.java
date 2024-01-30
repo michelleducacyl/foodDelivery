@@ -9,6 +9,8 @@ import Controller.PanelManager;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.KeyListener;
+import java.util.Locale;
+import java.util.ResourceBundle;
 import javax.swing.AbstractAction;
 import javax.swing.JButton;
 import javax.swing.JComponent;
@@ -44,6 +46,7 @@ public class LoginPanel extends javax.swing.JPanel {
         // Asignar acciones a las teclas "Enter" en los componentes
         asignarAccionEnter(inputEmailLogin, inputPasswordLogin);
         asignarAccionEnter(inputPasswordLogin, loginBtn);
+       
 
     }
 
@@ -127,7 +130,7 @@ public class LoginPanel extends javax.swing.JPanel {
         descriptionTxt = new javax.swing.JLabel();
         inputEmailLogin = new javax.swing.JTextField();
         emailTxt = new javax.swing.JLabel();
-        emailTxt1 = new javax.swing.JLabel();
+        passwordTxt = new javax.swing.JLabel();
         loginBtn = new javax.swing.JButton();
         forgotBtn = new javax.swing.JLabel();
         signUpBtn = new javax.swing.JLabel();
@@ -150,8 +153,8 @@ public class LoginPanel extends javax.swing.JPanel {
         emailTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         emailTxt.setText("Email");
 
-        emailTxt1.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
-        emailTxt1.setText("Password");
+        passwordTxt.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
+        passwordTxt.setText("Password");
 
         loginBtn.setBackground(new java.awt.Color(78, 96, 255));
         loginBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
@@ -195,7 +198,7 @@ public class LoginPanel extends javax.swing.JPanel {
             .addGroup(layout.createSequentialGroup()
                 .addGap(60, 60, 60)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(emailTxt1, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(passwordTxt, javax.swing.GroupLayout.PREFERRED_SIZE, 70, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addComponent(inputPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 280, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
             .addGroup(layout.createSequentialGroup()
@@ -244,7 +247,7 @@ public class LoginPanel extends javax.swing.JPanel {
                 .addGap(12, 12, 12)
                 .addComponent(inputEmailLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 33, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(17, 17, 17)
-                .addComponent(emailTxt1)
+                .addComponent(passwordTxt)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(inputPasswordLogin, javax.swing.GroupLayout.PREFERRED_SIZE, 35, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
@@ -287,7 +290,6 @@ public class LoginPanel extends javax.swing.JPanel {
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JLabel descriptionTxt;
     private javax.swing.JLabel emailTxt;
-    private javax.swing.JLabel emailTxt1;
     private javax.swing.JLabel errorLogin;
     private javax.swing.JLabel forgotBtn;
     private javax.swing.JLabel infoTxt;
@@ -295,6 +297,7 @@ public class LoginPanel extends javax.swing.JPanel {
     private javax.swing.JPasswordField inputPasswordLogin;
     private javax.swing.JButton loginBtn;
     private javax.swing.JLabel logo;
+    private javax.swing.JLabel passwordTxt;
     private javax.swing.JLabel signUpBtn;
     private javax.swing.JLabel titleTxt;
     // End of variables declaration//GEN-END:variables

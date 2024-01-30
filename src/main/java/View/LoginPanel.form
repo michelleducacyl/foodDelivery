@@ -24,7 +24,7 @@
           <Group type="102" alignment="0" attributes="0">
               <EmptySpace min="60" pref="60" max="-2" attributes="0"/>
               <Group type="103" groupAlignment="0" attributes="0">
-                  <Component id="emailTxt1" min="-2" pref="70" max="-2" attributes="0"/>
+                  <Component id="passwordTxt" min="-2" pref="70" max="-2" attributes="0"/>
                   <Component id="inputPasswordLogin" min="-2" pref="280" max="-2" attributes="0"/>
               </Group>
               <EmptySpace max="32767" attributes="0"/>
@@ -87,7 +87,7 @@
               <EmptySpace min="12" pref="12" max="-2" attributes="0"/>
               <Component id="inputEmailLogin" min="-2" pref="33" max="-2" attributes="0"/>
               <EmptySpace min="17" pref="17" max="-2" attributes="0"/>
-              <Component id="emailTxt1" min="-2" max="-2" attributes="0"/>
+              <Component id="passwordTxt" min="-2" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
               <Component id="inputPasswordLogin" min="-2" pref="35" max="-2" attributes="0"/>
               <EmptySpace max="-2" attributes="0"/>
@@ -145,7 +145,7 @@
         <Property name="text" type="java.lang.String" value="Email"/>
       </Properties>
     </Component>
-    <Component class="javax.swing.JLabel" name="emailTxt1">
+    <Component class="javax.swing.JLabel" name="passwordTxt">
       <Properties>
         <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
           <Font name="Nunito SemiBold" size="12" style="0"/>
