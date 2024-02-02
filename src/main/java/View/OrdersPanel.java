@@ -11,6 +11,7 @@ import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import food.model.Dishes;
 import food.model.Orders;
+import java.text.SimpleDateFormat;
 
 /**
  * Clase que muestra las ordenes de un usuario
@@ -22,28 +23,27 @@ public class OrdersPanel extends javax.swing.JPanel {
      * Creates new form OrdersPanel
      */
     public OrdersPanel() {
-        initComponents();
-        List<Object[]> orderInfoList = OrdersController.getOrdersByUser(); // Obtener la lista de información de órdenes
-        //System.out.print("SIZE ORDERS : " + orderInfoList.size());
-        DefaultTableModel model = (DefaultTableModel) tableOrders.getModel();
-        for (Object[] orderInfo : orderInfoList) {
-            String orderId = String.valueOf(orderInfo[0]); // Order ID
-            String restaurantName = (String) orderInfo[1]; // Restaurant Name
-            String orderDate = orderInfo[2].toString(); // Date
-            Object total = orderInfo[3]; // Total (puede ser de cualquier tipo)
+    initComponents();
+    List<Object[]> orderInfoList = OrdersController.getOrdersByUser();
+    DefaultTableModel model = (DefaultTableModel) tableOrders.getModel();
+    SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); //
+    for (Object[] orderInfo : orderInfoList) {
+        String orderId = String.valueOf(orderInfo[0]);
+        String restaurantName = (String) orderInfo[1];
+        Date orderDate = (Date) orderInfo[2]; // Convierte el objeto en una instancia de Date
+        String formattedDate = dateFormat.format(orderDate); // Formatea la fecha según el formato definido
+        Object total = orderInfo[3];
 
-            model.addRow(new Object[]{orderId, restaurantName, orderDate, total});
-        }
-
-// Eliminar las filas vacías al principio del modelo
-        while (model.getRowCount() > 0 && model.getValueAt(0, 0) == null) {
-            model.removeRow(0);
-        }
-
-        tableOrders.setModel(model);
-
+        model.addRow(new Object[]{orderId, restaurantName, formattedDate, total});
     }
 
+    // Eliminar las filas vacías al principio del modelo
+    while (model.getRowCount() > 0 && model.getValueAt(0, 0) == null) {
+        model.removeRow(0);
+    }
+
+    tableOrders.setModel(model);
+}
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -64,6 +64,7 @@ public class OrdersPanel extends javax.swing.JPanel {
         titleTtx.setFont(new java.awt.Font("Nunito Black", 0, 14)); // NOI18N
         titleTtx.setText("My Orders");
 
+        tableOrders.setFont(new java.awt.Font("Nunito", 0, 12)); // NOI18N
         tableOrders.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},

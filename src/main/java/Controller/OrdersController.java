@@ -94,7 +94,7 @@ public class OrdersController {
 
             if (userId != null) {
                 // Consulta HQL corregida para obtener todas las órdenes del usuario con información adicional
-                String hql = "SELECT o.id, o.restaurantId, o.orderDate, o.total FROM Orders o WHERE o.users.id = :user_id";
+               String hql = "SELECT o.id, r.name, o.orderDate, o.total FROM Orders o JOIN Restaurant r ON o.restaurantId = r.id WHERE o.users.id = :user_id";
                 Query<Object[]> query = session.createQuery(hql);
                 query.setParameter("user_id", userId);
                 orderInfoList = query.list();

@@ -408,12 +408,13 @@ public class RestaurantPanel extends javax.swing.JPanel {
         System.out.println("Cantidad de platos: " + cart.size());
         
         JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
+        spinnerDish1.setValue(0);
 
     }//GEN-LAST:event_addCartDish1MouseClicked
 
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
-        int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+       int cantidad = Integer.parseInt(spinnerDish2.getValue().toString());
 
         for (int i = 0; i < cantidad; i++) {
             // Verificar si la lista está vacía y agregar el plato directamente si es el caso
@@ -422,7 +423,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
             } else {
                 // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
                 if (dishO2.getRestaurant().equals(cart.get(0).getRestaurant())) {
-                    cart.add(dishO1);
+                    cart.add(dishO2);
                 } else {
                     // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
                     JOptionPane.showMessageDialog(null, "Los platos deben ser del mismo restaurante.", "Error", JOptionPane.ERROR_MESSAGE);
@@ -435,11 +436,12 @@ public class RestaurantPanel extends javax.swing.JPanel {
         mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " + cart.size());
         JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
+        spinnerDish2.setValue(0);
     }//GEN-LAST:event_addCartDish2MouseClicked
 
     private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
-        int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
+        int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());
 
         for (int i = 0; i < cantidad; i++) {
             // Verificar si la lista está vacía y agregar el plato directamente si es el caso
@@ -461,6 +463,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " + cart.size());
         JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
+        spinnerDish3.setValue(0);
     }//GEN-LAST:event_addCartDish3MouseClicked
 
 
