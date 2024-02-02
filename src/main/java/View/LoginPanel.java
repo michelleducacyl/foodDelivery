@@ -22,6 +22,10 @@ import javax.swing.KeyStroke;
 import javax.swing.SwingUtilities;
 import javax.swing.UIManager;
 import food.model.Users;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractButton;
+import javax.swing.JRootPane;
 
 /**
  * Clase del panel de login base
@@ -44,25 +48,20 @@ public class LoginPanel extends javax.swing.JPanel {
         inputPasswordLogin.putClientProperty("JTextField.placeholderText", "min. 8 characters");
         inputEmailLogin.setFocusable(true);
         // Asignar acciones a las teclas "Enter" en los componentes
-        asignarAccionEnter(inputEmailLogin, inputPasswordLogin);
         asignarAccionEnter(inputPasswordLogin, loginBtn);
        
-
     }
 
     /**
-     * Método para asignar acción al presionar "Enter" en un componente y cambiar el foco al siguiente
-     * @param componente al que se le va a asignar
-     * @param nextComponent componpente que debe verificar (orden)
+     * Metodo para asignar la accion a un botón por defecto
+     * @param field se pasa el componente que debe verificar
+     * @param button el boton que deberá accionar
      */
-    private void asignarAccionEnter(JComponent component, final JComponent nextComponent) {
-        KeyStroke enterKey = KeyStroke.getKeyStroke("ENTER");
-        component.getInputMap().put(enterKey, enterKey);
-        component.getActionMap().put(enterKey, new AbstractAction() {
+    private void asignarAccionEnter(JComponent field, final AbstractButton button) {
+        field.addKeyListener(new KeyAdapter() {
             @Override
-            public void actionPerformed(ActionEvent e) {
-                nextComponent.requestFocusInWindow();
-                if (nextComponent instanceof JButton) {
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
                     loginBtnMousePressed();
                 }
             }

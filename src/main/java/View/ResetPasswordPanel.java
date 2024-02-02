@@ -35,6 +35,7 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
         this.userEmail = email;
         // Aquí puedes actualizar los componentes de la UI si es necesario
     }
+    
 
     /**
      * This method is called from within the constructor to initialize the form.

@@ -43,7 +43,7 @@ public class MainApp extends javax.swing.JFrame {
     } else {
         point.setVisible(true); // Mostrar si el carrito está vacío
     }
-     point.revalidate();
+    point.revalidate();
     point.repaint();
 }
     /**

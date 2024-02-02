@@ -406,6 +406,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
         MainApp mainApp = new MainApp();
         mainApp.updatePointVisibility();
         System.out.println("Cantidad de platos: " + cart.size());
+        
         JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
 
     }//GEN-LAST:event_addCartDish1MouseClicked
