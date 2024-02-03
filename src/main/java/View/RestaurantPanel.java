@@ -406,7 +406,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 cart.add(dishO1);
             } else {
                 // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
-                if (dishO1.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                if (dishO1.getRestaurant().getId().equals(cart.get(0).getRestaurant().getId())) {
                     cart.add(dishO1);
                 } else {
                     // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
@@ -438,7 +438,10 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 cart.add(dishO2);
             } else {
                 // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
-                if (dishO2.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                System.out.println("RESTAURANTE PLATO: " + dishO2.getRestaurant().getId());
+                System.out.println("RESTAURANTE CART: " + cart.get(0).getRestaurant().getId());
+                
+                if (dishO2.getRestaurant().getId().equals(cart.get(0).getRestaurant().getId())) {
                     cart.add(dishO2);
                 } else {
                     // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario
@@ -468,7 +471,7 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 cart.add(dishO3);
             } else {
                 // Verificar si el plato a agregar tiene el mismo código de restaurante que los platos en la lista
-                if (dishO3.getRestaurant().equals(cart.get(0).getRestaurant())) {
+                if (dishO3.getRestaurant().getId().equals(cart.get(0).getRestaurant().getId())) {
                     cart.add(dishO3);
                 } else {
                     // Si los códigos de restaurante no coinciden, mostrar un mensaje de error o manejar la situación según sea necesario

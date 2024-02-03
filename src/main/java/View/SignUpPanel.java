@@ -245,7 +245,7 @@ public class SignUpPanel extends javax.swing.JPanel {
 
     private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
         
-        
+        registerBtnMousePressed();
 
     }//GEN-LAST:event_registerBtnActionPerformed
 

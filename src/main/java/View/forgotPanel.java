@@ -161,7 +161,7 @@ public class forgotPanel extends javax.swing.JPanel {
     private void instructionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsBtnActionPerformed
         // TODO add your handling code here:
         
-        
+        instructionsBtnMousePressed();
     }//GEN-LAST:event_instructionsBtnActionPerformed
 
 
