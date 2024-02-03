@@ -40,7 +40,8 @@ public class RestaurantPanel extends javax.swing.JPanel {
         addCartDish1.setVisible(false);
         addCartDish2.setVisible(false);
         addCartDish3.setVisible(false);
-
+        
+        //Estos listeners activan/desactivan el boton de agregar al carrito dependiendo del valor del spinner
         spinnerDish1.addChangeListener((ChangeEvent e) -> {
             // Este método se llama cada vez que cambia el valor del JSpinner
             int newValue = (int) spinnerDish1.getValue(); // Obtener el nuevo valor del JSpinner
@@ -84,7 +85,9 @@ public class RestaurantPanel extends javax.swing.JPanel {
 
         }
     }
-
+    /**
+     * Método que asigna la información del restaurante
+     */
     private void setRest() {
         Restaurant rest = RestaurantsController.getRestaurantById(restaurantId);
         titleRestaurant.setText(rest.getName());
@@ -100,7 +103,14 @@ public class RestaurantPanel extends javax.swing.JPanel {
             }
         }
     }
-
+    /**
+     * Método que asigna la información del plato
+     * @param dish Un objeto tipo dish que contiene la información
+     * @param nameLabel JLabel del nombre del plato
+     * @param descriptionLabel JLabel de la descripción del plato
+     * @param priceLabel JLabel del precio del plato
+     * @param photoLabel JLabel de la imagen del plato
+     */
     private void setupDish(Dishes dish, JLabel nameLabel, JLabel descriptionLabel, JLabel priceLabel, JLabel photoLabel) {
         if (dish != null) {
             nameLabel.setText(dish.getName());
@@ -382,7 +392,10 @@ public class RestaurantPanel extends javax.swing.JPanel {
                 .addContainerGap(75, Short.MAX_VALUE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método que agrega el plato número 1 al carrito
+     * @param evt Evento que lo llama
+     */
     private void addCartDish1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish1MouseClicked
 
         int cantidad = Integer.parseInt(spinnerDish1.getValue().toString());
@@ -411,7 +424,10 @@ public class RestaurantPanel extends javax.swing.JPanel {
         spinnerDish1.setValue(0);
 
     }//GEN-LAST:event_addCartDish1MouseClicked
-
+    /**
+     * Método que agrega el plato número 2 al carrito
+     * @param evt Evento que lo llama
+     */
     private void addCartDish2MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish2MouseClicked
         // TODO add your handling code here:
        int cantidad = Integer.parseInt(spinnerDish2.getValue().toString());
@@ -438,7 +454,10 @@ public class RestaurantPanel extends javax.swing.JPanel {
         JOptionPane.showMessageDialog(null, "Platos agregados al carrito.", "Agregado", JOptionPane.INFORMATION_MESSAGE);
         spinnerDish2.setValue(0);
     }//GEN-LAST:event_addCartDish2MouseClicked
-
+    /**
+     * Método que agrega el plato número 3 al carrito
+     * @param evt Evento que lo llama
+     */
     private void addCartDish3MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addCartDish3MouseClicked
         // TODO add your handling code here:
         int cantidad = Integer.parseInt(spinnerDish3.getValue().toString());

@@ -375,6 +375,11 @@ public class HomePanel extends javax.swing.JPanel {
         shawarmaQueen1.setRoundBottomRight(30);
         shawarmaQueen1.setRoundTopLeft(30);
         shawarmaQueen1.setRoundTopRight(30);
+        shawarmaQueen1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                shawarmaQueen1MouseClicked(evt);
+            }
+        });
 
         shawarmaPic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/shawarma.png"))); // NOI18N
 
@@ -413,6 +418,11 @@ public class HomePanel extends javax.swing.JPanel {
         coffeeTime1.setRoundBottomRight(30);
         coffeeTime1.setRoundTopLeft(30);
         coffeeTime1.setRoundTopRight(30);
+        coffeeTime1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                coffeeTime1MouseClicked(evt);
+            }
+        });
 
         coffePic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/coffee.png"))); // NOI18N
 
@@ -451,6 +461,11 @@ public class HomePanel extends javax.swing.JPanel {
         trattoriaBtn1.setRoundBottomRight(30);
         trattoriaBtn1.setRoundTopLeft(30);
         trattoriaBtn1.setRoundTopRight(30);
+        trattoriaBtn1.addMouseListener(new java.awt.event.MouseAdapter() {
+            public void mouseClicked(java.awt.event.MouseEvent evt) {
+                trattoriaBtn1MouseClicked(evt);
+            }
+        });
 
         trattoriaPic1.setIcon(new javax.swing.ImageIcon(getClass().getResource("/images/italian.png"))); // NOI18N
 
@@ -665,7 +680,10 @@ public class HomePanel extends javax.swing.JPanel {
                 .addComponent(scrollRestaurants, javax.swing.GroupLayout.PREFERRED_SIZE, 322, javax.swing.GroupLayout.PREFERRED_SIZE))
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método para seleccionar el restaurante Sushi House
+     * @param evt Evento que lo llama
+     */
     private void sushiHouseMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseClicked
         // TODO add your handling code here:
         // Obtén la lista de platos del restaurante
@@ -679,18 +697,27 @@ public class HomePanel extends javax.swing.JPanel {
         
        
     }//GEN-LAST:event_sushiHouseMouseClicked
-
+    /**
+     * Método para cambiar el tipo de ratón al entrar en el restaurante
+     * @param evt Evento que lo llama
+     */
     private void sushiHouseMouseEntered(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseEntered
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.HAND_CURSOR));
         
     }//GEN-LAST:event_sushiHouseMouseEntered
-
+    /**
+     * Método para cambiar el tipo de ratón al entrar en el restaurante
+     * @param evt Evento que lo llama
+     */
     private void sushiHouseMouseExited(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_sushiHouseMouseExited
         // TODO add your handling code here:
         this.setCursor(Cursor.getPredefinedCursor(Cursor.DEFAULT_CURSOR));
     }//GEN-LAST:event_sushiHouseMouseExited
-
+    /**
+     * Método para seleccionar el restaurante Mexican Palace
+     * @param evt Evento que lo llama
+     */
     private void mexicanPalaceMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_mexicanPalaceMouseClicked
         // TODO add your handling code here:
         restaurantId = "MP";
@@ -701,7 +728,10 @@ public class HomePanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_mexicanPalaceMouseClicked
-
+    /**
+     * Método para seleccionar el restaurante Burgers & Pizza
+     * @param evt Evento que lo llama
+     */
     private void burgersAndPizzaMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_burgersAndPizzaMouseClicked
         // TODO add your handling code here:
         restaurantId = "BP";
@@ -712,7 +742,10 @@ public class HomePanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_burgersAndPizzaMouseClicked
-
+    /**
+     * Método para seleccionar el restaurante Shawarma Queen
+     * @param evt Evento que lo llama
+     */
     private void shawarmaQueenMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shawarmaQueenMouseClicked
         // TODO add your handling code here:
         restaurantId = "SQ";
@@ -723,7 +756,10 @@ public class HomePanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_shawarmaQueenMouseClicked
-
+    /**
+     * Método para seleccionar el restaurante Coffe Time
+     * @param evt Evento que lo llama
+     */
     private void coffeeTimeMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coffeeTimeMouseClicked
         // TODO add your handling code here:
         restaurantId = "CT";
@@ -734,7 +770,10 @@ public class HomePanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_coffeeTimeMouseClicked
-
+    /**
+     * Método para seleccionar el restaurante Le Trattoria
+     * @param evt Evento que lo llama
+     */
     private void trattoriaBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trattoriaBtnMouseClicked
         // TODO add your handling code here:
         restaurantId = "LT";
@@ -745,6 +784,48 @@ public class HomePanel extends javax.swing.JPanel {
             ((MainApp) mainFrame).restaurantPanel(dishesList);
         }
     }//GEN-LAST:event_trattoriaBtnMouseClicked
+    /**
+     * Método para seleccionar el restaurante Shawarma Queen
+     * @param evt Evento que lo llama
+     */
+    private void shawarmaQueen1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_shawarmaQueen1MouseClicked
+        // TODO add your handling code here:
+        restaurantId = "SQ";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_shawarmaQueen1MouseClicked
+    /**
+     * Método para seleccionar el restaurante Coffe Time
+     * @param evt Evento que lo llama
+     */
+    private void coffeeTime1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_coffeeTime1MouseClicked
+        // TODO add your handling code here:
+        restaurantId = "CT";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_coffeeTime1MouseClicked
+    /**
+     * Método para seleccionar el restaurante Le Trattoria
+     * @param evt Evento que lo llama
+     */
+    private void trattoriaBtn1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_trattoriaBtn1MouseClicked
+        // TODO add your handling code here:
+        restaurantId = "LT";
+        List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);
+
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainApp) {
+            ((MainApp) mainFrame).restaurantPanel(dishesList);
+        }
+    }//GEN-LAST:event_trattoriaBtn1MouseClicked
 
 
     // Variables declaration - do not modify//GEN-BEGIN:variables

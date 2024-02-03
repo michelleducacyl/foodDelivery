@@ -10,7 +10,7 @@ import org.hibernate.boot.registry.StandardServiceRegistryBuilder;
 import org.hibernate.cfg.Configuration;
 
 /**
- *
+ * Clase utilizada para generar sesiones de Hibernate a través de la factoría
  * @author Michelle Arias García
  */
 public class HibernateUtil {

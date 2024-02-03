@@ -8,6 +8,10 @@ import Controller.SignUpController;
 import Controller.EmailValidator;
 import static Controller.EmailValidator.checkEmailFormat;
 import Controller.PanelManager;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -30,6 +34,8 @@ public class SignUpPanel extends javax.swing.JPanel {
         inputEmailSignUp.putClientProperty("JTextField.placeholderText", "name@example.com");
         inputPasswordSignUp.putClientProperty("JTextField.placeholderText", "min. 8 characters");
         inputRepeatSignUp.putClientProperty("JTextField.placeholderText", "min. 8 characters");
+        // Asignar acciones a las teclas "Enter" en los componentes
+        asignarAccionEnter(inputRepeatSignUp, registerBtn);
     }
 
     /**
@@ -81,7 +87,7 @@ public class SignUpPanel extends javax.swing.JPanel {
 
         signUpBtn.setFont(new java.awt.Font("Nunito SemiBold", 0, 12)); // NOI18N
         signUpBtn.setForeground(new java.awt.Color(78, 96, 255));
-        signUpBtn.setText("Sign Up");
+        signUpBtn.setText("Sign In");
         signUpBtn.addMouseListener(new java.awt.event.MouseAdapter() {
             public void mousePressed(java.awt.event.MouseEvent evt) {
                 signUpBtnMousePressed(evt);
@@ -164,16 +170,25 @@ public class SignUpPanel extends javax.swing.JPanel {
                 .addGap(33, 33, 33))
         );
     }// </editor-fold>//GEN-END:initComponents
-
-    private void signUpBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpBtnMousePressed
-        // TODO add your handling code here:
-        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
-        if (mainFrame instanceof MainLogin) {
-            ((MainLogin) mainFrame).loginPanel();
-        }
-    }//GEN-LAST:event_signUpBtnMousePressed
-
-    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
+    /**
+     * Método para asignar la acción a un botón por defecto
+     * @param field se pasa el componente que debe verificar
+     * @param button el botón que deberá accionar
+     */
+    private void asignarAccionEnter(JComponent field, final AbstractButton button) {
+        field.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    registerBtnMousePressed();
+                }
+            }
+        });
+    }
+    /**
+     * Método que se llama para registrar un nuevo usuario en la base de datos
+     */
+    public void registerBtnMousePressed(){
         // TODO add your handling code here:
         String email = inputEmailSignUp.getText();
         System.out.println("EMAIL: " + email);
@@ -215,6 +230,22 @@ public class SignUpPanel extends javax.swing.JPanel {
                 e.printStackTrace();
             }
         }
+    }
+    /**
+     * Método que te devuelve al login panel
+     * @param evt 
+     */
+    private void signUpBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_signUpBtnMousePressed
+        // TODO add your handling code here:
+        JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
+        if (mainFrame instanceof MainLogin) {
+            ((MainLogin) mainFrame).loginPanel();
+        }
+    }//GEN-LAST:event_signUpBtnMousePressed
+
+    private void registerBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_registerBtnActionPerformed
+        
+        
 
     }//GEN-LAST:event_registerBtnActionPerformed
 

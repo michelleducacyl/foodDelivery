@@ -286,7 +286,10 @@ public class CartPanel extends javax.swing.JPanel {
             .addComponent(background, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
         );
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método que se llama al darle click a checkout button
+     * @param evt El evento del mouse
+     */
     private void checkoutBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_checkoutBtnMouseClicked
         // TODO add your handling code here:
         try {
@@ -301,7 +304,10 @@ public class CartPanel extends javax.swing.JPanel {
             e.printStackTrace();
         }
     }//GEN-LAST:event_checkoutBtnMouseClicked
-
+    /**
+     * Método que se llama al darle click al botón eliminar
+     * @param evt Evento que lo llama
+     */
     private void deleteDishButtonMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_deleteDishButtonMouseClicked
         // TODO add your handling code here:
 
@@ -314,7 +320,10 @@ public class CartPanel extends javax.swing.JPanel {
             updateTotal(); // Actualiza el precio total
         }
     }//GEN-LAST:event_deleteDishButtonMouseClicked
-
+    /**
+     * Método que se llama al darle click al boton de agregar más platos (devuelve a la pantalla anterior)
+     * @param evt Evento que lo llama
+     */
     private void addMealsBtnMouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_addMealsBtnMouseClicked
         // TODO add your handling code here:
         List<Dishes> dishesList = RestaurantsController.getDishesByRestaurantId(restaurantId);

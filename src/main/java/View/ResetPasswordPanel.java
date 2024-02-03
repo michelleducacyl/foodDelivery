@@ -33,7 +33,7 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
     // Método setter para el email
     public void setUserEmail(String email) {
         this.userEmail = email;
-        // Aquí puedes actualizar los componentes de la UI si es necesario
+        
     }
     
 
@@ -154,7 +154,10 @@ public class ResetPasswordPanel extends javax.swing.JFrame {
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
-
+    /**
+     * Método que resetea la contraseña de un usuario en la base de datos
+     * @param evt 
+     */
     private void resetBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_resetBtnActionPerformed
         // TODO: add your handling code here:
         String verificationCode = inputCode.getText();

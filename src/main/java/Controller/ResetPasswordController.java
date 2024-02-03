@@ -19,7 +19,7 @@ import org.mindrot.jbcrypt.BCrypt;
 public class ResetPasswordController {
 
     /**
-     * Metodo que verifica que el codigo de verificación ingresado por el usuario coincida con el del email aportado
+     * Método que verifica que el codigo de verificación ingresado por el usuario coincida con el del email aportado
      * @param email este argumento es un tipo String que coincide con el ingresado por el usuario
      * @param codigoVerificacion este argumento es un tipo entero que deberá coincidir con el guardado dentro de la base de datos.
      * @return booleano que será verdadero en caso que los parámetros coincidan con los guardados en la base de datos.

@@ -6,6 +6,10 @@ package View;
 
 import Controller.ForgotPasswordController;
 import Controller.SignUpController;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
+import javax.swing.AbstractButton;
+import javax.swing.JComponent;
 import javax.swing.JFrame;
 import javax.swing.JOptionPane;
 import javax.swing.SwingUtilities;
@@ -24,9 +28,21 @@ public class forgotPanel extends javax.swing.JPanel {
         instructionsBtn.putClientProperty( "Button.arc","arc:40" );
         inputEmailReset.putClientProperty( "JComponent.arc","arc:40" );
         inputEmailReset.putClientProperty("JTextField.placeholderText", "name@example.com");
-        
+        // Asignar acciones a las teclas "Enter" en los componentes
+        asignarAccionEnter(inputEmailReset, instructionsBtn);
     }
+    
+    /**
+     * Método que envía las instrucciones a un usuario para cambiar la contraseña
+     */
+    public void instructionsBtnMousePressed(){
+        if(SignUpController.verificarCredenciales(inputEmailReset.getText())){
+            ForgotPasswordController.changePassword(inputEmailReset.getText());
+        }else{
+            JOptionPane.showMessageDialog(null, "The email is not registred", "User not found", JOptionPane.WARNING_MESSAGE);
 
+        }
+    }
     /**
      * This method is called from within the constructor to initialize the form.
      * WARNING: Do NOT modify this code. The content of this method is always
@@ -120,6 +136,20 @@ public class forgotPanel extends javax.swing.JPanel {
         );
     }// </editor-fold>//GEN-END:initComponents
 
+    private void asignarAccionEnter(JComponent field, final AbstractButton button) {
+        field.addKeyListener(new KeyAdapter() {
+            @Override
+            public void keyPressed(KeyEvent e) {
+                if (e.getKeyCode() == KeyEvent.VK_ENTER) {
+                    instructionsBtnMousePressed();
+                }
+            }
+        });
+    }
+    /**
+     * Método para volver al login panel
+     * @param evt 
+     */
     private void backToLoginBtnMousePressed(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_backToLoginBtnMousePressed
         // TODO add your handling code here:
           JFrame mainFrame = (JFrame) SwingUtilities.getWindowAncestor(this);
@@ -130,14 +160,8 @@ public class forgotPanel extends javax.swing.JPanel {
 
     private void instructionsBtnActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_instructionsBtnActionPerformed
         // TODO add your handling code here:
-        if(SignUpController.verificarCredenciales(inputEmailReset.getText())){
-            ForgotPasswordController.changePassword(inputEmailReset.getText());
-        }else{
-            JOptionPane.showMessageDialog(null, "The email is not registred", "User not found", JOptionPane.WARNING_MESSAGE);
-
-        }
         
-       
+        
     }//GEN-LAST:event_instructionsBtnActionPerformed
 
 

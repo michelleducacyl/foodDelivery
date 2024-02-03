@@ -69,14 +69,14 @@ public class LoginPanel extends javax.swing.JPanel {
     }
 
     /**
-     * Métodod que se llama para hacer login
+     * Métodos que se llama para hacer login
      */
     private void loginBtnMousePressed() {
         String email = inputEmailLogin.getText();
         String password = String.valueOf(inputPasswordLogin.getPassword());
         try {
             errorLogin.setText("");
-// Muestra un mensaje de espera utilizando JOptionPane
+        // Muestra un mensaje de espera utilizando JOptionPane
             JOptionPane.showMessageDialog(null, "Logging in... \nClick OK and wait", "Please wait", JOptionPane.INFORMATION_MESSAGE);
             // Obtener la contraseña almacenada del usuario
             // Verificar si la contraseña almacenada coincide con la ingresada por el usuario

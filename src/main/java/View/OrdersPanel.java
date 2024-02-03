@@ -24,6 +24,8 @@ public class OrdersPanel extends javax.swing.JPanel {
      */
     public OrdersPanel() {
     initComponents();
+    //Se recorre la lista de ordenes devueltas por el método de un usuario
+    // para mostrarlo en una tabla
     List<Object[]> orderInfoList = OrdersController.getOrdersByUser();
     DefaultTableModel model = (DefaultTableModel) tableOrders.getModel();
     SimpleDateFormat dateFormat = new SimpleDateFormat("yyyy-MM-dd"); //

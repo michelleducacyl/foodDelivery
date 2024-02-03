@@ -11,16 +11,19 @@ Controller\ForgotPasswordController.class
 Controller\SignUpController.class
 View\HomePanel$5.class
 View\ResetPasswordPanel.class
+View\HomePanel$8.class
 Controller\PanelManager.class
 View\HomePanel$2.class
 Load\Load.class
 View\LoginPanel$3.class
+View\HomePanel$9.class
 View\CartPanel$2.class
 View\OrdersPanel$2.class
 View\RestaurantPanel$2.class
 Controller\ForgotPasswordController$1.class
 View\LoginPanel.class
 View\HomePanel$3.class
+View\forgotPanel$3.class
 View\RestaurantPanel$1.class
 View\CartPanel$1.class
 View\LoginPanel$4.class
@@ -33,6 +36,7 @@ View\HomePanel$4.class
 View\HomePanel$1.class
 View\SignUpPanel.class
 View\LoginPanel$2.class
+View\SignUpPanel$3.class
 food\model\Dishes.class
 View\MainApp$5.class
 food\model\Users.class
@@ -59,4 +63,5 @@ View\CartPanel$4.class
 Controller\CartController.class
 Controller\OrdersController.class
 View\RestaurantPanel.class
+View\HomePanel$7.class
 View\MainLogin.class

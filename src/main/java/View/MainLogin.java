@@ -103,25 +103,33 @@ public class MainLogin extends javax.swing.JFrame {
             }
         });
     }
-    
+    /**
+     * Método que instancia el Forgot Panel
+     */
     public  void forgotPanel(){
         forgotPanel forgotPanel = new forgotPanel();
         PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(forgotPanel);
     }
-    
+    /**
+     * Método que instancia el Login Panel
+     */
     public  void loginPanel(){
         LoginPanel loginPanel = new LoginPanel();
         PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(loginPanel);
     }
-    
+    /**
+     * Método que instancia el SignUp Panel
+     */
     public  void signUpPanel(){
         SignUpPanel signUp = new SignUpPanel();
         PanelManager manager = new PanelManager(containerForms, 400, 600);
         manager.mostrarPanel(signUp);
     }
-    
+    /**
+     * Método que desactiva todo lo relacionado al login e inicia el home del app
+     */
     public void login(){
          MainLogin.this.dispose();
 
